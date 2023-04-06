@@ -21,9 +21,16 @@ jobs:
       - name: Build code (Windows)
         if: startsWith(matrix.os, 'windows')
         run: g++ hello.cpp -o hello.exe
-      - name: Save artifact
-        if: always()
-        uses: actions/upload-artifact@v2
+      - name: Save artifact (Ubuntu)
+        if: always() && startsWith(matrix.os, 'ubuntu')
+        uses: actions/upload-artifact@v2.2.4
         with:
          name: hello
-         path: | hello
+         path: ./hello
+      - name: Save artifact (Windows)
+        if: always() && startsWith(matrix.os, 'windows')
+        uses: actions/upload-artifact@v2.2.4
+        with:
+         name: hello
+         path: ./hello.exe
+
