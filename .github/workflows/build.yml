@@ -21,3 +21,9 @@ jobs:
       - name: Build code (Windows)
         if: startsWith(matrix.os, 'windows')
         run: g++ hello.cpp -o hello.exe
+      - name: Save artifact
+        if: always()
+        uses: actions/upload-artifact@v2
+        with:
+         name: hello
+         path: ./hello
