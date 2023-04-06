@@ -1,0 +1,9 @@
+﻿{
+  "agentId": 2,
+  "agentName": "mohamed esmail",
+  "poolId": 1,
+  "poolName": "Default",
+  "serverUrl": "https://pipelines.actions.githubusercontent.com/E72i4yQxnUthuzCimL5e2A76ZggI2zfN2qwFy4aFGu9eJL7Fpu",
+  "gitHubUrl": "https://github.com/mesmail98/ci-cd-sample",
+  "workFolder": "ci-cd-sample"
+}

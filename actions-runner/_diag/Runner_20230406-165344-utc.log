@@ -1,0 +1,218 @@
+[2023-04-06 16:53:44Z INFO HostContext] Configuring anonymous proxy http://proxy-chain.intel.com:911 for all HTTP requests.
+[2023-04-06 16:53:44Z INFO HostContext] Configuring anonymous proxy http://proxy-chain.intel.com:912 for all HTTPS requests.
+[2023-04-06 16:53:44Z INFO HostContext] Well known directory 'Bin': '/home/ifs/ci-cd-sample/actions-runner/bin'
+[2023-04-06 16:53:44Z INFO HostContext] Well known directory 'Root': '/home/ifs/ci-cd-sample/actions-runner'
+[2023-04-06 16:53:44Z INFO HostContext] Well known config file 'Credentials': '/home/ifs/ci-cd-sample/actions-runner/.credentials'
+[2023-04-06 16:53:44Z INFO HostContext] Well known directory 'Bin': '/home/ifs/ci-cd-sample/actions-runner/bin'
+[2023-04-06 16:53:44Z INFO HostContext] Well known directory 'Root': '/home/ifs/ci-cd-sample/actions-runner'
+[2023-04-06 16:53:44Z INFO HostContext] Well known config file 'Runner': '/home/ifs/ci-cd-sample/actions-runner/.runner'
+[2023-04-06 16:53:44Z INFO Listener] Runner is built for Linux (X64) - linux-x64.
+[2023-04-06 16:53:44Z INFO Listener] RuntimeInformation: Linux 5.15.0-41-generic #44~20.04.1-Ubuntu SMP Fri Jun 24 13:27:29 UTC 2022.
+[2023-04-06 16:53:44Z INFO Listener] Version: 2.303.0
+[2023-04-06 16:53:44Z INFO Listener] Commit: e676c7871817c1b484299cd93fabdf4b95e70741
+[2023-04-06 16:53:44Z INFO Listener] Culture: en-US
+[2023-04-06 16:53:44Z INFO Listener] UI Culture: en-US
+[2023-04-06 16:53:44Z INFO HostContext] Well known directory 'Bin': '/home/ifs/ci-cd-sample/actions-runner/bin'
+[2023-04-06 16:53:44Z INFO HostContext] Well known directory 'Root': '/home/ifs/ci-cd-sample/actions-runner'
+[2023-04-06 16:53:44Z INFO Listener] Validating directory permissions for: '/home/ifs/ci-cd-sample/actions-runner'
+[2023-04-06 16:53:44Z INFO CommandLineParser] Parse
+[2023-04-06 16:53:44Z INFO CommandLineParser] Parsing 7 args
+[2023-04-06 16:53:44Z INFO CommandLineParser] parsing argument
+[2023-04-06 16:53:44Z INFO CommandLineParser] HasArgs: False
+[2023-04-06 16:53:44Z INFO CommandLineParser] Adding Command: configure
+[2023-04-06 16:53:44Z INFO CommandLineParser] parsing argument
+[2023-04-06 16:53:44Z INFO CommandLineParser] HasArgs: True
+[2023-04-06 16:53:44Z INFO CommandLineParser] arg: url
+[2023-04-06 16:53:44Z INFO CommandLineParser] parsing argument
+[2023-04-06 16:53:44Z INFO CommandLineParser] HasArgs: True
+[2023-04-06 16:53:44Z INFO CommandLineParser] Adding option 'url': 'https://github.com/mesmail98/ci-cd-sample'
+[2023-04-06 16:53:44Z INFO CommandLineParser] parsing argument
+[2023-04-06 16:53:44Z INFO CommandLineParser] HasArgs: True
+[2023-04-06 16:53:44Z INFO CommandLineParser] arg: token
+[2023-04-06 16:53:44Z INFO CommandLineParser] parsing argument
+[2023-04-06 16:53:44Z INFO CommandLineParser] HasArgs: True
+[2023-04-06 16:53:44Z INFO CommandLineParser] Adding option 'token': '***'
+[2023-04-06 16:53:44Z INFO CommandLineParser] parsing argument
+[2023-04-06 16:53:44Z INFO CommandLineParser] HasArgs: True
+[2023-04-06 16:53:44Z INFO CommandLineParser] arg: labels
+[2023-04-06 16:53:44Z INFO CommandLineParser] parsing argument
+[2023-04-06 16:53:44Z INFO CommandLineParser] HasArgs: True
+[2023-04-06 16:53:44Z INFO CommandLineParser] Adding option 'labels': 'self-hosted-linux'
+[2023-04-06 16:53:44Z INFO Listener] Arguments parsed
+[2023-04-06 16:53:44Z INFO Runner] ExecuteCommand
+[2023-04-06 16:53:44Z INFO ConfigurationStore] currentAssemblyLocation: /home/ifs/ci-cd-sample/actions-runner/bin/Runner.Listener.dll
+[2023-04-06 16:53:44Z INFO HostContext] Well known directory 'Bin': '/home/ifs/ci-cd-sample/actions-runner/bin'
+[2023-04-06 16:53:44Z INFO ConfigurationStore] binPath: /home/ifs/ci-cd-sample/actions-runner/bin
+[2023-04-06 16:53:44Z INFO HostContext] Well known directory 'Bin': '/home/ifs/ci-cd-sample/actions-runner/bin'
+[2023-04-06 16:53:44Z INFO HostContext] Well known directory 'Root': '/home/ifs/ci-cd-sample/actions-runner'
+[2023-04-06 16:53:44Z INFO ConfigurationStore] RootFolder: /home/ifs/ci-cd-sample/actions-runner
+[2023-04-06 16:53:44Z INFO HostContext] Well known directory 'Bin': '/home/ifs/ci-cd-sample/actions-runner/bin'
+[2023-04-06 16:53:44Z INFO HostContext] Well known directory 'Root': '/home/ifs/ci-cd-sample/actions-runner'
+[2023-04-06 16:53:44Z INFO HostContext] Well known config file 'Runner': '/home/ifs/ci-cd-sample/actions-runner/.runner'
+[2023-04-06 16:53:44Z INFO ConfigurationStore] ConfigFilePath: /home/ifs/ci-cd-sample/actions-runner/.runner
+[2023-04-06 16:53:44Z INFO HostContext] Well known directory 'Bin': '/home/ifs/ci-cd-sample/actions-runner/bin'
+[2023-04-06 16:53:44Z INFO HostContext] Well known directory 'Root': '/home/ifs/ci-cd-sample/actions-runner'
+[2023-04-06 16:53:44Z INFO HostContext] Well known config file 'Credentials': '/home/ifs/ci-cd-sample/actions-runner/.credentials'
+[2023-04-06 16:53:44Z INFO ConfigurationStore] CredFilePath: /home/ifs/ci-cd-sample/actions-runner/.credentials
+[2023-04-06 16:53:44Z INFO HostContext] Well known directory 'Bin': '/home/ifs/ci-cd-sample/actions-runner/bin'
+[2023-04-06 16:53:44Z INFO HostContext] Well known directory 'Root': '/home/ifs/ci-cd-sample/actions-runner'
+[2023-04-06 16:53:44Z INFO HostContext] Well known config file 'MigratedCredentials': '/home/ifs/ci-cd-sample/actions-runner/.credentials_migrated'
+[2023-04-06 16:53:44Z INFO ConfigurationStore] MigratedCredFilePath: /home/ifs/ci-cd-sample/actions-runner/.credentials_migrated
+[2023-04-06 16:53:44Z INFO HostContext] Well known directory 'Bin': '/home/ifs/ci-cd-sample/actions-runner/bin'
+[2023-04-06 16:53:44Z INFO HostContext] Well known directory 'Root': '/home/ifs/ci-cd-sample/actions-runner'
+[2023-04-06 16:53:44Z INFO HostContext] Well known config file 'Service': '/home/ifs/ci-cd-sample/actions-runner/.service'
+[2023-04-06 16:53:44Z INFO ConfigurationStore] ServiceConfigFilePath: /home/ifs/ci-cd-sample/actions-runner/.service
+[2023-04-06 16:53:44Z INFO CommandSettings] Flag 'help': 'False'
+[2023-04-06 16:53:44Z INFO CommandSettings] Flag 'version': 'False'
+[2023-04-06 16:53:44Z INFO CommandSettings] Flag 'commit': 'False'
+[2023-04-06 16:53:44Z INFO CommandSettings] Flag 'check': 'False'
+[2023-04-06 16:53:44Z INFO CommandSettings] Command 'configure': 'True'
+[2023-04-06 16:53:44Z INFO Terminal] WRITE LINE: 
+[2023-04-06 16:53:44Z INFO Terminal] WRITE LINE: --------------------------------------------------------------------------------
+[2023-04-06 16:53:44Z INFO Terminal] WRITE LINE: |        ____ _ _   _   _       _          _        _   _                      |
+[2023-04-06 16:53:44Z INFO Terminal] WRITE LINE: |       / ___(_) |_| | | |_   _| |__      / \   ___| |_(_) ___  _ __  ___      |
+[2023-04-06 16:53:44Z INFO Terminal] WRITE LINE: |      | |  _| | __| |_| | | | | '_ \    / _ \ / __| __| |/ _ \| '_ \/ __|     |
+[2023-04-06 16:53:44Z INFO Terminal] WRITE LINE: |      | |_| | | |_|  _  | |_| | |_) |  / ___ \ (__| |_| | (_) | | | \__ \     |
+[2023-04-06 16:53:44Z INFO Terminal] WRITE LINE: |       \____|_|\__|_| |_|\__,_|_.__/  /_/   \_\___|\__|_|\___/|_| |_|___/     |
+[2023-04-06 16:53:44Z INFO Terminal] WRITE LINE: |                                                                              |
+[2023-04-06 16:53:44Z INFO Terminal] WRITE: |                       
+[2023-04-06 16:53:44Z INFO Terminal] WRITE: Self-hosted runner registration
+[2023-04-06 16:53:44Z INFO Terminal] WRITE LINE:                         |
+[2023-04-06 16:53:44Z INFO Terminal] WRITE LINE: |                                                                              |
+[2023-04-06 16:53:44Z INFO Terminal] WRITE LINE: --------------------------------------------------------------------------------
+[2023-04-06 16:53:44Z INFO ConfigurationManager] ConfigureAsync
+[2023-04-06 16:53:44Z INFO CommandSettings] Flag 'generateServiceConfig': 'False'
+[2023-04-06 16:53:44Z INFO ConfigurationStore] IsConfigured()
+[2023-04-06 16:53:44Z INFO ConfigurationStore] IsConfigured: False
+[2023-04-06 16:53:44Z INFO ConfigurationManager] Is configured: False
+[2023-04-06 16:53:44Z INFO CommandSettings] Arg 'url': 'https://github.com/mesmail98/ci-cd-sample'
+[2023-04-06 16:53:44Z INFO CommandSettings] Remove url from Arg dictionary.
+[2023-04-06 16:53:44Z INFO CommandSettings] Arg 'token': '***'
+[2023-04-06 16:53:44Z INFO CommandSettings] Remove token from Arg dictionary.
+[2023-04-06 16:53:45Z INFO ConfigurationManager] Http response code: OK from 'POST https://api.github.com/actions/runner-registration' (C0B2:6CE9:C0FDE:18CBD5:642EF910)
+[2023-04-06 16:53:45Z INFO ConfigurationManager] cred retrieved via GitHub auth
+[2023-04-06 16:53:45Z INFO RunnerServer] EstablishVssConnection
+[2023-04-06 16:53:45Z INFO RunnerServer] Establish connection with 100 seconds timeout.
+[2023-04-06 16:53:45Z INFO GitHubActionsService] Starting operation Location.GetConnectionData
+[2023-04-06 16:53:45Z INFO RunnerServer] EstablishVssConnection
+[2023-04-06 16:53:45Z INFO RunnerServer] Establish connection with 60 seconds timeout.
+[2023-04-06 16:53:45Z INFO GitHubActionsService] Starting operation Location.GetConnectionData
+[2023-04-06 16:53:45Z INFO RunnerServer] EstablishVssConnection
+[2023-04-06 16:53:45Z INFO RunnerServer] Establish connection with 60 seconds timeout.
+[2023-04-06 16:53:45Z INFO GitHubActionsService] Starting operation Location.GetConnectionData
+[2023-04-06 16:53:45Z INFO GitHubActionsService] Finished operation Location.GetConnectionData
+[2023-04-06 16:53:45Z INFO GitHubActionsService] Finished operation Location.GetConnectionData
+[2023-04-06 16:53:46Z INFO GitHubActionsService] Finished operation Location.GetConnectionData
+[2023-04-06 16:53:46Z INFO Terminal] WRITE LINE: 
+[2023-04-06 16:53:46Z INFO ConfigurationManager] Test Connection complete.
+[2023-04-06 16:53:46Z INFO HostContext] Well known directory 'Bin': '/home/ifs/ci-cd-sample/actions-runner/bin'
+[2023-04-06 16:53:46Z INFO HostContext] Well known directory 'Root': '/home/ifs/ci-cd-sample/actions-runner'
+[2023-04-06 16:53:46Z INFO HostContext] Well known config file 'RSACredentials': '/home/ifs/ci-cd-sample/actions-runner/.credentials_rsaparams'
+[2023-04-06 16:53:46Z INFO RSAFileKeyManager] Creating new RSA key using 2048-bit key length
+[2023-04-06 16:53:46Z INFO RSAFileKeyManager] Successfully saved RSA key parameters to file /home/ifs/ci-cd-sample/actions-runner/.credentials_rsaparams
+[2023-04-06 16:53:46Z INFO RSAFileKeyManager] Which: 'chmod'
+[2023-04-06 16:53:46Z INFO RSAFileKeyManager] Location: '/usr/bin/chmod'
+[2023-04-06 16:53:46Z INFO HostContext] Well known directory 'Bin': '/home/ifs/ci-cd-sample/actions-runner/bin'
+[2023-04-06 16:53:46Z INFO HostContext] Well known directory 'Root': '/home/ifs/ci-cd-sample/actions-runner'
+[2023-04-06 16:53:46Z INFO ProcessInvokerWrapper] Starting process:
+[2023-04-06 16:53:46Z INFO ProcessInvokerWrapper]   File name: '/usr/bin/chmod'
+[2023-04-06 16:53:46Z INFO ProcessInvokerWrapper]   Arguments: '600 /home/ifs/ci-cd-sample/actions-runner/.credentials_rsaparams'
+[2023-04-06 16:53:46Z INFO ProcessInvokerWrapper]   Working directory: '/home/ifs/ci-cd-sample/actions-runner'
+[2023-04-06 16:53:46Z INFO ProcessInvokerWrapper]   Require exit code zero: 'False'
+[2023-04-06 16:53:46Z INFO ProcessInvokerWrapper]   Encoding web name:  ; code page: ''
+[2023-04-06 16:53:46Z INFO ProcessInvokerWrapper]   Force kill process on cancellation: 'False'
+[2023-04-06 16:53:46Z INFO ProcessInvokerWrapper]   Redirected STDIN: 'False'
+[2023-04-06 16:53:46Z INFO ProcessInvokerWrapper]   Persist current code page: 'False'
+[2023-04-06 16:53:46Z INFO ProcessInvokerWrapper]   Keep redirected STDIN open: 'False'
+[2023-04-06 16:53:46Z INFO ProcessInvokerWrapper]   High priority process: 'False'
+[2023-04-06 16:53:46Z INFO ProcessInvokerWrapper] Process started with process id 3034462, waiting for process exit.
+[2023-04-06 16:53:46Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2023-04-06 16:53:46Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2023-04-06 16:53:46Z INFO ProcessInvokerWrapper] Finished process 3034462 with exit code 0, and elapsed time 00:00:00.0128278.
+[2023-04-06 16:53:46Z INFO RSAFileKeyManager] Successfully set permissions for RSA key parameters file /home/ifs/ci-cd-sample/actions-runner/.credentials_rsaparams
+[2023-04-06 16:53:46Z INFO CommandSettings] Arg 'runnergroup': ''
+[2023-04-06 16:53:46Z INFO CommandSettings] Flag 'unattended': 'False'
+[2023-04-06 16:53:46Z INFO PromptManager] ReadValue
+[2023-04-06 16:53:46Z INFO Terminal] WRITE: Enter the name of the runner group to add this runner to: 
+[2023-04-06 16:53:46Z INFO Terminal] WRITE: [press Enter for Default] 
+[2023-04-06 16:53:46Z INFO Terminal] READ LINE
+[2023-04-06 16:53:56Z INFO Terminal] Read value: ''
+[2023-04-06 16:53:56Z INFO PromptManager] Falling back to the default: 'Default'
+[2023-04-06 16:53:56Z INFO Terminal] WRITE LINE: 
+[2023-04-06 16:53:56Z INFO ConfigurationManager] Found a self-hosted runner group with id 1 and name Default
+[2023-04-06 16:53:56Z INFO CommandSettings] Flag 'disableupdate': 'False'
+[2023-04-06 16:53:56Z INFO CommandSettings] Flag 'ephemeral': 'False'
+[2023-04-06 16:53:56Z INFO CommandSettings] Arg 'name': ''
+[2023-04-06 16:53:56Z INFO CommandSettings] Flag 'unattended': 'False'
+[2023-04-06 16:53:56Z INFO PromptManager] ReadValue
+[2023-04-06 16:53:56Z INFO Terminal] WRITE: Enter the name of runner: 
+[2023-04-06 16:53:56Z INFO Terminal] WRITE: [press Enter for risckernelbuild] 
+[2023-04-06 16:53:56Z INFO Terminal] READ LINE
+[2023-04-06 16:54:08Z INFO Terminal] Read value: 'mohamed esmail'
+[2023-04-06 16:54:08Z INFO Terminal] WRITE LINE: 
+[2023-04-06 16:54:08Z INFO CommandSettings] Arg 'labels': 'self-hosted-linux'
+[2023-04-06 16:54:08Z INFO CommandSettings] Remove labels from Arg dictionary.
+[2023-04-06 16:54:08Z INFO Terminal] WRITE LINE: 
+[2023-04-06 16:54:08Z INFO CommandSettings] Flag 'disableupdate': 'False'
+[2023-04-06 16:54:08Z INFO CommandSettings] Flag 'disableupdate': 'False'
+[2023-04-06 16:54:08Z INFO CommandSettings] Flag 'ephemeral': 'False'
+[2023-04-06 16:54:08Z INFO ConfigurationStore] Saving OAuth credential @ /home/ifs/ci-cd-sample/actions-runner/.credentials
+[2023-04-06 16:54:08Z INFO ConfigurationStore] Credentials Saved.
+[2023-04-06 16:54:08Z INFO ConfigurationStore] HasCredentials()
+[2023-04-06 16:54:08Z INFO ConfigurationStore] stored True
+[2023-04-06 16:54:08Z INFO CredentialManager] GetCredentialProvider
+[2023-04-06 16:54:08Z INFO CredentialManager] Creating type OAuth
+[2023-04-06 16:54:08Z INFO CredentialManager] Creating credential type: OAuth
+[2023-04-06 16:54:08Z INFO RSAFileKeyManager] Loading RSA key parameters from file /home/ifs/ci-cd-sample/actions-runner/.credentials_rsaparams
+[2023-04-06 16:54:08Z INFO RunnerServer] EstablishVssConnection
+[2023-04-06 16:54:08Z INFO RunnerServer] Establish connection with 100 seconds timeout.
+[2023-04-06 16:54:08Z INFO GitHubActionsService] Starting operation Location.GetConnectionData
+[2023-04-06 16:54:08Z INFO RunnerServer] EstablishVssConnection
+[2023-04-06 16:54:08Z INFO RunnerServer] Establish connection with 60 seconds timeout.
+[2023-04-06 16:54:08Z INFO GitHubActionsService] Starting operation Location.GetConnectionData
+[2023-04-06 16:54:08Z INFO RunnerServer] EstablishVssConnection
+[2023-04-06 16:54:08Z INFO RunnerServer] Establish connection with 60 seconds timeout.
+[2023-04-06 16:54:08Z INFO GitHubActionsService] Starting operation Location.GetConnectionData
+[2023-04-06 16:54:08Z INFO GitHubActionsService] Finished operation Location.GetConnectionData
+[2023-04-06 16:54:08Z INFO GitHubActionsService] Finished operation Location.GetConnectionData
+[2023-04-06 16:54:08Z INFO GitHubActionsService] Finished operation Location.GetConnectionData
+[2023-04-06 16:54:09Z INFO RSAFileKeyManager] Loading RSA key parameters from file /home/ifs/ci-cd-sample/actions-runner/.credentials_rsaparams
+[2023-04-06 16:54:09Z INFO RSAFileKeyManager] Loading RSA key parameters from file /home/ifs/ci-cd-sample/actions-runner/.credentials_rsaparams
+[2023-04-06 16:54:09Z INFO GitHubActionsService] AAD Correlation ID for this token request: Unknown
+[2023-04-06 16:54:09Z INFO CommandSettings] Arg 'work': ''
+[2023-04-06 16:54:09Z INFO CommandSettings] Flag 'unattended': 'False'
+[2023-04-06 16:54:09Z INFO PromptManager] ReadValue
+[2023-04-06 16:54:09Z INFO Terminal] WRITE: Enter name of work folder: 
+[2023-04-06 16:54:09Z INFO Terminal] WRITE: [press Enter for _work] 
+[2023-04-06 16:54:09Z INFO Terminal] READ LINE
+[2023-04-06 16:54:59Z INFO Terminal] Read value: 'ci-cd-sample'
+[2023-04-06 16:54:59Z INFO ConfigurationStore] Saving runner settings.
+[2023-04-06 16:54:59Z INFO ConfigurationStore] Settings Saved.
+[2023-04-06 16:54:59Z INFO Terminal] WRITE LINE: 
+[2023-04-06 16:54:59Z INFO Terminal] WRITE LINE: 
+[2023-04-06 16:54:59Z INFO SystemDControlManager] Service name 'actions.runner.mesmail98-ci-cd-sample.mohamed esmail.service' display name 'GitHub Actions Runner (mesmail98-ci-cd-sample.mohamed esmail)' will be used for service configuration.
+[2023-04-06 16:54:59Z INFO HostContext] Well known directory 'Bin': '/home/ifs/ci-cd-sample/actions-runner/bin'
+[2023-04-06 16:54:59Z INFO HostContext] Well known directory 'Root': '/home/ifs/ci-cd-sample/actions-runner'
+[2023-04-06 16:54:59Z INFO HostContext] Well known directory 'Bin': '/home/ifs/ci-cd-sample/actions-runner/bin'
+[2023-04-06 16:54:59Z INFO HostContext] Well known directory 'Bin': '/home/ifs/ci-cd-sample/actions-runner/bin'
+[2023-04-06 16:54:59Z INFO HostContext] Well known directory 'Root': '/home/ifs/ci-cd-sample/actions-runner'
+[2023-04-06 16:54:59Z INFO UnixUtil] Which: 'chmod'
+[2023-04-06 16:54:59Z INFO UnixUtil] Location: '/usr/bin/chmod'
+[2023-04-06 16:54:59Z INFO UnixUtil] Running /usr/bin/chmod 755 "/home/ifs/ci-cd-sample/actions-runner/svc.sh"
+[2023-04-06 16:54:59Z INFO ProcessInvokerWrapper] Starting process:
+[2023-04-06 16:54:59Z INFO ProcessInvokerWrapper]   File name: '/usr/bin/chmod'
+[2023-04-06 16:54:59Z INFO ProcessInvokerWrapper]   Arguments: '755 "/home/ifs/ci-cd-sample/actions-runner/svc.sh"'
+[2023-04-06 16:54:59Z INFO ProcessInvokerWrapper]   Working directory: '/home/ifs/ci-cd-sample/actions-runner'
+[2023-04-06 16:54:59Z INFO ProcessInvokerWrapper]   Require exit code zero: 'True'
+[2023-04-06 16:54:59Z INFO ProcessInvokerWrapper]   Encoding web name:  ; code page: ''
+[2023-04-06 16:54:59Z INFO ProcessInvokerWrapper]   Force kill process on cancellation: 'False'
+[2023-04-06 16:54:59Z INFO ProcessInvokerWrapper]   Redirected STDIN: 'False'
+[2023-04-06 16:54:59Z INFO ProcessInvokerWrapper]   Persist current code page: 'False'
+[2023-04-06 16:54:59Z INFO ProcessInvokerWrapper]   Keep redirected STDIN open: 'False'
+[2023-04-06 16:54:59Z INFO ProcessInvokerWrapper]   High priority process: 'False'
+[2023-04-06 16:54:59Z INFO ProcessInvokerWrapper] Updated oom_score_adj to 500 for PID: 3034503.
+[2023-04-06 16:54:59Z INFO ProcessInvokerWrapper] Process started with process id 3034503, waiting for process exit.
+[2023-04-06 16:54:59Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2023-04-06 16:54:59Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2023-04-06 16:54:59Z INFO ProcessInvokerWrapper] Finished process 3034503 with exit code 0, and elapsed time 00:00:00.0022875.
+[2023-04-06 16:54:59Z INFO Listener] Runner execution has finished with return code 0

@@ -8,21 +8,33 @@ jobs:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        os: [ubuntu-latest, windows-latest]
+        os: [self-hosted-linux, windows-latest]
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
-      - name: Install g++ (Ubuntu)
-        if: startsWith(matrix.os, 'ubuntu')
+      - name: Install g++ (Linux)
+        if: startsWith(matrix.os, 'self-hosted-linux')
         run: sudo apt-get install g++
-      - name: Build code (Ubuntu)
-        if: startsWith(matrix.os, 'ubuntu')
-        run: g++ hello.cpp -o hello
+        #  - name: Install g++ (Ubuntu)
+        #if: startsWith(matrix.os, 'ubuntu')
+        #run: sudo apt-get install g++
+        #     - name: Build code (Ubuntu)
+        #if: startsWith(matrix.os, 'ubuntu')
+        #run: g++ hello.cpp -o hello
       - name: Build code (Windows)
         if: startsWith(matrix.os, 'windows')
         run: g++ hello.cpp -o hello.exe
-      - name: Save artifact (Ubuntu)
-        if: always() && startsWith(matrix.os, 'ubuntu')
+      - name: Build code (Linux)
+        if: startsWith(matrix.os, 'self-hosted-linux')
+        run: g++ hello.cpp -o hello
+        # - name: Save artifact (Ubuntu)
+        #if: always() && startsWith(matrix.os, 'ubuntu')
+        #uses: actions/upload-artifact@v2.2.4
+        #with:
+        # name: hello
+        # path: ./hello
+      - name: Save artifact (Linux)
+        if: always() && startsWith(matrix.os, 'self-hosted-linux')
         uses: actions/upload-artifact@v2.2.4
         with:
          name: hello
@@ -33,4 +45,4 @@ jobs:
         with:
          name: hello
          path: ./hello.exe
-
+       
