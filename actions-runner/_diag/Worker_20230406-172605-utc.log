@@ -1,0 +1,3575 @@
+[2023-04-06 17:26:05Z INFO HostContext] Configuring anonymous proxy http://proxy-chain.intel.com:911 for all HTTP requests.
+[2023-04-06 17:26:05Z INFO HostContext] Configuring anonymous proxy http://proxy-chain.intel.com:912 for all HTTPS requests.
+[2023-04-06 17:26:05Z INFO HostContext] Well known directory 'Bin': '/home/ifs/ci-cd-sample/actions-runner/bin'
+[2023-04-06 17:26:05Z INFO HostContext] Well known directory 'Root': '/home/ifs/ci-cd-sample/actions-runner'
+[2023-04-06 17:26:05Z INFO HostContext] Well known config file 'Credentials': '/home/ifs/ci-cd-sample/actions-runner/.credentials'
+[2023-04-06 17:26:05Z INFO HostContext] Well known directory 'Bin': '/home/ifs/ci-cd-sample/actions-runner/bin'
+[2023-04-06 17:26:05Z INFO HostContext] Well known directory 'Root': '/home/ifs/ci-cd-sample/actions-runner'
+[2023-04-06 17:26:05Z INFO HostContext] Well known config file 'Runner': '/home/ifs/ci-cd-sample/actions-runner/.runner'
+[2023-04-06 17:26:05Z INFO Worker] Version: 2.303.0
+[2023-04-06 17:26:05Z INFO Worker] Commit: e676c7871817c1b484299cd93fabdf4b95e70741
+[2023-04-06 17:26:05Z INFO Worker] Culture: en-US
+[2023-04-06 17:26:05Z INFO Worker] UI Culture: en-US
+[2023-04-06 17:26:05Z INFO Worker] Waiting to receive the job message from the channel.
+[2023-04-06 17:26:05Z INFO ProcessChannel] Receiving message of length 22749, with hash 'bc5f8a4118503d4fca9724d08e01ce8d055d2e1fef6cf625f675ba3ff0fb7f83'
+[2023-04-06 17:26:05Z INFO Worker] Message received.
+[2023-04-06 17:26:06Z INFO Worker] Job message:
+ {
+  "fileTable": [
+    ".github/workflows/build.yml"
+  ],
+  "mask": [
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    }
+  ],
+  "steps": [
+    {
+      "type": "action",
+      "reference": {
+        "type": "repository",
+        "name": "actions/checkout",
+        "ref": "v3",
+        "repositoryType": "GitHub",
+        "path": ""
+      },
+      "displayNameToken": {
+        "type": 0,
+        "file": 1,
+        "line": 13,
+        "col": 15,
+        "lit": "Checkout code"
+      },
+      "contextName": "__actions_checkout",
+      "condition": "success()",
+      "id": "aed715ca-3f37-5992-da03-0db8356b4ca9",
+      "name": "__actions_checkout"
+    },
+    {
+      "type": "action",
+      "reference": {
+        "type": "script"
+      },
+      "displayNameToken": {
+        "type": 0,
+        "file": 1,
+        "line": 15,
+        "col": 15,
+        "lit": "Install g++ (Linux)"
+      },
+      "contextName": "__run",
+      "inputs": {
+        "type": 2,
+        "map": [
+          {
+            "key": "script",
+            "value": {
+              "type": 0,
+              "file": 1,
+              "line": 17,
+              "col": 14,
+              "lit": "sudo apt-get install g++"
+            }
+          }
+        ]
+      },
+      "condition": "success() && (startsWith(matrix.os, 'self-hosted-linux'))",
+      "id": "f2290000-62bc-5c82-3c2d-ee47c260fa38",
+      "name": "__run"
+    },
+    {
+      "type": "action",
+      "reference": {
+        "type": "script"
+      },
+      "displayNameToken": {
+        "type": 0,
+        "file": 1,
+        "line": 24,
+        "col": 15,
+        "lit": "Build code (Windows)"
+      },
+      "contextName": "__run_2",
+      "inputs": {
+        "type": 2,
+        "map": [
+          {
+            "key": "script",
+            "value": {
+              "type": 0,
+              "file": 1,
+              "line": 26,
+              "col": 14,
+              "lit": "g++ hello.cpp -o hello.exe"
+            }
+          }
+        ]
+      },
+      "condition": "success() && (startsWith(matrix.os, 'windows'))",
+      "id": "966be8dd-9956-52ee-64a7-d434ff75b1d3",
+      "name": "__run_2"
+    },
+    {
+      "type": "action",
+      "reference": {
+        "type": "script"
+      },
+      "displayNameToken": {
+        "type": 0,
+        "file": 1,
+        "line": 27,
+        "col": 15,
+        "lit": "Build code (Linux)"
+      },
+      "contextName": "__run_3",
+      "inputs": {
+        "type": 2,
+        "map": [
+          {
+            "key": "script",
+            "value": {
+              "type": 0,
+              "file": 1,
+              "line": 29,
+              "col": 14,
+              "lit": "g++ hello.cpp -o hello"
+            }
+          }
+        ]
+      },
+      "condition": "success() && (startsWith(matrix.os, 'self-hosted-linux'))",
+      "id": "d962e631-3b84-5002-2328-5ba186324413",
+      "name": "__run_3"
+    },
+    {
+      "type": "action",
+      "reference": {
+        "type": "repository",
+        "name": "actions/upload-artifact",
+        "ref": "v2.2.4",
+        "repositoryType": "GitHub",
+        "path": ""
+      },
+      "displayNameToken": {
+        "type": 0,
+        "file": 1,
+        "line": 36,
+        "col": 15,
+        "lit": "Save artifact (Linux)"
+      },
+      "contextName": "__actions_upload-artifact",
+      "inputs": {
+        "type": 2,
+        "file": 1,
+        "line": 40,
+        "col": 10,
+        "map": [
+          {
+            "key": {
+              "type": 0,
+              "file": 1,
+              "line": 40,
+              "col": 10,
+              "lit": "name"
+            },
+            "value": {
+              "type": 0,
+              "file": 1,
+              "line": 40,
+              "col": 16,
+              "lit": "hello"
+            }
+          },
+          {
+            "key": {
+              "type": 0,
+              "file": 1,
+              "line": 41,
+              "col": 10,
+              "lit": "path"
+            },
+            "value": {
+              "type": 0,
+              "file": 1,
+              "line": 41,
+              "col": 16,
+              "lit": "./hello"
+            }
+          }
+        ]
+      },
+      "condition": "always() && startsWith(matrix.os, 'self-hosted-linux')",
+      "id": "1676fe7e-2086-5d8e-ea6f-a98c568c7ddc",
+      "name": "__actions_upload-artifact"
+    },
+    {
+      "type": "action",
+      "reference": {
+        "type": "repository",
+        "name": "actions/upload-artifact",
+        "ref": "v2.2.4",
+        "repositoryType": "GitHub",
+        "path": ""
+      },
+      "displayNameToken": {
+        "type": 0,
+        "file": 1,
+        "line": 42,
+        "col": 15,
+        "lit": "Save artifact (Windows)"
+      },
+      "contextName": "__actions_upload-artifact_2",
+      "inputs": {
+        "type": 2,
+        "file": 1,
+        "line": 46,
+        "col": 10,
+        "map": [
+          {
+            "key": {
+              "type": 0,
+              "file": 1,
+              "line": 46,
+              "col": 10,
+              "lit": "name"
+            },
+            "value": {
+              "type": 0,
+              "file": 1,
+              "line": 46,
+              "col": 16,
+              "lit": "hello"
+            }
+          },
+          {
+            "key": {
+              "type": 0,
+              "file": 1,
+              "line": 47,
+              "col": 10,
+              "lit": "path"
+            },
+            "value": {
+              "type": 0,
+              "file": 1,
+              "line": 47,
+              "col": 16,
+              "lit": "./hello.exe"
+            }
+          }
+        ]
+      },
+      "condition": "always() && startsWith(matrix.os, 'windows')",
+      "id": "57bf080e-9032-5ead-244c-6b525e735564",
+      "name": "__actions_upload-artifact_2"
+    }
+  ],
+  "variables": {
+    "system.isScheduled": {
+      "value": "False"
+    },
+    "system.servertype": {
+      "value": "Hosted"
+    },
+    "system.culture": {
+      "value": "en-US"
+    },
+    "system.pipelineStartTime": {
+      "value": "2023-04-06 17:25:54+00:00"
+    },
+    "system.runner.lowdiskspacethreshold": {
+      "value": "100"
+    },
+    "DistributedTask.NewActionMetadata": {
+      "value": "true"
+    },
+    "DistributedTask.EnableCompositeActions": {
+      "value": "true"
+    },
+    "DistributedTask.EnhancedAnnotations": {
+      "value": "true"
+    },
+    "DistributedTask.UploadStepSummary": {
+      "value": "true"
+    },
+    "DistributedTask.AddWarningToNode12Action": {
+      "value": "true"
+    },
+    "DistributedTask.AllowRunnerContainerHooks": {
+      "value": "true"
+    },
+    "DistributedTask.DeprecateStepOutputCommands": {
+      "value": "true"
+    },
+    "system.teamProjectId": {
+      "value": "00000000-0000-0000-0000-000000000000"
+    },
+    "build.buildId": {
+      "value": "6"
+    },
+    "build.containerId": {
+      "value": "6210816"
+    },
+    "system.workflowFilePath": {
+      "value": ".github/workflows/build.yml"
+    },
+    "system.phaseDisplayName": {
+      "value": "build"
+    },
+    "system.phaseId": {
+      "value": "6884a131-87da-5381-61f3-d7acc3b91d76"
+    },
+    "system.phaseName": {
+      "value": "build"
+    },
+    "system.phaseAttempt": {
+      "value": "1"
+    },
+    "system.jobIdentifier": {
+      "value": "build.self-hosted-linux"
+    },
+    "system.jobAttempt": {
+      "value": "1"
+    },
+    "System.JobPositionInPhase": {
+      "value": "1"
+    },
+    "System.TotalJobsInPhase": {
+      "value": "2"
+    },
+    "system.github.job": {
+      "value": "build"
+    },
+    "system.jobDisplayName": {
+      "value": "Build on self-hosted-linux"
+    },
+    "system.jobId": {
+      "value": "bddc1945-e983-5915-0743-b12662939965"
+    },
+    "system.jobName": {
+      "value": "self-hosted-linux"
+    },
+    "system.github.token.permissions": {
+      "value": "{\"Contents\":\"read\",\"Metadata\":\"read\",\"Packages\":\"read\"}"
+    },
+    "system.github.token": {
+      "value": "***",
+      "isSecret": true
+    },
+    "system.runnerGroupName": {
+      "value": "Default"
+    }
+  },
+  "messageType": "PipelineAgentJobRequest",
+  "plan": {
+    "scopeIdentifier": "00000000-0000-0000-0000-000000000000",
+    "planType": "Actions",
+    "version": 31,
+    "planId": "ffd401a8-5ddd-48f9-9cd2-1c8b05398e87",
+    "planGroup": "Actions:00000000-0000-0000-0000-000000000000:1",
+    "artifactUri": "vstfs:///Build/Build/6",
+    "artifactLocation": null,
+    "definition": {
+      "_links": {},
+      "id": 3,
+      "name": "ci-cd-sample"
+    },
+    "owner": {
+      "_links": {},
+      "id": 3,
+      "name": "mesmail98"
+    }
+  },
+  "timeline": {
+    "id": "ffd401a8-5ddd-48f9-9cd2-1c8b05398e87",
+    "changeId": 0,
+    "location": null
+  },
+  "jobId": "bddc1945-e983-5915-0743-b12662939965",
+  "jobDisplayName": "Build on self-hosted-linux",
+  "jobName": "self-hosted-linux",
+  "requestId": 12,
+  "lockedUntil": "0001-01-01T00:00:00",
+  "resources": {
+    "endpoints": [
+      {
+        "data": {
+          "ServerId": "3be53e0e-d521-4bda-9525-5673fd532aa9",
+          "ServerName": "E72i4yQxnUthuzCimL5e2A76ZggI2zfN2qwFy4aFGu9eJL7Fpu",
+          "CacheServerUrl": "https://artifactcache.actions.githubusercontent.com/E72i4yQxnUthuzCimL5e2A76ZggI2zfN2qwFy4aFGu9eJL7Fpu/",
+          "FeedStreamUrl": "https://pipelines.actions.githubusercontent.com/E72i4yQxnUthuzCimL5e2A76ZggI2zfN2qwFy4aFGu9eJL7Fpu/00000000-0000-0000-0000-000000000000/_apis/distributedtask/hubs/Actions/plans/ffd401a8-5ddd-48f9-9cd2-1c8b05398e87/timelines/ffd401a8-5ddd-48f9-9cd2-1c8b05398e87/records/bddc1945-e983-5915-0743-b12662939965/feedstream?api-version=6.0-preview"
+        },
+        "name": "SystemVssConnection",
+        "url": "https://pipelines.actions.githubusercontent.com/E72i4yQxnUthuzCimL5e2A76ZggI2zfN2qwFy4aFGu9eJL7Fpu/",
+        "authorization": {
+          "parameters": {
+            "AccessToken": ***
+          },
+          "scheme": "OAuth"
+        },
+        "isShared": false,
+        "isReady": true
+      }
+    ]
+  },
+  "contextData": {
+    "github": {
+      "t": 2,
+      "d": [
+        {
+          "k": "ref",
+          "v": "refs/heads/main"
+        },
+        {
+          "k": "sha",
+          "v": "c811dabd9315adeed1d7116922be2827a049fd95"
+        },
+        {
+          "k": "repository",
+          "v": "mesmail98/ci-cd-sample"
+        },
+        {
+          "k": "repository_owner",
+          "v": "mesmail98"
+        },
+        {
+          "k": "repository_owner_id",
+          "v": "104802478"
+        },
+        {
+          "k": "repositoryUrl",
+          "v": "git://github.com/mesmail98/ci-cd-sample.git"
+        },
+        {
+          "k": "run_id",
+          "v": "4631461298"
+        },
+        {
+          "k": "run_number",
+          "v": "7"
+        },
+        {
+          "k": "retention_days",
+          "v": "90"
+        },
+        {
+          "k": "run_attempt",
+          "v": "1"
+        },
+        {
+          "k": "artifact_cache_size_limit",
+          "v": "10"
+        },
+        {
+          "k": "repository_visibility",
+          "v": "public"
+        },
+        {
+          "k": "repository_id",
+          "v": "624510764"
+        },
+        {
+          "k": "actor_id",
+          "v": "104802478"
+        },
+        {
+          "k": "actor",
+          "v": "mesmail98"
+        },
+        {
+          "k": "triggering_actor",
+          "v": "mesmail98"
+        },
+        {
+          "k": "workflow",
+          "v": "Build"
+        },
+        {
+          "k": "head_ref",
+          "v": ""
+        },
+        {
+          "k": "base_ref",
+          "v": ""
+        },
+        {
+          "k": "event_name",
+          "v": "push"
+        },
+        {
+          "k": "event",
+          "v": {
+            "t": 2,
+            "d": [
+              {
+                "k": "after",
+                "v": "c811dabd9315adeed1d7116922be2827a049fd95"
+              },
+              {
+                "k": "base_ref",
+                "v": null
+              },
+              {
+                "k": "before",
+                "v": "aaf0b662f6a7abe308ed33d320bebca890daae3c"
+              },
+              {
+                "k": "commits",
+                "v": {
+                  "t": 1,
+                  "a": [
+                    {
+                      "t": 2,
+                      "d": [
+                        {
+                          "k": "author",
+                          "v": {
+                            "t": 2,
+                            "d": [
+                              {
+                                "k": "email",
+                                "v": "mohamed.esmail@intel.com"
+                              },
+                              {
+                                "k": "name",
+                                "v": "mohamed esmail"
+                              },
+                              {
+                                "k": "username",
+                                "v": "mesmail98"
+                              }
+                            ]
+                          }
+                        },
+                        {
+                          "k": "committer",
+                          "v": {
+                            "t": 2,
+                            "d": [
+                              {
+                                "k": "email",
+                                "v": "mohamed.esmail@intel.com"
+                              },
+                              {
+                                "k": "name",
+                                "v": "mohamed esmail"
+                              },
+                              {
+                                "k": "username",
+                                "v": "mesmail98"
+                              }
+                            ]
+                          }
+                        },
+                        {
+                          "k": "distinct",
+                          "v": true
+                        },
+                        {
+                          "k": "id",
+                          "v": "c811dabd9315adeed1d7116922be2827a049fd95"
+                        },
+                        {
+                          "k": "message",
+                          "v": "Testing self-hosted runner"
+                        },
+                        {
+                          "k": "timestamp",
+                          "v": "2023-04-06T10:25:15-07:00"
+                        },
+                        {
+                          "k": "tree_id",
+                          "v": "6db97e8d975a3285cff3d156b025f2f80984ef01"
+                        },
+                        {
+                          "k": "url",
+                          "v": "https://github.com/mesmail98/ci-cd-sample/commit/c811dabd9315adeed1d7116922be2827a049fd95"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              },
+              {
+                "k": "compare",
+                "v": "https://github.com/mesmail98/ci-cd-sample/compare/aaf0b662f6a7...c811dabd9315"
+              },
+              {
+                "k": "created",
+                "v": false
+              },
+              {
+                "k": "deleted",
+                "v": false
+              },
+              {
+                "k": "forced",
+                "v": false
+              },
+              {
+                "k": "head_commit",
+                "v": {
+                  "t": 2,
+                  "d": [
+                    {
+                      "k": "author",
+                      "v": {
+                        "t": 2,
+                        "d": [
+                          {
+                            "k": "email",
+                            "v": "mohamed.esmail@intel.com"
+                          },
+                          {
+                            "k": "name",
+                            "v": "mohamed esmail"
+                          },
+                          {
+                            "k": "username",
+                            "v": "mesmail98"
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "k": "committer",
+                      "v": {
+                        "t": 2,
+                        "d": [
+                          {
+                            "k": "email",
+                            "v": "mohamed.esmail@intel.com"
+                          },
+                          {
+                            "k": "name",
+                            "v": "mohamed esmail"
+                          },
+                          {
+                            "k": "username",
+                            "v": "mesmail98"
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "k": "distinct",
+                      "v": true
+                    },
+                    {
+                      "k": "id",
+                      "v": "c811dabd9315adeed1d7116922be2827a049fd95"
+                    },
+                    {
+                      "k": "message",
+                      "v": "Testing self-hosted runner"
+                    },
+                    {
+                      "k": "timestamp",
+                      "v": "2023-04-06T10:25:15-07:00"
+                    },
+                    {
+                      "k": "tree_id",
+                      "v": "6db97e8d975a3285cff3d156b025f2f80984ef01"
+                    },
+                    {
+                      "k": "url",
+                      "v": "https://github.com/mesmail98/ci-cd-sample/commit/c811dabd9315adeed1d7116922be2827a049fd95"
+                    }
+                  ]
+                }
+              },
+              {
+                "k": "pusher",
+                "v": {
+                  "t": 2,
+                  "d": [
+                    {
+                      "k": "email",
+                      "v": "104802478+mesmail98@users.noreply.github.com"
+                    },
+                    {
+                      "k": "name",
+                      "v": "mesmail98"
+                    }
+                  ]
+                }
+              },
+              {
+                "k": "ref",
+                "v": "refs/heads/main"
+              },
+              {
+                "k": "repository",
+                "v": {
+                  "t": 2,
+                  "d": [
+                    {
+                      "k": "allow_forking",
+                      "v": true
+                    },
+                    {
+                      "k": "archive_url",
+                      "v": "https://api.github.com/repos/mesmail98/ci-cd-sample/{archive_format}{/ref}"
+                    },
+                    {
+                      "k": "archived",
+                      "v": false
+                    },
+                    {
+                      "k": "assignees_url",
+                      "v": "https://api.github.com/repos/mesmail98/ci-cd-sample/assignees{/user}"
+                    },
+                    {
+                      "k": "blobs_url",
+                      "v": "https://api.github.com/repos/mesmail98/ci-cd-sample/git/blobs{/sha}"
+                    },
+                    {
+                      "k": "branches_url",
+                      "v": "https://api.github.com/repos/mesmail98/ci-cd-sample/branches{/branch}"
+                    },
+                    {
+                      "k": "clone_url",
+                      "v": "https://github.com/mesmail98/ci-cd-sample.git"
+                    },
+                    {
+                      "k": "collaborators_url",
+                      "v": "https://api.github.com/repos/mesmail98/ci-cd-sample/collaborators{/collaborator}"
+                    },
+                    {
+                      "k": "comments_url",
+                      "v": "https://api.github.com/repos/mesmail98/ci-cd-sample/comments{/number}"
+                    },
+                    {
+                      "k": "commits_url",
+                      "v": "https://api.github.com/repos/mesmail98/ci-cd-sample/commits{/sha}"
+                    },
+                    {
+                      "k": "compare_url",
+                      "v": "https://api.github.com/repos/mesmail98/ci-cd-sample/compare/{base}...{head}"
+                    },
+                    {
+                      "k": "contents_url",
+                      "v": "https://api.github.com/repos/mesmail98/ci-cd-sample/contents/{+path}"
+                    },
+                    {
+                      "k": "contributors_url",
+                      "v": "https://api.github.com/repos/mesmail98/ci-cd-sample/contributors"
+                    },
+                    {
+                      "k": "created_at",
+                      "v": 1680798061.0
+                    },
+                    {
+                      "k": "default_branch",
+                      "v": "main"
+                    },
+                    {
+                      "k": "deployments_url",
+                      "v": "https://api.github.com/repos/mesmail98/ci-cd-sample/deployments"
+                    },
+                    {
+                      "k": "description",
+                      "v": null
+                    },
+                    {
+                      "k": "disabled",
+                      "v": false
+                    },
+                    {
+                      "k": "downloads_url",
+                      "v": "https://api.github.com/repos/mesmail98/ci-cd-sample/downloads"
+                    },
+                    {
+                      "k": "events_url",
+                      "v": "https://api.github.com/repos/mesmail98/ci-cd-sample/events"
+                    },
+                    {
+                      "k": "fork",
+                      "v": false
+                    },
+                    {
+                      "k": "forks",
+                      "v": 0.0
+                    },
+                    {
+                      "k": "forks_count",
+                      "v": 0.0
+                    },
+                    {
+                      "k": "forks_url",
+                      "v": "https://api.github.com/repos/mesmail98/ci-cd-sample/forks"
+                    },
+                    {
+                      "k": "full_name",
+                      "v": "mesmail98/ci-cd-sample"
+                    },
+                    {
+                      "k": "git_commits_url",
+                      "v": "https://api.github.com/repos/mesmail98/ci-cd-sample/git/commits{/sha}"
+                    },
+                    {
+                      "k": "git_refs_url",
+                      "v": "https://api.github.com/repos/mesmail98/ci-cd-sample/git/refs{/sha}"
+                    },
+                    {
+                      "k": "git_tags_url",
+                      "v": "https://api.github.com/repos/mesmail98/ci-cd-sample/git/tags{/sha}"
+                    },
+                    {
+                      "k": "git_url",
+                      "v": "git://github.com/mesmail98/ci-cd-sample.git"
+                    },
+                    {
+                      "k": "has_discussions",
+                      "v": false
+                    },
+                    {
+                      "k": "has_downloads",
+                      "v": true
+                    },
+                    {
+                      "k": "has_issues",
+                      "v": true
+                    },
+                    {
+                      "k": "has_pages",
+                      "v": false
+                    },
+                    {
+                      "k": "has_projects",
+                      "v": true
+                    },
+                    {
+                      "k": "has_wiki",
+                      "v": true
+                    },
+                    {
+                      "k": "homepage",
+                      "v": null
+                    },
+                    {
+                      "k": "hooks_url",
+                      "v": "https://api.github.com/repos/mesmail98/ci-cd-sample/hooks"
+                    },
+                    {
+                      "k": "html_url",
+                      "v": "https://github.com/mesmail98/ci-cd-sample"
+                    },
+                    {
+                      "k": "id",
+                      "v": 624510764.0
+                    },
+                    {
+                      "k": "is_template",
+                      "v": false
+                    },
+                    {
+                      "k": "issue_comment_url",
+                      "v": "https://api.github.com/repos/mesmail98/ci-cd-sample/issues/comments{/number}"
+                    },
+                    {
+                      "k": "issue_events_url",
+                      "v": "https://api.github.com/repos/mesmail98/ci-cd-sample/issues/events{/number}"
+                    },
+                    {
+                      "k": "issues_url",
+                      "v": "https://api.github.com/repos/mesmail98/ci-cd-sample/issues{/number}"
+                    },
+                    {
+                      "k": "keys_url",
+                      "v": "https://api.github.com/repos/mesmail98/ci-cd-sample/keys{/key_id}"
+                    },
+                    {
+                      "k": "labels_url",
+                      "v": "https://api.github.com/repos/mesmail98/ci-cd-sample/labels{/name}"
+                    },
+                    {
+                      "k": "language",
+                      "v": "C++"
+                    },
+                    {
+                      "k": "languages_url",
+                      "v": "https://api.github.com/repos/mesmail98/ci-cd-sample/languages"
+                    },
+                    {
+                      "k": "license",
+                      "v": null
+                    },
+                    {
+                      "k": "master_branch",
+                      "v": "main"
+                    },
+                    {
+                      "k": "merges_url",
+                      "v": "https://api.github.com/repos/mesmail98/ci-cd-sample/merges"
+                    },
+                    {
+                      "k": "milestones_url",
+                      "v": "https://api.github.com/repos/mesmail98/ci-cd-sample/milestones{/number}"
+                    },
+                    {
+                      "k": "mirror_url",
+                      "v": null
+                    },
+                    {
+                      "k": "name",
+                      "v": "ci-cd-sample"
+                    },
+                    {
+                      "k": "node_id",
+                      "v": "R_kgDOJTlHLA"
+                    },
+                    {
+                      "k": "notifications_url",
+                      "v": "https://api.github.com/repos/mesmail98/ci-cd-sample/notifications{?since,all,participating}"
+                    },
+                    {
+                      "k": "open_issues",
+                      "v": 0.0
+                    },
+                    {
+                      "k": "open_issues_count",
+                      "v": 0.0
+                    },
+                    {
+                      "k": "owner",
+                      "v": {
+                        "t": 2,
+                        "d": [
+                          {
+                            "k": "avatar_url",
+                            "v": "https://avatars.githubusercontent.com/u/104802478?v=4"
+                          },
+                          {
+                            "k": "email",
+                            "v": "104802478+mesmail98@users.noreply.github.com"
+                          },
+                          {
+                            "k": "events_url",
+                            "v": "https://api.github.com/users/mesmail98/events{/privacy}"
+                          },
+                          {
+                            "k": "followers_url",
+                            "v": "https://api.github.com/users/mesmail98/followers"
+                          },
+                          {
+                            "k": "following_url",
+                            "v": "https://api.github.com/users/mesmail98/following{/other_user}"
+                          },
+                          {
+                            "k": "gists_url",
+                            "v": "https://api.github.com/users/mesmail98/gists{/gist_id}"
+                          },
+                          {
+                            "k": "gravatar_id",
+                            "v": ""
+                          },
+                          {
+                            "k": "html_url",
+                            "v": "https://github.com/mesmail98"
+                          },
+                          {
+                            "k": "id",
+                            "v": 104802478.0
+                          },
+                          {
+                            "k": "login",
+                            "v": "mesmail98"
+                          },
+                          {
+                            "k": "name",
+                            "v": "mesmail98"
+                          },
+                          {
+                            "k": "node_id",
+                            "v": "U_kgDOBj8org"
+                          },
+                          {
+                            "k": "organizations_url",
+                            "v": "https://api.github.com/users/mesmail98/orgs"
+                          },
+                          {
+                            "k": "received_events_url",
+                            "v": "https://api.github.com/users/mesmail98/received_events"
+                          },
+                          {
+                            "k": "repos_url",
+                            "v": "https://api.github.com/users/mesmail98/repos"
+                          },
+                          {
+                            "k": "site_admin",
+                            "v": false
+                          },
+                          {
+                            "k": "starred_url",
+                            "v": "https://api.github.com/users/mesmail98/starred{/owner}{/repo}"
+                          },
+                          {
+                            "k": "subscriptions_url",
+                            "v": "https://api.github.com/users/mesmail98/subscriptions"
+                          },
+                          {
+                            "k": "type",
+                            "v": "User"
+                          },
+                          {
+                            "k": "url",
+                            "v": "https://api.github.com/users/mesmail98"
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "k": "private",
+                      "v": false
+                    },
+                    {
+                      "k": "pulls_url",
+                      "v": "https://api.github.com/repos/mesmail98/ci-cd-sample/pulls{/number}"
+                    },
+                    {
+                      "k": "pushed_at",
+                      "v": 1680801925.0
+                    },
+                    {
+                      "k": "releases_url",
+                      "v": "https://api.github.com/repos/mesmail98/ci-cd-sample/releases{/id}"
+                    },
+                    {
+                      "k": "size",
+                      "v": 3.0
+                    },
+                    {
+                      "k": "ssh_url",
+                      "v": "git@github.com:mesmail98/ci-cd-sample.git"
+                    },
+                    {
+                      "k": "stargazers",
+                      "v": 0.0
+                    },
+                    {
+                      "k": "stargazers_count",
+                      "v": 0.0
+                    },
+                    {
+                      "k": "stargazers_url",
+                      "v": "https://api.github.com/repos/mesmail98/ci-cd-sample/stargazers"
+                    },
+                    {
+                      "k": "statuses_url",
+                      "v": "https://api.github.com/repos/mesmail98/ci-cd-sample/statuses/{sha}"
+                    },
+                    {
+                      "k": "subscribers_url",
+                      "v": "https://api.github.com/repos/mesmail98/ci-cd-sample/subscribers"
+                    },
+                    {
+                      "k": "subscription_url",
+                      "v": "https://api.github.com/repos/mesmail98/ci-cd-sample/subscription"
+                    },
+                    {
+                      "k": "svn_url",
+                      "v": "https://github.com/mesmail98/ci-cd-sample"
+                    },
+                    {
+                      "k": "tags_url",
+                      "v": "https://api.github.com/repos/mesmail98/ci-cd-sample/tags"
+                    },
+                    {
+                      "k": "teams_url",
+                      "v": "https://api.github.com/repos/mesmail98/ci-cd-sample/teams"
+                    },
+                    {
+                      "k": "topics",
+                      "v": {
+                        "t": 1
+                      }
+                    },
+                    {
+                      "k": "trees_url",
+                      "v": "https://api.github.com/repos/mesmail98/ci-cd-sample/git/trees{/sha}"
+                    },
+                    {
+                      "k": "updated_at",
+                      "v": "2023-04-06T16:28:12Z"
+                    },
+                    {
+                      "k": "url",
+                      "v": "https://github.com/mesmail98/ci-cd-sample"
+                    },
+                    {
+                      "k": "visibility",
+                      "v": "public"
+                    },
+                    {
+                      "k": "watchers",
+                      "v": 0.0
+                    },
+                    {
+                      "k": "watchers_count",
+                      "v": 0.0
+                    },
+                    {
+                      "k": "web_commit_signoff_required",
+                      "v": false
+                    }
+                  ]
+                }
+              },
+              {
+                "k": "sender",
+                "v": {
+                  "t": 2,
+                  "d": [
+                    {
+                      "k": "avatar_url",
+                      "v": "https://avatars.githubusercontent.com/u/104802478?v=4"
+                    },
+                    {
+                      "k": "events_url",
+                      "v": "https://api.github.com/users/mesmail98/events{/privacy}"
+                    },
+                    {
+                      "k": "followers_url",
+                      "v": "https://api.github.com/users/mesmail98/followers"
+                    },
+                    {
+                      "k": "following_url",
+                      "v": "https://api.github.com/users/mesmail98/following{/other_user}"
+                    },
+                    {
+                      "k": "gists_url",
+                      "v": "https://api.github.com/users/mesmail98/gists{/gist_id}"
+                    },
+                    {
+                      "k": "gravatar_id",
+                      "v": ""
+                    },
+                    {
+                      "k": "html_url",
+                      "v": "https://github.com/mesmail98"
+                    },
+                    {
+                      "k": "id",
+                      "v": 104802478.0
+                    },
+                    {
+                      "k": "login",
+                      "v": "mesmail98"
+                    },
+                    {
+                      "k": "node_id",
+                      "v": "U_kgDOBj8org"
+                    },
+                    {
+                      "k": "organizations_url",
+                      "v": "https://api.github.com/users/mesmail98/orgs"
+                    },
+                    {
+                      "k": "received_events_url",
+                      "v": "https://api.github.com/users/mesmail98/received_events"
+                    },
+                    {
+                      "k": "repos_url",
+                      "v": "https://api.github.com/users/mesmail98/repos"
+                    },
+                    {
+                      "k": "site_admin",
+                      "v": false
+                    },
+                    {
+                      "k": "starred_url",
+                      "v": "https://api.github.com/users/mesmail98/starred{/owner}{/repo}"
+                    },
+                    {
+                      "k": "subscriptions_url",
+                      "v": "https://api.github.com/users/mesmail98/subscriptions"
+                    },
+                    {
+                      "k": "type",
+                      "v": "User"
+                    },
+                    {
+                      "k": "url",
+                      "v": "https://api.github.com/users/mesmail98"
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        {
+          "k": "server_url",
+          "v": "https://github.com"
+        },
+        {
+          "k": "api_url",
+          "v": "https://api.github.com"
+        },
+        {
+          "k": "graphql_url",
+          "v": "https://api.github.com/graphql"
+        },
+        {
+          "k": "ref_name",
+          "v": "main"
+        },
+        {
+          "k": "ref_protected",
+          "v": false
+        },
+        {
+          "k": "ref_type",
+          "v": "branch"
+        },
+        {
+          "k": "secret_source",
+          "v": "Actions"
+        },
+        {
+          "k": "workflow_ref",
+          "v": "mesmail98/ci-cd-sample/.github/workflows/build.yml@refs/heads/main"
+        },
+        {
+          "k": "workflow_sha",
+          "v": "c811dabd9315adeed1d7116922be2827a049fd95"
+        }
+      ]
+    },
+    "partialrerun": false,
+    "needs": {
+      "t": 2
+    },
+    "vars": null,
+    "inputs": {
+      "t": 2
+    },
+    "matrix": {
+      "t": 2,
+      "d": [
+        {
+          "k": "os",
+          "v": "self-hosted-linux"
+        }
+      ]
+    },
+    "strategy": {
+      "t": 2,
+      "d": [
+        {
+          "k": "fail-fast",
+          "v": true
+        },
+        {
+          "k": "job-index",
+          "v": 0.0
+        },
+        {
+          "k": "job-total",
+          "v": 2.0
+        },
+        {
+          "k": "max-parallel",
+          "v": 2.0
+        }
+      ]
+    }
+  }
+}
+[2023-04-06 17:26:06Z INFO JobRunner] Job ID bddc1945-e983-5915-0743-b12662939965
+[2023-04-06 17:26:06Z INFO JobRunner] Creating job server with URL: https://pipelines.actions.githubusercontent.com/E72i4yQxnUthuzCimL5e2A76ZggI2zfN2qwFy4aFGu9eJL7Fpu/
+[2023-04-06 17:26:06Z INFO ConfigurationStore] currentAssemblyLocation: /home/ifs/ci-cd-sample/actions-runner/bin/Runner.Worker.dll
+[2023-04-06 17:26:06Z INFO HostContext] Well known directory 'Bin': '/home/ifs/ci-cd-sample/actions-runner/bin'
+[2023-04-06 17:26:06Z INFO ConfigurationStore] binPath: /home/ifs/ci-cd-sample/actions-runner/bin
+[2023-04-06 17:26:06Z INFO HostContext] Well known directory 'Bin': '/home/ifs/ci-cd-sample/actions-runner/bin'
+[2023-04-06 17:26:06Z INFO HostContext] Well known directory 'Root': '/home/ifs/ci-cd-sample/actions-runner'
+[2023-04-06 17:26:06Z INFO ConfigurationStore] RootFolder: /home/ifs/ci-cd-sample/actions-runner
+[2023-04-06 17:26:06Z INFO HostContext] Well known directory 'Bin': '/home/ifs/ci-cd-sample/actions-runner/bin'
+[2023-04-06 17:26:06Z INFO HostContext] Well known directory 'Root': '/home/ifs/ci-cd-sample/actions-runner'
+[2023-04-06 17:26:06Z INFO HostContext] Well known config file 'Runner': '/home/ifs/ci-cd-sample/actions-runner/.runner'
+[2023-04-06 17:26:06Z INFO ConfigurationStore] ConfigFilePath: /home/ifs/ci-cd-sample/actions-runner/.runner
+[2023-04-06 17:26:06Z INFO HostContext] Well known directory 'Bin': '/home/ifs/ci-cd-sample/actions-runner/bin'
+[2023-04-06 17:26:06Z INFO HostContext] Well known directory 'Root': '/home/ifs/ci-cd-sample/actions-runner'
+[2023-04-06 17:26:06Z INFO HostContext] Well known config file 'Credentials': '/home/ifs/ci-cd-sample/actions-runner/.credentials'
+[2023-04-06 17:26:06Z INFO ConfigurationStore] CredFilePath: /home/ifs/ci-cd-sample/actions-runner/.credentials
+[2023-04-06 17:26:06Z INFO HostContext] Well known directory 'Bin': '/home/ifs/ci-cd-sample/actions-runner/bin'
+[2023-04-06 17:26:06Z INFO HostContext] Well known directory 'Root': '/home/ifs/ci-cd-sample/actions-runner'
+[2023-04-06 17:26:06Z INFO HostContext] Well known config file 'MigratedCredentials': '/home/ifs/ci-cd-sample/actions-runner/.credentials_migrated'
+[2023-04-06 17:26:06Z INFO ConfigurationStore] MigratedCredFilePath: /home/ifs/ci-cd-sample/actions-runner/.credentials_migrated
+[2023-04-06 17:26:06Z INFO HostContext] Well known directory 'Bin': '/home/ifs/ci-cd-sample/actions-runner/bin'
+[2023-04-06 17:26:06Z INFO HostContext] Well known directory 'Root': '/home/ifs/ci-cd-sample/actions-runner'
+[2023-04-06 17:26:06Z INFO HostContext] Well known config file 'Service': '/home/ifs/ci-cd-sample/actions-runner/.service'
+[2023-04-06 17:26:06Z INFO ConfigurationStore] ServiceConfigFilePath: /home/ifs/ci-cd-sample/actions-runner/.service
+[2023-04-06 17:26:06Z INFO ConfigurationStore] Read setting file: 300 chars
+[2023-04-06 17:26:06Z INFO GitHubActionsService] Starting operation Location.GetConnectionData
+[2023-04-06 17:26:06Z INFO Worker] Listening for cancel message from the channel.
+[2023-04-06 17:26:06Z INFO Worker] Waiting for the job to complete or for a cancel message from the channel.
+[2023-04-06 17:26:06Z INFO GitHubActionsService] Finished operation Location.GetConnectionData
+[2023-04-06 17:26:06Z INFO JobServer] Creating websocket client ...wss://pipelines.actions.githubusercontent.com/E72i4yQxnUthuzCimL5e2A76ZggI2zfN2qwFy4aFGu9eJL7Fpu/00000000-0000-0000-0000-000000000000/_apis/distributedtask/hubs/Actions/plans/ffd401a8-5ddd-48f9-9cd2-1c8b05398e87/timelines/ffd401a8-5ddd-48f9-9cd2-1c8b05398e87/records/bddc1945-e983-5915-0743-b12662939965/feedstream?api-version=6.0-preview
+[2023-04-06 17:26:06Z INFO JobServer] Attempting to start websocket client with delay 00:00:00.
+[2023-04-06 17:26:06Z INFO JobServerQueue] Start process web console line queue.
+[2023-04-06 17:26:06Z INFO JobServerQueue] Start process file upload queue.
+[2023-04-06 17:26:06Z INFO JobServerQueue] Start results file upload queue.
+[2023-04-06 17:26:06Z INFO JobServerQueue] Starting results-based upload queue...
+[2023-04-06 17:26:06Z INFO JobServerQueue] Start process timeline update queue.
+[2023-04-06 17:26:06Z INFO ExecutionContext] Initialize GitHub context
+[2023-04-06 17:26:06Z INFO ExecutionContext] Initialize Env context
+[2023-04-06 17:26:06Z INFO HostContext] Well known directory 'Bin': '/home/ifs/ci-cd-sample/actions-runner/bin'
+[2023-04-06 17:26:06Z INFO HostContext] Well known directory 'Root': '/home/ifs/ci-cd-sample/actions-runner'
+[2023-04-06 17:26:06Z INFO HostContext] Well known directory 'Diag': '/home/ifs/ci-cd-sample/actions-runner/_diag'
+[2023-04-06 17:26:06Z INFO HostContext] Well known directory 'Bin': '/home/ifs/ci-cd-sample/actions-runner/bin'
+[2023-04-06 17:26:06Z INFO HostContext] Well known directory 'Root': '/home/ifs/ci-cd-sample/actions-runner'
+[2023-04-06 17:26:06Z INFO HostContext] Well known directory 'Diag': '/home/ifs/ci-cd-sample/actions-runner/_diag'
+[2023-04-06 17:26:06Z INFO JobRunner] Starting the job execution context.
+[2023-04-06 17:26:06Z INFO HostContext] Well known directory 'Bin': '/home/ifs/ci-cd-sample/actions-runner/bin'
+[2023-04-06 17:26:06Z INFO HostContext] Well known directory 'Root': '/home/ifs/ci-cd-sample/actions-runner'
+[2023-04-06 17:26:06Z INFO HostContext] Well known directory 'Work': '/home/ifs/ci-cd-sample/actions-runner/ci-cd-sample'
+[2023-04-06 17:26:06Z INFO JobRunner] Validating directory permissions for: '/home/ifs/ci-cd-sample/actions-runner/ci-cd-sample'
+[2023-04-06 17:26:06Z INFO HostContext] Well known directory 'Bin': '/home/ifs/ci-cd-sample/actions-runner/bin'
+[2023-04-06 17:26:06Z INFO HostContext] Well known directory 'Root': '/home/ifs/ci-cd-sample/actions-runner'
+[2023-04-06 17:26:06Z INFO HostContext] Well known directory 'Work': '/home/ifs/ci-cd-sample/actions-runner/ci-cd-sample'
+[2023-04-06 17:26:06Z INFO HostContext] Well known directory 'Tools': '/home/ifs/ci-cd-sample/actions-runner/ci-cd-sample/_tool'
+[2023-04-06 17:26:06Z INFO HostContext] Well known directory 'Bin': '/home/ifs/ci-cd-sample/actions-runner/bin'
+[2023-04-06 17:26:06Z INFO HostContext] Well known directory 'Root': '/home/ifs/ci-cd-sample/actions-runner'
+[2023-04-06 17:26:06Z INFO HostContext] Well known directory 'Work': '/home/ifs/ci-cd-sample/actions-runner/ci-cd-sample'
+[2023-04-06 17:26:06Z INFO HostContext] Well known directory 'Temp': '/home/ifs/ci-cd-sample/actions-runner/ci-cd-sample/_temp'
+[2023-04-06 17:26:06Z INFO JobRunner] Getting job extension.
+[2023-04-06 17:26:06Z INFO JobRunner] Initialize job. Getting all job steps.
+[2023-04-06 17:26:07Z INFO HostContext] Well known directory 'Bin': '/home/ifs/ci-cd-sample/actions-runner/bin'
+[2023-04-06 17:26:07Z INFO HostContext] Well known directory 'Root': '/home/ifs/ci-cd-sample/actions-runner'
+[2023-04-06 17:26:07Z INFO HostContext] Well known directory 'Diag': '/home/ifs/ci-cd-sample/actions-runner/_diag'
+[2023-04-06 17:26:07Z INFO HostContext] Well known directory 'Bin': '/home/ifs/ci-cd-sample/actions-runner/bin'
+[2023-04-06 17:26:07Z INFO HostContext] Well known directory 'Root': '/home/ifs/ci-cd-sample/actions-runner'
+[2023-04-06 17:26:07Z INFO HostContext] Well known directory 'Diag': '/home/ifs/ci-cd-sample/actions-runner/_diag'
+[2023-04-06 17:26:07Z INFO HostContext] Well known directory 'Bin': '/home/ifs/ci-cd-sample/actions-runner/bin'
+[2023-04-06 17:26:07Z INFO HostContext] Well known directory 'Root': '/home/ifs/ci-cd-sample/actions-runner'
+[2023-04-06 17:26:07Z INFO HostContext] Well known config file 'Credentials': '/home/ifs/ci-cd-sample/actions-runner/.credentials'
+[2023-04-06 17:26:07Z INFO HostContext] Well known directory 'Bin': '/home/ifs/ci-cd-sample/actions-runner/bin'
+[2023-04-06 17:26:07Z INFO HostContext] Well known directory 'Root': '/home/ifs/ci-cd-sample/actions-runner'
+[2023-04-06 17:26:07Z INFO HostContext] Well known config file 'SetupInfo': '/home/ifs/ci-cd-sample/actions-runner/.setup_info'
+[2023-04-06 17:26:07Z INFO HostContext] Well known directory 'Bin': '/home/ifs/ci-cd-sample/actions-runner/bin'
+[2023-04-06 17:26:07Z INFO HostContext] Well known directory 'Root': '/home/ifs/ci-cd-sample/actions-runner'
+[2023-04-06 17:26:07Z INFO HostContext] Well known directory 'Work': '/home/ifs/ci-cd-sample/actions-runner/ci-cd-sample'
+[2023-04-06 17:26:07Z INFO PipelineDirectoryManager] Loading tracking config if exists: /home/ifs/ci-cd-sample/actions-runner/ci-cd-sample/_PipelineMapping/mesmail98/ci-cd-sample/PipelineFolder.json
+[2023-04-06 17:26:07Z INFO PipelineDirectoryManager] Creating a new tracking config file.
+[2023-04-06 17:26:07Z INFO HostContext] Well known directory 'Bin': '/home/ifs/ci-cd-sample/actions-runner/bin'
+[2023-04-06 17:26:07Z INFO HostContext] Well known directory 'Root': '/home/ifs/ci-cd-sample/actions-runner'
+[2023-04-06 17:26:07Z INFO HostContext] Well known directory 'Work': '/home/ifs/ci-cd-sample/actions-runner/ci-cd-sample'
+[2023-04-06 17:26:07Z INFO PipelineDirectoryManager] Creating pipeline directory.
+[2023-04-06 17:26:07Z INFO HostContext] Well known directory 'Bin': '/home/ifs/ci-cd-sample/actions-runner/bin'
+[2023-04-06 17:26:07Z INFO HostContext] Well known directory 'Root': '/home/ifs/ci-cd-sample/actions-runner'
+[2023-04-06 17:26:07Z INFO HostContext] Well known directory 'Work': '/home/ifs/ci-cd-sample/actions-runner/ci-cd-sample'
+[2023-04-06 17:26:07Z INFO PipelineDirectoryManager] Creating workspace directory.
+[2023-04-06 17:26:07Z INFO HostContext] Well known directory 'Bin': '/home/ifs/ci-cd-sample/actions-runner/bin'
+[2023-04-06 17:26:07Z INFO HostContext] Well known directory 'Root': '/home/ifs/ci-cd-sample/actions-runner'
+[2023-04-06 17:26:07Z INFO HostContext] Well known directory 'Work': '/home/ifs/ci-cd-sample/actions-runner/ci-cd-sample'
+[2023-04-06 17:26:07Z INFO JobExtension] Downloading actions
+[2023-04-06 17:26:07Z INFO HostContext] Well known directory 'Bin': '/home/ifs/ci-cd-sample/actions-runner/bin'
+[2023-04-06 17:26:07Z INFO HostContext] Well known directory 'Root': '/home/ifs/ci-cd-sample/actions-runner'
+[2023-04-06 17:26:07Z INFO HostContext] Well known directory 'Work': '/home/ifs/ci-cd-sample/actions-runner/ci-cd-sample'
+[2023-04-06 17:26:07Z INFO HostContext] Well known directory 'Actions': '/home/ifs/ci-cd-sample/actions-runner/ci-cd-sample/_actions'
+[2023-04-06 17:26:07Z INFO HostContext] Well known directory 'Bin': '/home/ifs/ci-cd-sample/actions-runner/bin'
+[2023-04-06 17:26:07Z INFO HostContext] Well known directory 'Root': '/home/ifs/ci-cd-sample/actions-runner'
+[2023-04-06 17:26:07Z INFO HostContext] Well known directory 'Work': '/home/ifs/ci-cd-sample/actions-runner/ci-cd-sample'
+[2023-04-06 17:26:07Z INFO HostContext] Well known directory 'Actions': '/home/ifs/ci-cd-sample/actions-runner/ci-cd-sample/_actions'
+[2023-04-06 17:26:07Z INFO HostContext] Well known directory 'Bin': '/home/ifs/ci-cd-sample/actions-runner/bin'
+[2023-04-06 17:26:07Z INFO HostContext] Well known directory 'Root': '/home/ifs/ci-cd-sample/actions-runner'
+[2023-04-06 17:26:07Z INFO HostContext] Well known directory 'Work': '/home/ifs/ci-cd-sample/actions-runner/ci-cd-sample'
+[2023-04-06 17:26:07Z INFO HostContext] Well known directory 'Actions': '/home/ifs/ci-cd-sample/actions-runner/ci-cd-sample/_actions'
+[2023-04-06 17:26:07Z INFO ActionManager] Save archive 'https://api.github.com/repos/actions/checkout/tarball/8f4b7f84864484a7bf31766abe9204da3cbe65b3' into /home/ifs/ci-cd-sample/actions-runner/ci-cd-sample/_actions/_temp_55abae9f-817c-45a1-8d2a-24992944d83a/b4764aff-5ec3-4d32-8f67-1b0267727430.tar.gz.
+[2023-04-06 17:26:07Z INFO JobServer] Successfully started websocket client.
+[2023-04-06 17:26:07Z INFO JobServerQueue] Try to append 1 batches web console lines for record '681033ad-e7ee-4399-a658-0b178f39f5af', success rate: 1/1.
+[2023-04-06 17:26:07Z INFO JobServerQueue] Job timeline record has been updated for the first time.
+[2023-04-06 17:26:07Z INFO JobServerQueue] Try to append 1 batches web console lines for record '681033ad-e7ee-4399-a658-0b178f39f5af', success rate: 1/1.
+[2023-04-06 17:26:08Z INFO ActionManager] Which: 'tar'
+[2023-04-06 17:26:08Z INFO ActionManager] Location: '/usr/bin/tar'
+[2023-04-06 17:26:08Z INFO ProcessInvokerWrapper] Starting process:
+[2023-04-06 17:26:08Z INFO ProcessInvokerWrapper]   File name: '/usr/bin/tar'
+[2023-04-06 17:26:08Z INFO ProcessInvokerWrapper]   Arguments: '-xzf "/home/ifs/ci-cd-sample/actions-runner/ci-cd-sample/_actions/_temp_55abae9f-817c-45a1-8d2a-24992944d83a/b4764aff-5ec3-4d32-8f67-1b0267727430.tar.gz"'
+[2023-04-06 17:26:08Z INFO ProcessInvokerWrapper]   Working directory: '/home/ifs/ci-cd-sample/actions-runner/ci-cd-sample/_actions/_temp_55abae9f-817c-45a1-8d2a-24992944d83a/_staging'
+[2023-04-06 17:26:08Z INFO ProcessInvokerWrapper]   Require exit code zero: 'False'
+[2023-04-06 17:26:08Z INFO ProcessInvokerWrapper]   Encoding web name:  ; code page: ''
+[2023-04-06 17:26:08Z INFO ProcessInvokerWrapper]   Force kill process on cancellation: 'False'
+[2023-04-06 17:26:08Z INFO ProcessInvokerWrapper]   Redirected STDIN: 'False'
+[2023-04-06 17:26:08Z INFO ProcessInvokerWrapper]   Persist current code page: 'False'
+[2023-04-06 17:26:08Z INFO ProcessInvokerWrapper]   Keep redirected STDIN open: 'False'
+[2023-04-06 17:26:08Z INFO ProcessInvokerWrapper]   High priority process: 'False'
+[2023-04-06 17:26:08Z INFO ProcessInvokerWrapper] Updated oom_score_adj to 500 for PID: 3036603.
+[2023-04-06 17:26:08Z INFO ProcessInvokerWrapper] Process started with process id 3036603, waiting for process exit.
+[2023-04-06 17:26:08Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2023-04-06 17:26:08Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2023-04-06 17:26:08Z INFO ProcessInvokerWrapper] Finished process 3036603 with exit code 0, and elapsed time 00:00:00.0488831.
+[2023-04-06 17:26:08Z INFO ActionManager] Finished getting action repository.
+[2023-04-06 17:26:08Z INFO HostContext] Well known directory 'Bin': '/home/ifs/ci-cd-sample/actions-runner/bin'
+[2023-04-06 17:26:08Z INFO HostContext] Well known directory 'Root': '/home/ifs/ci-cd-sample/actions-runner'
+[2023-04-06 17:26:08Z INFO HostContext] Well known directory 'Work': '/home/ifs/ci-cd-sample/actions-runner/ci-cd-sample'
+[2023-04-06 17:26:08Z INFO HostContext] Well known directory 'Actions': '/home/ifs/ci-cd-sample/actions-runner/ci-cd-sample/_actions'
+[2023-04-06 17:26:08Z INFO HostContext] Well known directory 'Bin': '/home/ifs/ci-cd-sample/actions-runner/bin'
+[2023-04-06 17:26:08Z INFO HostContext] Well known directory 'Root': '/home/ifs/ci-cd-sample/actions-runner'
+[2023-04-06 17:26:08Z INFO HostContext] Well known directory 'Work': '/home/ifs/ci-cd-sample/actions-runner/ci-cd-sample'
+[2023-04-06 17:26:08Z INFO HostContext] Well known directory 'Actions': '/home/ifs/ci-cd-sample/actions-runner/ci-cd-sample/_actions'
+[2023-04-06 17:26:08Z INFO ActionManager] Save archive 'https://api.github.com/repos/actions/upload-artifact/tarball/27121b0bdffd731efa15d66772be8dc71245d074' into /home/ifs/ci-cd-sample/actions-runner/ci-cd-sample/_actions/_temp_40e9c816-f642-4115-a893-bdf6af56e3a5/3c0cf474-6dfc-4959-8168-0ae2af2b903b.tar.gz.
+[2023-04-06 17:26:08Z INFO JobServerQueue] Try to append 1 batches web console lines for record '681033ad-e7ee-4399-a658-0b178f39f5af', success rate: 1/1.
+[2023-04-06 17:26:10Z INFO ActionManager] Which: 'tar'
+[2023-04-06 17:26:10Z INFO ActionManager] Location: '/usr/bin/tar'
+[2023-04-06 17:26:10Z INFO ProcessInvokerWrapper] Starting process:
+[2023-04-06 17:26:10Z INFO ProcessInvokerWrapper]   File name: '/usr/bin/tar'
+[2023-04-06 17:26:10Z INFO ProcessInvokerWrapper]   Arguments: '-xzf "/home/ifs/ci-cd-sample/actions-runner/ci-cd-sample/_actions/_temp_40e9c816-f642-4115-a893-bdf6af56e3a5/3c0cf474-6dfc-4959-8168-0ae2af2b903b.tar.gz"'
+[2023-04-06 17:26:10Z INFO ProcessInvokerWrapper]   Working directory: '/home/ifs/ci-cd-sample/actions-runner/ci-cd-sample/_actions/_temp_40e9c816-f642-4115-a893-bdf6af56e3a5/_staging'
+[2023-04-06 17:26:10Z INFO ProcessInvokerWrapper]   Require exit code zero: 'False'
+[2023-04-06 17:26:10Z INFO ProcessInvokerWrapper]   Encoding web name:  ; code page: ''
+[2023-04-06 17:26:10Z INFO ProcessInvokerWrapper]   Force kill process on cancellation: 'False'
+[2023-04-06 17:26:10Z INFO ProcessInvokerWrapper]   Redirected STDIN: 'False'
+[2023-04-06 17:26:10Z INFO ProcessInvokerWrapper]   Persist current code page: 'False'
+[2023-04-06 17:26:10Z INFO ProcessInvokerWrapper]   Keep redirected STDIN open: 'False'
+[2023-04-06 17:26:10Z INFO ProcessInvokerWrapper]   High priority process: 'False'
+[2023-04-06 17:26:10Z INFO ProcessInvokerWrapper] Updated oom_score_adj to 500 for PID: 3036679.
+[2023-04-06 17:26:10Z INFO ProcessInvokerWrapper] Process started with process id 3036679, waiting for process exit.
+[2023-04-06 17:26:10Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2023-04-06 17:26:10Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2023-04-06 17:26:10Z INFO ProcessInvokerWrapper] Finished process 3036679 with exit code 0, and elapsed time 00:00:00.0498126.
+[2023-04-06 17:26:10Z INFO ActionManager] Finished getting action repository.
+[2023-04-06 17:26:10Z INFO HostContext] Well known directory 'Bin': '/home/ifs/ci-cd-sample/actions-runner/bin'
+[2023-04-06 17:26:10Z INFO HostContext] Well known directory 'Root': '/home/ifs/ci-cd-sample/actions-runner'
+[2023-04-06 17:26:10Z INFO HostContext] Well known directory 'Work': '/home/ifs/ci-cd-sample/actions-runner/ci-cd-sample'
+[2023-04-06 17:26:10Z INFO HostContext] Well known directory 'Actions': '/home/ifs/ci-cd-sample/actions-runner/ci-cd-sample/_actions'
+[2023-04-06 17:26:10Z INFO HostContext] Well known directory 'Bin': '/home/ifs/ci-cd-sample/actions-runner/bin'
+[2023-04-06 17:26:10Z INFO HostContext] Well known directory 'Root': '/home/ifs/ci-cd-sample/actions-runner'
+[2023-04-06 17:26:10Z INFO HostContext] Well known directory 'Work': '/home/ifs/ci-cd-sample/actions-runner/ci-cd-sample'
+[2023-04-06 17:26:10Z INFO HostContext] Well known directory 'Actions': '/home/ifs/ci-cd-sample/actions-runner/ci-cd-sample/_actions'
+[2023-04-06 17:26:10Z INFO ActionManifestManager] Load schema file with definitions: [
+  "null",
+  "boolean",
+  "number",
+  "string",
+  "sequence",
+  "mapping",
+  "any",
+  "action-root",
+  "inputs",
+  "input",
+  "outputs",
+  "output-definition",
+  "runs",
+  "container-runs",
+  "container-runs-args",
+  "container-runs-env",
+  "node-runs",
+  "plugin-runs",
+  "composite-runs",
+  "composite-steps",
+  "composite-step",
+  "run-step",
+  "uses-step",
+  "container-runs-context",
+  "output-value",
+  "input-default-context",
+  "non-empty-string",
+  "string-steps-context",
+  "boolean-steps-context",
+  "step-env",
+  "step-if",
+  "step-with"
+]
+[2023-04-06 17:26:10Z INFO HostContext] Well known directory 'Bin': '/home/ifs/ci-cd-sample/actions-runner/bin'
+[2023-04-06 17:26:10Z INFO HostContext] Well known directory 'Root': '/home/ifs/ci-cd-sample/actions-runner'
+[2023-04-06 17:26:10Z INFO HostContext] Well known directory 'Work': '/home/ifs/ci-cd-sample/actions-runner/ci-cd-sample'
+[2023-04-06 17:26:10Z INFO HostContext] Well known directory 'Actions': '/home/ifs/ci-cd-sample/actions-runner/ci-cd-sample/_actions'
+[2023-04-06 17:26:10Z INFO ActionManifestManager] Loaded action.yml file: {
+  "name": "Checkout",
+  "description": "Checkout a Git repository at a particular version",
+  "inputs": {
+    "type": 2,
+    "map": [
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 4,
+          "col": 3,
+          "lit": "repository"
+        },
+        "value": {
+          "type": 3,
+          "file": 2,
+          "line": 6,
+          "col": 14,
+          "expr": "github.repository"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 7,
+          "col": 3,
+          "lit": "ref"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 12,
+          "col": 3,
+          "lit": "token"
+        },
+        "value": {
+          "type": 3,
+          "file": 2,
+          "line": 24,
+          "col": 14,
+          "expr": "github.token"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 25,
+          "col": 3,
+          "lit": "ssh-key"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 37,
+          "col": 3,
+          "lit": "ssh-known-hosts"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 42,
+          "col": 3,
+          "lit": "ssh-strict"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 47,
+          "col": 14,
+          "lit": "true"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 48,
+          "col": 3,
+          "lit": "persist-credentials"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 50,
+          "col": 14,
+          "lit": "true"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 51,
+          "col": 3,
+          "lit": "path"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 53,
+          "col": 3,
+          "lit": "clean"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 55,
+          "col": 14,
+          "lit": "true"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 56,
+          "col": 3,
+          "lit": "fetch-depth"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 58,
+          "col": 14,
+          "lit": "1"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 59,
+          "col": 3,
+          "lit": "lfs"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 61,
+          "col": 14,
+          "lit": "false"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 62,
+          "col": 3,
+          "lit": "submodules"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 70,
+          "col": 14,
+          "lit": "false"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 71,
+          "col": 3,
+          "lit": "set-safe-directory"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 73,
+          "col": 14,
+          "lit": "true"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 74,
+          "col": 3,
+          "lit": "github-server-url"
+        },
+        "value": ""
+      }
+    ]
+  },
+  "execution": {
+    "executionType": "nodeJS",
+    "hasPre": false,
+    "hasPost": true,
+    "script": "dist/index.js",
+    "pre": null,
+    "post": "dist/index.js",
+    "nodeVersion": "node16",
+    "cleanupCondition": "always()",
+    "initCondition": "always()"
+  },
+  "deprecated": null
+}
+[2023-04-06 17:26:10Z INFO ActionManager] Action node.js file: dist/index.js, no more preparation.
+[2023-04-06 17:26:10Z INFO HostContext] Well known directory 'Bin': '/home/ifs/ci-cd-sample/actions-runner/bin'
+[2023-04-06 17:26:10Z INFO HostContext] Well known directory 'Root': '/home/ifs/ci-cd-sample/actions-runner'
+[2023-04-06 17:26:10Z INFO HostContext] Well known directory 'Work': '/home/ifs/ci-cd-sample/actions-runner/ci-cd-sample'
+[2023-04-06 17:26:10Z INFO HostContext] Well known directory 'Actions': '/home/ifs/ci-cd-sample/actions-runner/ci-cd-sample/_actions'
+[2023-04-06 17:26:10Z INFO ActionManager] Load action that reference repository from '/home/ifs/ci-cd-sample/actions-runner/ci-cd-sample/_actions/actions/checkout/v3'
+[2023-04-06 17:26:10Z INFO HostContext] Well known directory 'Bin': '/home/ifs/ci-cd-sample/actions-runner/bin'
+[2023-04-06 17:26:10Z INFO HostContext] Well known directory 'Root': '/home/ifs/ci-cd-sample/actions-runner'
+[2023-04-06 17:26:10Z INFO HostContext] Well known directory 'Work': '/home/ifs/ci-cd-sample/actions-runner/ci-cd-sample'
+[2023-04-06 17:26:10Z INFO HostContext] Well known directory 'Actions': '/home/ifs/ci-cd-sample/actions-runner/ci-cd-sample/_actions'
+[2023-04-06 17:26:10Z INFO ActionManifestManager] Loaded action.yml file: {
+  "name": "Checkout",
+  "description": "Checkout a Git repository at a particular version",
+  "inputs": {
+    "type": 2,
+    "map": [
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 4,
+          "col": 3,
+          "lit": "repository"
+        },
+        "value": {
+          "type": 3,
+          "file": 2,
+          "line": 6,
+          "col": 14,
+          "expr": "github.repository"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 7,
+          "col": 3,
+          "lit": "ref"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 12,
+          "col": 3,
+          "lit": "token"
+        },
+        "value": {
+          "type": 3,
+          "file": 2,
+          "line": 24,
+          "col": 14,
+          "expr": "github.token"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 25,
+          "col": 3,
+          "lit": "ssh-key"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 37,
+          "col": 3,
+          "lit": "ssh-known-hosts"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 42,
+          "col": 3,
+          "lit": "ssh-strict"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 47,
+          "col": 14,
+          "lit": "true"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 48,
+          "col": 3,
+          "lit": "persist-credentials"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 50,
+          "col": 14,
+          "lit": "true"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 51,
+          "col": 3,
+          "lit": "path"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 53,
+          "col": 3,
+          "lit": "clean"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 55,
+          "col": 14,
+          "lit": "true"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 56,
+          "col": 3,
+          "lit": "fetch-depth"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 58,
+          "col": 14,
+          "lit": "1"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 59,
+          "col": 3,
+          "lit": "lfs"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 61,
+          "col": 14,
+          "lit": "false"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 62,
+          "col": 3,
+          "lit": "submodules"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 70,
+          "col": 14,
+          "lit": "false"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 71,
+          "col": 3,
+          "lit": "set-safe-directory"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 73,
+          "col": 14,
+          "lit": "true"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 74,
+          "col": 3,
+          "lit": "github-server-url"
+        },
+        "value": ""
+      }
+    ]
+  },
+  "execution": {
+    "executionType": "nodeJS",
+    "hasPre": false,
+    "hasPost": true,
+    "script": "dist/index.js",
+    "pre": null,
+    "post": "dist/index.js",
+    "nodeVersion": "node16",
+    "cleanupCondition": "always()",
+    "initCondition": "always()"
+  },
+  "deprecated": null
+}
+[2023-04-06 17:26:10Z INFO ActionManager] Action pre node.js file: N/A.
+[2023-04-06 17:26:10Z INFO ActionManager] Action node.js file: dist/index.js.
+[2023-04-06 17:26:10Z INFO ActionManager] Action post node.js file: dist/index.js.
+[2023-04-06 17:26:10Z INFO HostContext] Well known directory 'Bin': '/home/ifs/ci-cd-sample/actions-runner/bin'
+[2023-04-06 17:26:10Z INFO HostContext] Well known directory 'Root': '/home/ifs/ci-cd-sample/actions-runner'
+[2023-04-06 17:26:10Z INFO HostContext] Well known directory 'Work': '/home/ifs/ci-cd-sample/actions-runner/ci-cd-sample'
+[2023-04-06 17:26:10Z INFO HostContext] Well known directory 'Actions': '/home/ifs/ci-cd-sample/actions-runner/ci-cd-sample/_actions'
+[2023-04-06 17:26:10Z INFO HostContext] Well known directory 'Bin': '/home/ifs/ci-cd-sample/actions-runner/bin'
+[2023-04-06 17:26:10Z INFO HostContext] Well known directory 'Root': '/home/ifs/ci-cd-sample/actions-runner'
+[2023-04-06 17:26:10Z INFO HostContext] Well known directory 'Work': '/home/ifs/ci-cd-sample/actions-runner/ci-cd-sample'
+[2023-04-06 17:26:10Z INFO HostContext] Well known directory 'Actions': '/home/ifs/ci-cd-sample/actions-runner/ci-cd-sample/_actions'
+[2023-04-06 17:26:10Z INFO ActionManifestManager] Ignore action property author.
+[2023-04-06 17:26:10Z INFO ActionManifestManager] Loaded action.yml file: {
+  "name": "Upload a Build Artifact",
+  "description": "Upload a build artifact that can be used by subsequent workflow steps",
+  "inputs": {
+    "type": 2,
+    "map": [
+      {
+        "key": {
+          "type": 0,
+          "file": 3,
+          "line": 5,
+          "col": 3,
+          "lit": "name"
+        },
+        "value": {
+          "type": 0,
+          "file": 3,
+          "line": 7,
+          "col": 14,
+          "lit": "artifact"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 3,
+          "line": 8,
+          "col": 3,
+          "lit": "path"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 3,
+          "line": 11,
+          "col": 3,
+          "lit": "if-no-files-found"
+        },
+        "value": {
+          "type": 0,
+          "file": 3,
+          "line": 19,
+          "col": 14,
+          "lit": "warn"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 3,
+          "line": 20,
+          "col": 3,
+          "lit": "retention-days"
+        },
+        "value": ""
+      }
+    ]
+  },
+  "execution": {
+    "executionType": "nodeJS",
+    "hasPre": false,
+    "hasPost": false,
+    "script": "dist/index.js",
+    "pre": null,
+    "post": null,
+    "nodeVersion": "node12",
+    "cleanupCondition": "always()",
+    "initCondition": "always()"
+  },
+  "deprecated": null
+}
+[2023-04-06 17:26:10Z INFO ActionManager] Action node.js file: dist/index.js, no more preparation.
+[2023-04-06 17:26:10Z INFO HostContext] Well known directory 'Bin': '/home/ifs/ci-cd-sample/actions-runner/bin'
+[2023-04-06 17:26:10Z INFO HostContext] Well known directory 'Root': '/home/ifs/ci-cd-sample/actions-runner'
+[2023-04-06 17:26:10Z INFO HostContext] Well known directory 'Work': '/home/ifs/ci-cd-sample/actions-runner/ci-cd-sample'
+[2023-04-06 17:26:10Z INFO HostContext] Well known directory 'Actions': '/home/ifs/ci-cd-sample/actions-runner/ci-cd-sample/_actions'
+[2023-04-06 17:26:10Z INFO ActionManager] Load action that reference repository from '/home/ifs/ci-cd-sample/actions-runner/ci-cd-sample/_actions/actions/upload-artifact/v2.2.4'
+[2023-04-06 17:26:10Z INFO HostContext] Well known directory 'Bin': '/home/ifs/ci-cd-sample/actions-runner/bin'
+[2023-04-06 17:26:10Z INFO HostContext] Well known directory 'Root': '/home/ifs/ci-cd-sample/actions-runner'
+[2023-04-06 17:26:10Z INFO HostContext] Well known directory 'Work': '/home/ifs/ci-cd-sample/actions-runner/ci-cd-sample'
+[2023-04-06 17:26:10Z INFO HostContext] Well known directory 'Actions': '/home/ifs/ci-cd-sample/actions-runner/ci-cd-sample/_actions'
+[2023-04-06 17:26:10Z INFO ActionManifestManager] Ignore action property author.
+[2023-04-06 17:26:10Z INFO ActionManifestManager] Loaded action.yml file: {
+  "name": "Upload a Build Artifact",
+  "description": "Upload a build artifact that can be used by subsequent workflow steps",
+  "inputs": {
+    "type": 2,
+    "map": [
+      {
+        "key": {
+          "type": 0,
+          "file": 3,
+          "line": 5,
+          "col": 3,
+          "lit": "name"
+        },
+        "value": {
+          "type": 0,
+          "file": 3,
+          "line": 7,
+          "col": 14,
+          "lit": "artifact"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 3,
+          "line": 8,
+          "col": 3,
+          "lit": "path"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 3,
+          "line": 11,
+          "col": 3,
+          "lit": "if-no-files-found"
+        },
+        "value": {
+          "type": 0,
+          "file": 3,
+          "line": 19,
+          "col": 14,
+          "lit": "warn"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 3,
+          "line": 20,
+          "col": 3,
+          "lit": "retention-days"
+        },
+        "value": ""
+      }
+    ]
+  },
+  "execution": {
+    "executionType": "nodeJS",
+    "hasPre": false,
+    "hasPost": false,
+    "script": "dist/index.js",
+    "pre": null,
+    "post": null,
+    "nodeVersion": "node12",
+    "cleanupCondition": "always()",
+    "initCondition": "always()"
+  },
+  "deprecated": null
+}
+[2023-04-06 17:26:10Z INFO ActionManager] Action pre node.js file: N/A.
+[2023-04-06 17:26:10Z INFO ActionManager] Action node.js file: dist/index.js.
+[2023-04-06 17:26:10Z INFO ActionManager] Action post node.js file: N/A.
+[2023-04-06 17:26:10Z INFO HostContext] Well known directory 'Bin': '/home/ifs/ci-cd-sample/actions-runner/bin'
+[2023-04-06 17:26:10Z INFO HostContext] Well known directory 'Root': '/home/ifs/ci-cd-sample/actions-runner'
+[2023-04-06 17:26:10Z INFO HostContext] Well known directory 'Work': '/home/ifs/ci-cd-sample/actions-runner/ci-cd-sample'
+[2023-04-06 17:26:10Z INFO HostContext] Well known directory 'Actions': '/home/ifs/ci-cd-sample/actions-runner/ci-cd-sample/_actions'
+[2023-04-06 17:26:10Z INFO HostContext] Well known directory 'Bin': '/home/ifs/ci-cd-sample/actions-runner/bin'
+[2023-04-06 17:26:10Z INFO HostContext] Well known directory 'Root': '/home/ifs/ci-cd-sample/actions-runner'
+[2023-04-06 17:26:10Z INFO HostContext] Well known directory 'Work': '/home/ifs/ci-cd-sample/actions-runner/ci-cd-sample'
+[2023-04-06 17:26:10Z INFO HostContext] Well known directory 'Actions': '/home/ifs/ci-cd-sample/actions-runner/ci-cd-sample/_actions'
+[2023-04-06 17:26:10Z INFO ActionManifestManager] Ignore action property author.
+[2023-04-06 17:26:10Z INFO ActionManifestManager] Loaded action.yml file: {
+  "name": "Upload a Build Artifact",
+  "description": "Upload a build artifact that can be used by subsequent workflow steps",
+  "inputs": {
+    "type": 2,
+    "map": [
+      {
+        "key": {
+          "type": 0,
+          "file": 3,
+          "line": 5,
+          "col": 3,
+          "lit": "name"
+        },
+        "value": {
+          "type": 0,
+          "file": 3,
+          "line": 7,
+          "col": 14,
+          "lit": "artifact"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 3,
+          "line": 8,
+          "col": 3,
+          "lit": "path"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 3,
+          "line": 11,
+          "col": 3,
+          "lit": "if-no-files-found"
+        },
+        "value": {
+          "type": 0,
+          "file": 3,
+          "line": 19,
+          "col": 14,
+          "lit": "warn"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 3,
+          "line": 20,
+          "col": 3,
+          "lit": "retention-days"
+        },
+        "value": ""
+      }
+    ]
+  },
+  "execution": {
+    "executionType": "nodeJS",
+    "hasPre": false,
+    "hasPost": false,
+    "script": "dist/index.js",
+    "pre": null,
+    "post": null,
+    "nodeVersion": "node12",
+    "cleanupCondition": "always()",
+    "initCondition": "always()"
+  },
+  "deprecated": null
+}
+[2023-04-06 17:26:10Z INFO ActionManager] Action node.js file: dist/index.js, no more preparation.
+[2023-04-06 17:26:10Z INFO HostContext] Well known directory 'Bin': '/home/ifs/ci-cd-sample/actions-runner/bin'
+[2023-04-06 17:26:10Z INFO HostContext] Well known directory 'Root': '/home/ifs/ci-cd-sample/actions-runner'
+[2023-04-06 17:26:10Z INFO HostContext] Well known directory 'Work': '/home/ifs/ci-cd-sample/actions-runner/ci-cd-sample'
+[2023-04-06 17:26:10Z INFO HostContext] Well known directory 'Actions': '/home/ifs/ci-cd-sample/actions-runner/ci-cd-sample/_actions'
+[2023-04-06 17:26:10Z INFO ActionManager] Load action that reference repository from '/home/ifs/ci-cd-sample/actions-runner/ci-cd-sample/_actions/actions/upload-artifact/v2.2.4'
+[2023-04-06 17:26:10Z INFO HostContext] Well known directory 'Bin': '/home/ifs/ci-cd-sample/actions-runner/bin'
+[2023-04-06 17:26:10Z INFO HostContext] Well known directory 'Root': '/home/ifs/ci-cd-sample/actions-runner'
+[2023-04-06 17:26:10Z INFO HostContext] Well known directory 'Work': '/home/ifs/ci-cd-sample/actions-runner/ci-cd-sample'
+[2023-04-06 17:26:10Z INFO HostContext] Well known directory 'Actions': '/home/ifs/ci-cd-sample/actions-runner/ci-cd-sample/_actions'
+[2023-04-06 17:26:10Z INFO ActionManifestManager] Ignore action property author.
+[2023-04-06 17:26:10Z INFO ActionManifestManager] Loaded action.yml file: {
+  "name": "Upload a Build Artifact",
+  "description": "Upload a build artifact that can be used by subsequent workflow steps",
+  "inputs": {
+    "type": 2,
+    "map": [
+      {
+        "key": {
+          "type": 0,
+          "file": 3,
+          "line": 5,
+          "col": 3,
+          "lit": "name"
+        },
+        "value": {
+          "type": 0,
+          "file": 3,
+          "line": 7,
+          "col": 14,
+          "lit": "artifact"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 3,
+          "line": 8,
+          "col": 3,
+          "lit": "path"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 3,
+          "line": 11,
+          "col": 3,
+          "lit": "if-no-files-found"
+        },
+        "value": {
+          "type": 0,
+          "file": 3,
+          "line": 19,
+          "col": 14,
+          "lit": "warn"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 3,
+          "line": 20,
+          "col": 3,
+          "lit": "retention-days"
+        },
+        "value": ""
+      }
+    ]
+  },
+  "execution": {
+    "executionType": "nodeJS",
+    "hasPre": false,
+    "hasPost": false,
+    "script": "dist/index.js",
+    "pre": null,
+    "post": null,
+    "nodeVersion": "node12",
+    "cleanupCondition": "always()",
+    "initCondition": "always()"
+  },
+  "deprecated": null
+}
+[2023-04-06 17:26:10Z INFO ActionManager] Action pre node.js file: N/A.
+[2023-04-06 17:26:10Z INFO ActionManager] Action node.js file: dist/index.js.
+[2023-04-06 17:26:10Z INFO ActionManager] Action post node.js file: N/A.
+[2023-04-06 17:26:10Z INFO JobExtension] Adding .
+[2023-04-06 17:26:10Z INFO JobExtension] Adding .
+[2023-04-06 17:26:10Z INFO JobExtension] Adding .
+[2023-04-06 17:26:10Z INFO JobExtension] Adding .
+[2023-04-06 17:26:10Z INFO JobExtension] Adding .
+[2023-04-06 17:26:10Z INFO JobExtension] Adding .
+[2023-04-06 17:26:10Z INFO HostContext] Well known directory 'Bin': '/home/ifs/ci-cd-sample/actions-runner/bin'
+[2023-04-06 17:26:10Z INFO HostContext] Well known directory 'Root': '/home/ifs/ci-cd-sample/actions-runner'
+[2023-04-06 17:26:10Z INFO HostContext] Well known directory 'Diag': '/home/ifs/ci-cd-sample/actions-runner/_diag'
+[2023-04-06 17:26:10Z INFO HostContext] Well known directory 'Bin': '/home/ifs/ci-cd-sample/actions-runner/bin'
+[2023-04-06 17:26:10Z INFO HostContext] Well known directory 'Root': '/home/ifs/ci-cd-sample/actions-runner'
+[2023-04-06 17:26:10Z INFO HostContext] Well known directory 'Diag': '/home/ifs/ci-cd-sample/actions-runner/_diag'
+[2023-04-06 17:26:10Z INFO HostContext] Well known directory 'Bin': '/home/ifs/ci-cd-sample/actions-runner/bin'
+[2023-04-06 17:26:10Z INFO HostContext] Well known directory 'Root': '/home/ifs/ci-cd-sample/actions-runner'
+[2023-04-06 17:26:10Z INFO HostContext] Well known directory 'Diag': '/home/ifs/ci-cd-sample/actions-runner/_diag'
+[2023-04-06 17:26:10Z INFO HostContext] Well known directory 'Bin': '/home/ifs/ci-cd-sample/actions-runner/bin'
+[2023-04-06 17:26:10Z INFO HostContext] Well known directory 'Root': '/home/ifs/ci-cd-sample/actions-runner'
+[2023-04-06 17:26:10Z INFO HostContext] Well known directory 'Diag': '/home/ifs/ci-cd-sample/actions-runner/_diag'
+[2023-04-06 17:26:10Z INFO HostContext] Well known directory 'Bin': '/home/ifs/ci-cd-sample/actions-runner/bin'
+[2023-04-06 17:26:10Z INFO HostContext] Well known directory 'Root': '/home/ifs/ci-cd-sample/actions-runner'
+[2023-04-06 17:26:10Z INFO HostContext] Well known directory 'Diag': '/home/ifs/ci-cd-sample/actions-runner/_diag'
+[2023-04-06 17:26:10Z INFO HostContext] Well known directory 'Bin': '/home/ifs/ci-cd-sample/actions-runner/bin'
+[2023-04-06 17:26:10Z INFO HostContext] Well known directory 'Root': '/home/ifs/ci-cd-sample/actions-runner'
+[2023-04-06 17:26:10Z INFO HostContext] Well known directory 'Diag': '/home/ifs/ci-cd-sample/actions-runner/_diag'
+[2023-04-06 17:26:10Z INFO HostContext] Well known directory 'Bin': '/home/ifs/ci-cd-sample/actions-runner/bin'
+[2023-04-06 17:26:10Z INFO HostContext] Well known directory 'Root': '/home/ifs/ci-cd-sample/actions-runner'
+[2023-04-06 17:26:10Z INFO HostContext] Well known directory 'Diag': '/home/ifs/ci-cd-sample/actions-runner/_diag'
+[2023-04-06 17:26:10Z INFO HostContext] Well known directory 'Bin': '/home/ifs/ci-cd-sample/actions-runner/bin'
+[2023-04-06 17:26:10Z INFO HostContext] Well known directory 'Root': '/home/ifs/ci-cd-sample/actions-runner'
+[2023-04-06 17:26:10Z INFO HostContext] Well known directory 'Diag': '/home/ifs/ci-cd-sample/actions-runner/_diag'
+[2023-04-06 17:26:10Z INFO HostContext] Well known directory 'Bin': '/home/ifs/ci-cd-sample/actions-runner/bin'
+[2023-04-06 17:26:10Z INFO HostContext] Well known directory 'Root': '/home/ifs/ci-cd-sample/actions-runner'
+[2023-04-06 17:26:10Z INFO HostContext] Well known directory 'Diag': '/home/ifs/ci-cd-sample/actions-runner/_diag'
+[2023-04-06 17:26:10Z INFO HostContext] Well known directory 'Bin': '/home/ifs/ci-cd-sample/actions-runner/bin'
+[2023-04-06 17:26:10Z INFO HostContext] Well known directory 'Root': '/home/ifs/ci-cd-sample/actions-runner'
+[2023-04-06 17:26:10Z INFO HostContext] Well known directory 'Diag': '/home/ifs/ci-cd-sample/actions-runner/_diag'
+[2023-04-06 17:26:10Z INFO HostContext] Well known directory 'Bin': '/home/ifs/ci-cd-sample/actions-runner/bin'
+[2023-04-06 17:26:10Z INFO HostContext] Well known directory 'Root': '/home/ifs/ci-cd-sample/actions-runner'
+[2023-04-06 17:26:10Z INFO HostContext] Well known directory 'Diag': '/home/ifs/ci-cd-sample/actions-runner/_diag'
+[2023-04-06 17:26:10Z INFO HostContext] Well known directory 'Bin': '/home/ifs/ci-cd-sample/actions-runner/bin'
+[2023-04-06 17:26:10Z INFO HostContext] Well known directory 'Root': '/home/ifs/ci-cd-sample/actions-runner'
+[2023-04-06 17:26:10Z INFO HostContext] Well known directory 'Diag': '/home/ifs/ci-cd-sample/actions-runner/_diag'
+[2023-04-06 17:26:10Z INFO JobExtension] Total accessible running process: 1422.
+[2023-04-06 17:26:10Z INFO HostContext] Well known directory 'Bin': '/home/ifs/ci-cd-sample/actions-runner/bin'
+[2023-04-06 17:26:10Z INFO HostContext] Well known directory 'Root': '/home/ifs/ci-cd-sample/actions-runner'
+[2023-04-06 17:26:10Z INFO HostContext] Well known directory 'Work': '/home/ifs/ci-cd-sample/actions-runner/ci-cd-sample'
+[2023-04-06 17:26:10Z INFO ExecutionContext] Publish step telemetry for current step {
+  "action": "setup_job",
+  "type": "runner",
+  "stage": "Pre",
+  "stepId": "681033ad-e7ee-4399-a658-0b178f39f5af",
+  "result": "succeeded",
+  "errorMessages": [],
+  "executionTimeInSeconds": 4,
+  "startTime": "2023-04-06T17:26:07.0075228Z",
+  "finishTime": "2023-04-06T17:26:10.4607985Z"
+}.
+[2023-04-06 17:26:10Z INFO JobRunner] Total job steps: 6.
+[2023-04-06 17:26:10Z INFO JobRunner] Run all job steps.
+[2023-04-06 17:26:10Z INFO StepsRunner] Processing step: DisplayName='Checkout code'
+[2023-04-06 17:26:10Z INFO JobServerQueue] Try to append 1 batches web console lines for record '681033ad-e7ee-4399-a658-0b178f39f5af', success rate: 1/1.
+[2023-04-06 17:26:10Z INFO StepsRunner] Evaluating: success()
+[2023-04-06 17:26:10Z INFO StepsRunner] Result: true
+[2023-04-06 17:26:10Z INFO StepsRunner] Starting the step.
+[2023-04-06 17:26:10Z INFO HostContext] Well known directory 'Bin': '/home/ifs/ci-cd-sample/actions-runner/bin'
+[2023-04-06 17:26:10Z INFO HostContext] Well known directory 'Root': '/home/ifs/ci-cd-sample/actions-runner'
+[2023-04-06 17:26:10Z INFO HostContext] Well known directory 'Work': '/home/ifs/ci-cd-sample/actions-runner/ci-cd-sample'
+[2023-04-06 17:26:10Z INFO HostContext] Well known directory 'Actions': '/home/ifs/ci-cd-sample/actions-runner/ci-cd-sample/_actions'
+[2023-04-06 17:26:10Z INFO ActionManager] Load action that reference repository from '/home/ifs/ci-cd-sample/actions-runner/ci-cd-sample/_actions/actions/checkout/v3'
+[2023-04-06 17:26:10Z INFO HostContext] Well known directory 'Bin': '/home/ifs/ci-cd-sample/actions-runner/bin'
+[2023-04-06 17:26:10Z INFO HostContext] Well known directory 'Root': '/home/ifs/ci-cd-sample/actions-runner'
+[2023-04-06 17:26:10Z INFO HostContext] Well known directory 'Work': '/home/ifs/ci-cd-sample/actions-runner/ci-cd-sample'
+[2023-04-06 17:26:10Z INFO HostContext] Well known directory 'Actions': '/home/ifs/ci-cd-sample/actions-runner/ci-cd-sample/_actions'
+[2023-04-06 17:26:10Z INFO ActionManifestManager] Loaded action.yml file: {
+  "name": "Checkout",
+  "description": "Checkout a Git repository at a particular version",
+  "inputs": {
+    "type": 2,
+    "map": [
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 4,
+          "col": 3,
+          "lit": "repository"
+        },
+        "value": {
+          "type": 3,
+          "file": 2,
+          "line": 6,
+          "col": 14,
+          "expr": "github.repository"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 7,
+          "col": 3,
+          "lit": "ref"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 12,
+          "col": 3,
+          "lit": "token"
+        },
+        "value": {
+          "type": 3,
+          "file": 2,
+          "line": 24,
+          "col": 14,
+          "expr": "github.token"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 25,
+          "col": 3,
+          "lit": "ssh-key"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 37,
+          "col": 3,
+          "lit": "ssh-known-hosts"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 42,
+          "col": 3,
+          "lit": "ssh-strict"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 47,
+          "col": 14,
+          "lit": "true"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 48,
+          "col": 3,
+          "lit": "persist-credentials"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 50,
+          "col": 14,
+          "lit": "true"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 51,
+          "col": 3,
+          "lit": "path"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 53,
+          "col": 3,
+          "lit": "clean"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 55,
+          "col": 14,
+          "lit": "true"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 56,
+          "col": 3,
+          "lit": "fetch-depth"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 58,
+          "col": 14,
+          "lit": "1"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 59,
+          "col": 3,
+          "lit": "lfs"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 61,
+          "col": 14,
+          "lit": "false"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 62,
+          "col": 3,
+          "lit": "submodules"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 70,
+          "col": 14,
+          "lit": "false"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 71,
+          "col": 3,
+          "lit": "set-safe-directory"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 73,
+          "col": 14,
+          "lit": "true"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 74,
+          "col": 3,
+          "lit": "github-server-url"
+        },
+        "value": ""
+      }
+    ]
+  },
+  "execution": {
+    "executionType": "nodeJS",
+    "hasPre": false,
+    "hasPost": true,
+    "script": "dist/index.js",
+    "pre": null,
+    "post": "dist/index.js",
+    "nodeVersion": "node16",
+    "cleanupCondition": "always()",
+    "initCondition": "always()"
+  },
+  "deprecated": null
+}
+[2023-04-06 17:26:10Z INFO ActionManager] Action pre node.js file: N/A.
+[2023-04-06 17:26:10Z INFO ActionManager] Action node.js file: dist/index.js.
+[2023-04-06 17:26:10Z INFO ActionManager] Action post node.js file: dist/index.js.
+[2023-04-06 17:26:10Z INFO ExecutionContext] Reserve record order 8 to 14 for post job actions.
+[2023-04-06 17:26:10Z INFO HostContext] Well known directory 'Bin': '/home/ifs/ci-cd-sample/actions-runner/bin'
+[2023-04-06 17:26:10Z INFO HostContext] Well known directory 'Root': '/home/ifs/ci-cd-sample/actions-runner'
+[2023-04-06 17:26:10Z INFO HostContext] Well known directory 'Diag': '/home/ifs/ci-cd-sample/actions-runner/_diag'
+[2023-04-06 17:26:10Z INFO HostContext] Well known directory 'Bin': '/home/ifs/ci-cd-sample/actions-runner/bin'
+[2023-04-06 17:26:10Z INFO HostContext] Well known directory 'Root': '/home/ifs/ci-cd-sample/actions-runner'
+[2023-04-06 17:26:10Z INFO HostContext] Well known directory 'Diag': '/home/ifs/ci-cd-sample/actions-runner/_diag'
+[2023-04-06 17:26:10Z INFO HostContext] Well known directory 'Bin': '/home/ifs/ci-cd-sample/actions-runner/bin'
+[2023-04-06 17:26:10Z INFO HostContext] Well known directory 'Root': '/home/ifs/ci-cd-sample/actions-runner'
+[2023-04-06 17:26:10Z INFO HostContext] Well known directory 'Work': '/home/ifs/ci-cd-sample/actions-runner/ci-cd-sample'
+[2023-04-06 17:26:10Z INFO HostContext] Well known directory 'Temp': '/home/ifs/ci-cd-sample/actions-runner/ci-cd-sample/_temp'
+[2023-04-06 17:26:10Z INFO ExecutionContext] Write event payload to /home/ifs/ci-cd-sample/actions-runner/ci-cd-sample/_temp/_github_workflow/event.json
+[2023-04-06 17:26:10Z INFO HostContext] Well known directory 'Bin': '/home/ifs/ci-cd-sample/actions-runner/bin'
+[2023-04-06 17:26:10Z INFO HostContext] Well known directory 'Root': '/home/ifs/ci-cd-sample/actions-runner'
+[2023-04-06 17:26:10Z INFO HostContext] Well known directory 'Work': '/home/ifs/ci-cd-sample/actions-runner/ci-cd-sample'
+[2023-04-06 17:26:10Z INFO HostContext] Well known directory 'Temp': '/home/ifs/ci-cd-sample/actions-runner/ci-cd-sample/_temp'
+[2023-04-06 17:26:10Z INFO ExtensionManager] Getting extensions for interface: 'GitHub.Runner.Worker.IFileCommandExtension'
+[2023-04-06 17:26:10Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.AddPathFileCommand, Runner.Worker
+[2023-04-06 17:26:10Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.SetEnvFileCommand, Runner.Worker
+[2023-04-06 17:26:10Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.CreateStepSummaryCommand, Runner.Worker
+[2023-04-06 17:26:10Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.SaveStateFileCommand, Runner.Worker
+[2023-04-06 17:26:10Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.SetOutputFileCommand, Runner.Worker
+[2023-04-06 17:26:10Z INFO ActionManifestManager] Input 'repository': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 6,
+  "col": 14,
+  "lit": "mesmail98/ci-cd-sample"
+}
+[2023-04-06 17:26:10Z INFO ActionManifestManager] Input 'ref': default value evaluate result: ""
+[2023-04-06 17:26:10Z INFO ActionManifestManager] Input 'token': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 24,
+  "col": 14,
+  "lit": "***"
+}
+[2023-04-06 17:26:10Z INFO ActionManifestManager] Input 'ssh-key': default value evaluate result: ""
+[2023-04-06 17:26:10Z INFO ActionManifestManager] Input 'ssh-known-hosts': default value evaluate result: ""
+[2023-04-06 17:26:10Z INFO ActionManifestManager] Input 'ssh-strict': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 47,
+  "col": 14,
+  "lit": "true"
+}
+[2023-04-06 17:26:10Z INFO ActionManifestManager] Input 'persist-credentials': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 50,
+  "col": 14,
+  "lit": "true"
+}
+[2023-04-06 17:26:10Z INFO ActionManifestManager] Input 'path': default value evaluate result: ""
+[2023-04-06 17:26:10Z INFO ActionManifestManager] Input 'clean': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 55,
+  "col": 14,
+  "lit": "true"
+}
+[2023-04-06 17:26:10Z INFO ActionManifestManager] Input 'fetch-depth': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 58,
+  "col": 14,
+  "lit": "1"
+}
+[2023-04-06 17:26:10Z INFO ActionManifestManager] Input 'lfs': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 61,
+  "col": 14,
+  "lit": "false"
+}
+[2023-04-06 17:26:10Z INFO ActionManifestManager] Input 'submodules': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 70,
+  "col": 14,
+  "lit": "false"
+}
+[2023-04-06 17:26:10Z INFO ActionManifestManager] Input 'set-safe-directory': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 73,
+  "col": 14,
+  "lit": "true"
+}
+[2023-04-06 17:26:10Z INFO ActionManifestManager] Input 'github-server-url': default value evaluate result: ""
+[2023-04-06 17:26:10Z INFO ExtensionManager] Getting extensions for interface: 'GitHub.Runner.Worker.IActionCommandExtension'
+[2023-04-06 17:26:10Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.InternalPluginSetRepoPathCommandExtension, Runner.Worker
+[2023-04-06 17:26:10Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.SetEnvCommandExtension, Runner.Worker
+[2023-04-06 17:26:10Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.SetOutputCommandExtension, Runner.Worker
+[2023-04-06 17:26:10Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.SaveStateCommandExtension, Runner.Worker
+[2023-04-06 17:26:10Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.AddPathCommandExtension, Runner.Worker
+[2023-04-06 17:26:10Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.AddMaskCommandExtension, Runner.Worker
+[2023-04-06 17:26:10Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.AddMatcherCommandExtension, Runner.Worker
+[2023-04-06 17:26:10Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.RemoveMatcherCommandExtension, Runner.Worker
+[2023-04-06 17:26:10Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.WarningCommandExtension, Runner.Worker
+[2023-04-06 17:26:10Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.ErrorCommandExtension, Runner.Worker
+[2023-04-06 17:26:10Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.NoticeCommandExtension, Runner.Worker
+[2023-04-06 17:26:10Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.DebugCommandExtension, Runner.Worker
+[2023-04-06 17:26:10Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.GroupCommandExtension, Runner.Worker
+[2023-04-06 17:26:10Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.EndGroupCommandExtension, Runner.Worker
+[2023-04-06 17:26:10Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.EchoCommandExtension, Runner.Worker
+[2023-04-06 17:26:10Z INFO ActionCommandManager] Register action command extension for command internal-set-repo-path
+[2023-04-06 17:26:10Z INFO ActionCommandManager] Register action command extension for command set-env
+[2023-04-06 17:26:10Z INFO ActionCommandManager] Register action command extension for command set-output
+[2023-04-06 17:26:10Z INFO ActionCommandManager] Register action command extension for command save-state
+[2023-04-06 17:26:10Z INFO ActionCommandManager] Register action command extension for command add-path
+[2023-04-06 17:26:10Z INFO ActionCommandManager] Register action command extension for command add-mask
+[2023-04-06 17:26:10Z INFO ActionCommandManager] Register action command extension for command add-matcher
+[2023-04-06 17:26:10Z INFO ActionCommandManager] Register action command extension for command remove-matcher
+[2023-04-06 17:26:10Z INFO ActionCommandManager] Register action command extension for command warning
+[2023-04-06 17:26:10Z INFO ActionCommandManager] Register action command extension for command error
+[2023-04-06 17:26:10Z INFO ActionCommandManager] Register action command extension for command notice
+[2023-04-06 17:26:10Z INFO ActionCommandManager] Register action command extension for command debug
+[2023-04-06 17:26:10Z INFO ActionCommandManager] Register action command extension for command group
+[2023-04-06 17:26:10Z INFO ActionCommandManager] Register action command extension for command endgroup
+[2023-04-06 17:26:10Z INFO ActionCommandManager] Register action command extension for command echo
+[2023-04-06 17:26:10Z INFO HostContext] Well known directory 'Bin': '/home/ifs/ci-cd-sample/actions-runner/bin'
+[2023-04-06 17:26:10Z INFO HostContext] Well known directory 'Root': '/home/ifs/ci-cd-sample/actions-runner'
+[2023-04-06 17:26:10Z INFO HostContext] Well known directory 'Externals': '/home/ifs/ci-cd-sample/actions-runner/externals'
+[2023-04-06 17:26:10Z INFO ProcessInvokerWrapper] Starting process:
+[2023-04-06 17:26:10Z INFO ProcessInvokerWrapper]   File name: '/home/ifs/ci-cd-sample/actions-runner/externals/node16/bin/node'
+[2023-04-06 17:26:10Z INFO ProcessInvokerWrapper]   Arguments: '"/home/ifs/ci-cd-sample/actions-runner/ci-cd-sample/_actions/actions/checkout/v3/dist/index.js"'
+[2023-04-06 17:26:10Z INFO ProcessInvokerWrapper]   Working directory: '/home/ifs/ci-cd-sample/actions-runner/ci-cd-sample/ci-cd-sample/ci-cd-sample'
+[2023-04-06 17:26:10Z INFO ProcessInvokerWrapper]   Require exit code zero: 'False'
+[2023-04-06 17:26:10Z INFO ProcessInvokerWrapper]   Encoding web name:  ; code page: ''
+[2023-04-06 17:26:10Z INFO ProcessInvokerWrapper]   Force kill process on cancellation: 'False'
+[2023-04-06 17:26:10Z INFO ProcessInvokerWrapper]   Redirected STDIN: 'False'
+[2023-04-06 17:26:10Z INFO ProcessInvokerWrapper]   Persist current code page: 'False'
+[2023-04-06 17:26:10Z INFO ProcessInvokerWrapper]   Keep redirected STDIN open: 'False'
+[2023-04-06 17:26:10Z INFO ProcessInvokerWrapper]   High priority process: 'False'
+[2023-04-06 17:26:10Z INFO ProcessInvokerWrapper] Updated oom_score_adj to 500 for PID: 3036681.
+[2023-04-06 17:26:10Z INFO ProcessInvokerWrapper] Process started with process id 3036681, waiting for process exit.
+[2023-04-06 17:26:10Z INFO JobServerQueue] Try to append 1 batches web console lines for record 'aed715ca-3f37-5992-da03-0db8356b4ca9', success rate: 1/1.
+[2023-04-06 17:26:10Z INFO AddMaskCommandExtension] Add new secret mask with length of 76
+[2023-04-06 17:26:10Z INFO JobServerQueue] Try to append 1 batches web console lines for record 'aed715ca-3f37-5992-da03-0db8356b4ca9', success rate: 1/1.
+[2023-04-06 17:26:11Z INFO JobServerQueue] Try to upload 1 log files or attachments, success rate: 1/1.
+[2023-04-06 17:26:11Z INFO JobServerQueue] Try to append 3 batches web console lines for record 'aed715ca-3f37-5992-da03-0db8356b4ca9', success rate: 3/3.
+[2023-04-06 17:26:12Z INFO JobServerQueue] Try to append 1 batches web console lines for record 'aed715ca-3f37-5992-da03-0db8356b4ca9', success rate: 1/1.
+[2023-04-06 17:26:12Z INFO JobServerQueue] Try to append 1 batches web console lines for record 'aed715ca-3f37-5992-da03-0db8356b4ca9', success rate: 1/1.
+[2023-04-06 17:26:13Z INFO JobServerQueue] Try to append 1 batches web console lines for record 'aed715ca-3f37-5992-da03-0db8356b4ca9', success rate: 1/1.
+[2023-04-06 17:26:13Z INFO JobServerQueue] Try to append 1 batches web console lines for record 'aed715ca-3f37-5992-da03-0db8356b4ca9', success rate: 1/1.
+[2023-04-06 17:26:14Z INFO JobServerQueue] Try to append 1 batches web console lines for record 'aed715ca-3f37-5992-da03-0db8356b4ca9', success rate: 1/1.
+[2023-04-06 17:26:14Z INFO JobServerQueue] Try to append 1 batches web console lines for record 'aed715ca-3f37-5992-da03-0db8356b4ca9', success rate: 1/1.
+[2023-04-06 17:26:14Z INFO JobServerQueue] Try to append 1 batches web console lines for record 'aed715ca-3f37-5992-da03-0db8356b4ca9', success rate: 1/1.
+[2023-04-06 17:26:15Z INFO JobServerQueue] Try to append 1 batches web console lines for record 'aed715ca-3f37-5992-da03-0db8356b4ca9', success rate: 1/1.
+[2023-04-06 17:26:16Z INFO JobServerQueue] Try to append 1 batches web console lines for record 'aed715ca-3f37-5992-da03-0db8356b4ca9', success rate: 1/1.
+[2023-04-06 17:26:16Z INFO JobServerQueue] Try to append 1 batches web console lines for record 'aed715ca-3f37-5992-da03-0db8356b4ca9', success rate: 1/1.
+[2023-04-06 17:26:17Z INFO JobServerQueue] Try to append 1 batches web console lines for record 'aed715ca-3f37-5992-da03-0db8356b4ca9', success rate: 1/1.
+[2023-04-06 17:26:18Z INFO JobServerQueue] Try to append 1 batches web console lines for record 'aed715ca-3f37-5992-da03-0db8356b4ca9', success rate: 1/1.
+[2023-04-06 17:26:19Z INFO JobServerQueue] Try to append 1 batches web console lines for record 'aed715ca-3f37-5992-da03-0db8356b4ca9', success rate: 1/1.
+[2023-04-06 17:26:19Z INFO JobServerQueue] Try to append 1 batches web console lines for record 'aed715ca-3f37-5992-da03-0db8356b4ca9', success rate: 1/1.
+[2023-04-06 17:26:20Z INFO HostContext] Well known directory 'Bin': '/home/ifs/ci-cd-sample/actions-runner/bin'
+[2023-04-06 17:26:20Z INFO HostContext] Well known directory 'Root': '/home/ifs/ci-cd-sample/actions-runner'
+[2023-04-06 17:26:20Z INFO HostContext] Well known directory 'Work': '/home/ifs/ci-cd-sample/actions-runner/ci-cd-sample'
+[2023-04-06 17:26:20Z INFO JobServerQueue] Try to append 1 batches web console lines for record 'aed715ca-3f37-5992-da03-0db8356b4ca9', success rate: 1/1.
+[2023-04-06 17:26:20Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2023-04-06 17:26:20Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2023-04-06 17:26:20Z INFO ProcessInvokerWrapper] Finished process 3036681 with exit code 0, and elapsed time 00:00:10.1152673.
+[2023-04-06 17:26:20Z INFO CreateStepSummaryCommand] Step Summary file (/home/ifs/ci-cd-sample/actions-runner/ci-cd-sample/_temp/_runner_file_commands/step_summary_e1455857-b7b5-4721-b88c-636ea278b61d) is empty; skipping attachment upload
+[2023-04-06 17:26:20Z INFO StepsRunner] Step result: 
+[2023-04-06 17:26:20Z INFO ExecutionContext] Publish step telemetry for current step {
+  "action": "actions/checkout",
+  "ref": "v3",
+  "type": "node16",
+  "stage": "Main",
+  "stepId": "aed715ca-3f37-5992-da03-0db8356b4ca9",
+  "stepContextName": "__actions_checkout",
+  "hasPreStep": false,
+  "hasPostStep": true,
+  "result": "succeeded",
+  "errorMessages": [],
+  "executionTimeInSeconds": 11,
+  "startTime": "2023-04-06T17:26:10.4811433Z",
+  "finishTime": "2023-04-06T17:26:20.7047541Z"
+}.
+[2023-04-06 17:26:20Z INFO StepsRunner] No need for updating job result with current step result 'Succeeded'.
+[2023-04-06 17:26:20Z INFO StepsRunner] Current state: job state = ''
+[2023-04-06 17:26:20Z INFO StepsRunner] Processing step: DisplayName='Install g++ (Linux)'
+[2023-04-06 17:26:20Z INFO StepsRunner] Evaluating: (success() && startsWith(matrix.os, 'self-hosted-linux'))
+[2023-04-06 17:26:20Z INFO StepsRunner] Expanded: (true && startsWith('self-hosted-linux', 'self-hosted-linux'))
+[2023-04-06 17:26:20Z INFO StepsRunner] Result: true
+[2023-04-06 17:26:20Z INFO StepsRunner] Starting the step.
+[2023-04-06 17:26:20Z INFO HostContext] Well known directory 'Bin': '/home/ifs/ci-cd-sample/actions-runner/bin'
+[2023-04-06 17:26:20Z INFO HostContext] Well known directory 'Root': '/home/ifs/ci-cd-sample/actions-runner'
+[2023-04-06 17:26:20Z INFO HostContext] Well known directory 'Work': '/home/ifs/ci-cd-sample/actions-runner/ci-cd-sample'
+[2023-04-06 17:26:20Z INFO HostContext] Well known directory 'Temp': '/home/ifs/ci-cd-sample/actions-runner/ci-cd-sample/_temp'
+[2023-04-06 17:26:20Z INFO ExecutionContext] Write event payload to /home/ifs/ci-cd-sample/actions-runner/ci-cd-sample/_temp/_github_workflow/event.json
+[2023-04-06 17:26:20Z INFO HostContext] Well known directory 'Bin': '/home/ifs/ci-cd-sample/actions-runner/bin'
+[2023-04-06 17:26:20Z INFO HostContext] Well known directory 'Root': '/home/ifs/ci-cd-sample/actions-runner'
+[2023-04-06 17:26:20Z INFO HostContext] Well known directory 'Work': '/home/ifs/ci-cd-sample/actions-runner/ci-cd-sample'
+[2023-04-06 17:26:20Z INFO HostContext] Well known directory 'Temp': '/home/ifs/ci-cd-sample/actions-runner/ci-cd-sample/_temp'
+[2023-04-06 17:26:20Z INFO ExtensionManager] Getting extensions for interface: 'GitHub.Runner.Worker.IFileCommandExtension'
+[2023-04-06 17:26:20Z INFO ExtensionManager] Getting extensions for interface: 'GitHub.Runner.Worker.IActionCommandExtension'
+[2023-04-06 17:26:20Z INFO ActionCommandManager] Register action command extension for command internal-set-repo-path
+[2023-04-06 17:26:20Z INFO ActionCommandManager] Register action command extension for command set-env
+[2023-04-06 17:26:20Z INFO ActionCommandManager] Register action command extension for command set-output
+[2023-04-06 17:26:20Z INFO ActionCommandManager] Register action command extension for command save-state
+[2023-04-06 17:26:20Z INFO ActionCommandManager] Register action command extension for command add-path
+[2023-04-06 17:26:20Z INFO ActionCommandManager] Register action command extension for command add-mask
+[2023-04-06 17:26:20Z INFO ActionCommandManager] Register action command extension for command add-matcher
+[2023-04-06 17:26:20Z INFO ActionCommandManager] Register action command extension for command remove-matcher
+[2023-04-06 17:26:20Z INFO ActionCommandManager] Register action command extension for command warning
+[2023-04-06 17:26:20Z INFO ActionCommandManager] Register action command extension for command error
+[2023-04-06 17:26:20Z INFO ActionCommandManager] Register action command extension for command notice
+[2023-04-06 17:26:20Z INFO ActionCommandManager] Register action command extension for command debug
+[2023-04-06 17:26:20Z INFO ActionCommandManager] Register action command extension for command group
+[2023-04-06 17:26:20Z INFO ActionCommandManager] Register action command extension for command endgroup
+[2023-04-06 17:26:20Z INFO ActionCommandManager] Register action command extension for command echo
+[2023-04-06 17:26:20Z INFO ScriptHandler] Which: 'bash'
+[2023-04-06 17:26:20Z INFO ScriptHandler] Location: '/usr/bin/bash'
+[2023-04-06 17:26:20Z INFO HostContext] Well known directory 'Bin': '/home/ifs/ci-cd-sample/actions-runner/bin'
+[2023-04-06 17:26:20Z INFO HostContext] Well known directory 'Root': '/home/ifs/ci-cd-sample/actions-runner'
+[2023-04-06 17:26:20Z INFO HostContext] Well known directory 'Work': '/home/ifs/ci-cd-sample/actions-runner/ci-cd-sample'
+[2023-04-06 17:26:20Z INFO HostContext] Well known directory 'Temp': '/home/ifs/ci-cd-sample/actions-runner/ci-cd-sample/_temp'
+[2023-04-06 17:26:20Z INFO ScriptHandler] Which: 'bash'
+[2023-04-06 17:26:20Z INFO ScriptHandler] Location: '/usr/bin/bash'
+[2023-04-06 17:26:20Z INFO ProcessInvokerWrapper] Starting process:
+[2023-04-06 17:26:20Z INFO ProcessInvokerWrapper]   File name: '/usr/bin/bash'
+[2023-04-06 17:26:20Z INFO ProcessInvokerWrapper]   Arguments: '-e /home/ifs/ci-cd-sample/actions-runner/ci-cd-sample/_temp/2a359216-393f-4cc6-a955-5790a385efea.sh'
+[2023-04-06 17:26:20Z INFO ProcessInvokerWrapper]   Working directory: '/home/ifs/ci-cd-sample/actions-runner/ci-cd-sample/ci-cd-sample/ci-cd-sample'
+[2023-04-06 17:26:20Z INFO ProcessInvokerWrapper]   Require exit code zero: 'False'
+[2023-04-06 17:26:20Z INFO ProcessInvokerWrapper]   Encoding web name:  ; code page: ''
+[2023-04-06 17:26:20Z INFO ProcessInvokerWrapper]   Force kill process on cancellation: 'False'
+[2023-04-06 17:26:20Z INFO ProcessInvokerWrapper]   Redirected STDIN: 'False'
+[2023-04-06 17:26:20Z INFO ProcessInvokerWrapper]   Persist current code page: 'False'
+[2023-04-06 17:26:20Z INFO ProcessInvokerWrapper]   Keep redirected STDIN open: 'False'
+[2023-04-06 17:26:20Z INFO ProcessInvokerWrapper]   High priority process: 'False'
+[2023-04-06 17:26:20Z INFO ProcessInvokerWrapper] Updated oom_score_adj to 500 for PID: 3036771.
+[2023-04-06 17:26:20Z INFO ProcessInvokerWrapper] Process started with process id 3036771, waiting for process exit.
+[2023-04-06 17:26:20Z INFO JobServerQueue] Try to append 1 batches web console lines for record 'aed715ca-3f37-5992-da03-0db8356b4ca9', success rate: 1/1.
+[2023-04-06 17:26:20Z INFO JobServerQueue] Try to append 1 batches web console lines for record 'f2290000-62bc-5c82-3c2d-ee47c260fa38', success rate: 1/1.
+[2023-04-06 17:26:21Z INFO JobServerQueue] Try to upload 1 log files or attachments, success rate: 1/1.
+[2023-04-06 17:26:24Z INFO JobServerQueue] Try to append 1 batches web console lines for record 'f2290000-62bc-5c82-3c2d-ee47c260fa38', success rate: 1/1.
+[2023-04-06 17:26:24Z INFO JobServerQueue] Try to append 1 batches web console lines for record 'f2290000-62bc-5c82-3c2d-ee47c260fa38', success rate: 1/1.
+[2023-04-06 17:26:24Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2023-04-06 17:26:24Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2023-04-06 17:26:24Z INFO ProcessInvokerWrapper] Finished process 3036771 with exit code 0, and elapsed time 00:00:03.9993137.
+[2023-04-06 17:26:24Z INFO CreateStepSummaryCommand] Step Summary file (/home/ifs/ci-cd-sample/actions-runner/ci-cd-sample/_temp/_runner_file_commands/step_summary_1b375c28-a731-4484-b259-05c4b6d67bdb) is empty; skipping attachment upload
+[2023-04-06 17:26:24Z INFO StepsRunner] Step result: 
+[2023-04-06 17:26:24Z INFO ExecutionContext] Publish step telemetry for current step {
+  "action": "sh",
+  "type": "run",
+  "stage": "Main",
+  "stepId": "f2290000-62bc-5c82-3c2d-ee47c260fa38",
+  "stepContextName": "__run",
+  "result": "succeeded",
+  "errorMessages": [],
+  "executionTimeInSeconds": 5,
+  "startTime": "2023-04-06T17:26:20.7054912Z",
+  "finishTime": "2023-04-06T17:26:24.7379894Z"
+}.
+[2023-04-06 17:26:24Z INFO StepsRunner] No need for updating job result with current step result 'Succeeded'.
+[2023-04-06 17:26:24Z INFO StepsRunner] Current state: job state = ''
+[2023-04-06 17:26:24Z INFO StepsRunner] Processing step: DisplayName='Build code (Windows)'
+[2023-04-06 17:26:24Z INFO StepsRunner] Evaluating: (success() && startsWith(matrix.os, 'windows'))
+[2023-04-06 17:26:24Z INFO StepsRunner] Expanded: (true && startsWith('self-hosted-linux', 'windows'))
+[2023-04-06 17:26:24Z INFO StepsRunner] Result: false
+[2023-04-06 17:26:24Z INFO StepsRunner] Skipping step due to condition evaluation.
+[2023-04-06 17:26:24Z INFO StepsRunner] No need for updating job result with current step result 'Skipped'.
+[2023-04-06 17:26:24Z INFO StepsRunner] Current state: job state = ''
+[2023-04-06 17:26:24Z INFO StepsRunner] Processing step: DisplayName='Build code (Linux)'
+[2023-04-06 17:26:24Z INFO StepsRunner] Evaluating: (success() && startsWith(matrix.os, 'self-hosted-linux'))
+[2023-04-06 17:26:24Z INFO StepsRunner] Expanded: (true && startsWith('self-hosted-linux', 'self-hosted-linux'))
+[2023-04-06 17:26:24Z INFO StepsRunner] Result: true
+[2023-04-06 17:26:24Z INFO StepsRunner] Starting the step.
+[2023-04-06 17:26:24Z INFO HostContext] Well known directory 'Bin': '/home/ifs/ci-cd-sample/actions-runner/bin'
+[2023-04-06 17:26:24Z INFO HostContext] Well known directory 'Root': '/home/ifs/ci-cd-sample/actions-runner'
+[2023-04-06 17:26:24Z INFO HostContext] Well known directory 'Work': '/home/ifs/ci-cd-sample/actions-runner/ci-cd-sample'
+[2023-04-06 17:26:24Z INFO HostContext] Well known directory 'Temp': '/home/ifs/ci-cd-sample/actions-runner/ci-cd-sample/_temp'
+[2023-04-06 17:26:24Z INFO ExecutionContext] Write event payload to /home/ifs/ci-cd-sample/actions-runner/ci-cd-sample/_temp/_github_workflow/event.json
+[2023-04-06 17:26:24Z INFO HostContext] Well known directory 'Bin': '/home/ifs/ci-cd-sample/actions-runner/bin'
+[2023-04-06 17:26:24Z INFO HostContext] Well known directory 'Root': '/home/ifs/ci-cd-sample/actions-runner'
+[2023-04-06 17:26:24Z INFO HostContext] Well known directory 'Work': '/home/ifs/ci-cd-sample/actions-runner/ci-cd-sample'
+[2023-04-06 17:26:24Z INFO HostContext] Well known directory 'Temp': '/home/ifs/ci-cd-sample/actions-runner/ci-cd-sample/_temp'
+[2023-04-06 17:26:24Z INFO ExtensionManager] Getting extensions for interface: 'GitHub.Runner.Worker.IFileCommandExtension'
+[2023-04-06 17:26:24Z INFO ExtensionManager] Getting extensions for interface: 'GitHub.Runner.Worker.IActionCommandExtension'
+[2023-04-06 17:26:24Z INFO ActionCommandManager] Register action command extension for command internal-set-repo-path
+[2023-04-06 17:26:24Z INFO ActionCommandManager] Register action command extension for command set-env
+[2023-04-06 17:26:24Z INFO ActionCommandManager] Register action command extension for command set-output
+[2023-04-06 17:26:24Z INFO ActionCommandManager] Register action command extension for command save-state
+[2023-04-06 17:26:24Z INFO ActionCommandManager] Register action command extension for command add-path
+[2023-04-06 17:26:24Z INFO ActionCommandManager] Register action command extension for command add-mask
+[2023-04-06 17:26:24Z INFO ActionCommandManager] Register action command extension for command add-matcher
+[2023-04-06 17:26:24Z INFO ActionCommandManager] Register action command extension for command remove-matcher
+[2023-04-06 17:26:24Z INFO ActionCommandManager] Register action command extension for command warning
+[2023-04-06 17:26:24Z INFO ActionCommandManager] Register action command extension for command error
+[2023-04-06 17:26:24Z INFO ActionCommandManager] Register action command extension for command notice
+[2023-04-06 17:26:24Z INFO ActionCommandManager] Register action command extension for command debug
+[2023-04-06 17:26:24Z INFO ActionCommandManager] Register action command extension for command group
+[2023-04-06 17:26:24Z INFO ActionCommandManager] Register action command extension for command endgroup
+[2023-04-06 17:26:24Z INFO ActionCommandManager] Register action command extension for command echo
+[2023-04-06 17:26:24Z INFO ScriptHandler] Which: 'bash'
+[2023-04-06 17:26:24Z INFO ScriptHandler] Location: '/usr/bin/bash'
+[2023-04-06 17:26:24Z INFO HostContext] Well known directory 'Bin': '/home/ifs/ci-cd-sample/actions-runner/bin'
+[2023-04-06 17:26:24Z INFO HostContext] Well known directory 'Root': '/home/ifs/ci-cd-sample/actions-runner'
+[2023-04-06 17:26:24Z INFO HostContext] Well known directory 'Work': '/home/ifs/ci-cd-sample/actions-runner/ci-cd-sample'
+[2023-04-06 17:26:24Z INFO HostContext] Well known directory 'Temp': '/home/ifs/ci-cd-sample/actions-runner/ci-cd-sample/_temp'
+[2023-04-06 17:26:24Z INFO ScriptHandler] Which: 'bash'
+[2023-04-06 17:26:24Z INFO ScriptHandler] Location: '/usr/bin/bash'
+[2023-04-06 17:26:24Z INFO ProcessInvokerWrapper] Starting process:
+[2023-04-06 17:26:24Z INFO ProcessInvokerWrapper]   File name: '/usr/bin/bash'
+[2023-04-06 17:26:24Z INFO ProcessInvokerWrapper]   Arguments: '-e /home/ifs/ci-cd-sample/actions-runner/ci-cd-sample/_temp/012aaf61-bf20-4fb4-8d03-148dae395800.sh'
+[2023-04-06 17:26:24Z INFO ProcessInvokerWrapper]   Working directory: '/home/ifs/ci-cd-sample/actions-runner/ci-cd-sample/ci-cd-sample/ci-cd-sample'
+[2023-04-06 17:26:24Z INFO ProcessInvokerWrapper]   Require exit code zero: 'False'
+[2023-04-06 17:26:24Z INFO ProcessInvokerWrapper]   Encoding web name:  ; code page: ''
+[2023-04-06 17:26:24Z INFO ProcessInvokerWrapper]   Force kill process on cancellation: 'False'
+[2023-04-06 17:26:24Z INFO ProcessInvokerWrapper]   Redirected STDIN: 'False'
+[2023-04-06 17:26:24Z INFO ProcessInvokerWrapper]   Persist current code page: 'False'
+[2023-04-06 17:26:24Z INFO ProcessInvokerWrapper]   Keep redirected STDIN open: 'False'
+[2023-04-06 17:26:24Z INFO ProcessInvokerWrapper]   High priority process: 'False'
+[2023-04-06 17:26:24Z INFO ProcessInvokerWrapper] Updated oom_score_adj to 500 for PID: 3036776.
+[2023-04-06 17:26:24Z INFO ProcessInvokerWrapper] Process started with process id 3036776, waiting for process exit.
+[2023-04-06 17:26:24Z INFO JobServerQueue] Try to append 1 batches web console lines for record 'f2290000-62bc-5c82-3c2d-ee47c260fa38', success rate: 1/1.
+[2023-04-06 17:26:24Z INFO JobServerQueue] Try to append 1 batches web console lines for record 'd962e631-3b84-5002-2328-5ba186324413', success rate: 1/1.
+[2023-04-06 17:26:25Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2023-04-06 17:26:25Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2023-04-06 17:26:25Z INFO ProcessInvokerWrapper] Finished process 3036776 with exit code 0, and elapsed time 00:00:00.3452293.
+[2023-04-06 17:26:25Z INFO CreateStepSummaryCommand] Step Summary file (/home/ifs/ci-cd-sample/actions-runner/ci-cd-sample/_temp/_runner_file_commands/step_summary_3c4f9020-77d2-44f7-941e-4825d09f12e0) is empty; skipping attachment upload
+[2023-04-06 17:26:25Z INFO StepsRunner] Step result: 
+[2023-04-06 17:26:25Z INFO ExecutionContext] Publish step telemetry for current step {
+  "action": "sh",
+  "type": "run",
+  "stage": "Main",
+  "stepId": "d962e631-3b84-5002-2328-5ba186324413",
+  "stepContextName": "__run_3",
+  "result": "succeeded",
+  "errorMessages": [],
+  "executionTimeInSeconds": 1,
+  "startTime": "2023-04-06T17:26:24.7401942Z",
+  "finishTime": "2023-04-06T17:26:25.1050587Z"
+}.
+[2023-04-06 17:26:25Z INFO StepsRunner] No need for updating job result with current step result 'Succeeded'.
+[2023-04-06 17:26:25Z INFO StepsRunner] Current state: job state = ''
+[2023-04-06 17:26:25Z INFO StepsRunner] Processing step: DisplayName='Save artifact (Linux)'
+[2023-04-06 17:26:25Z INFO StepsRunner] Evaluating: (always() && startsWith(matrix.os, 'self-hosted-linux'))
+[2023-04-06 17:26:25Z INFO StepsRunner] Expanded: (true && startsWith('self-hosted-linux', 'self-hosted-linux'))
+[2023-04-06 17:26:25Z INFO StepsRunner] Result: true
+[2023-04-06 17:26:25Z INFO StepsRunner] Starting the step.
+[2023-04-06 17:26:25Z INFO HostContext] Well known directory 'Bin': '/home/ifs/ci-cd-sample/actions-runner/bin'
+[2023-04-06 17:26:25Z INFO HostContext] Well known directory 'Root': '/home/ifs/ci-cd-sample/actions-runner'
+[2023-04-06 17:26:25Z INFO HostContext] Well known directory 'Work': '/home/ifs/ci-cd-sample/actions-runner/ci-cd-sample'
+[2023-04-06 17:26:25Z INFO HostContext] Well known directory 'Actions': '/home/ifs/ci-cd-sample/actions-runner/ci-cd-sample/_actions'
+[2023-04-06 17:26:25Z INFO ActionManager] Load action that reference repository from '/home/ifs/ci-cd-sample/actions-runner/ci-cd-sample/_actions/actions/upload-artifact/v2.2.4'
+[2023-04-06 17:26:25Z INFO HostContext] Well known directory 'Bin': '/home/ifs/ci-cd-sample/actions-runner/bin'
+[2023-04-06 17:26:25Z INFO HostContext] Well known directory 'Root': '/home/ifs/ci-cd-sample/actions-runner'
+[2023-04-06 17:26:25Z INFO HostContext] Well known directory 'Work': '/home/ifs/ci-cd-sample/actions-runner/ci-cd-sample'
+[2023-04-06 17:26:25Z INFO HostContext] Well known directory 'Actions': '/home/ifs/ci-cd-sample/actions-runner/ci-cd-sample/_actions'
+[2023-04-06 17:26:25Z INFO ActionManifestManager] Ignore action property author.
+[2023-04-06 17:26:25Z INFO ActionManifestManager] Loaded action.yml file: {
+  "name": "Upload a Build Artifact",
+  "description": "Upload a build artifact that can be used by subsequent workflow steps",
+  "inputs": {
+    "type": 2,
+    "map": [
+      {
+        "key": {
+          "type": 0,
+          "file": 3,
+          "line": 5,
+          "col": 3,
+          "lit": "name"
+        },
+        "value": {
+          "type": 0,
+          "file": 3,
+          "line": 7,
+          "col": 14,
+          "lit": "artifact"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 3,
+          "line": 8,
+          "col": 3,
+          "lit": "path"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 3,
+          "line": 11,
+          "col": 3,
+          "lit": "if-no-files-found"
+        },
+        "value": {
+          "type": 0,
+          "file": 3,
+          "line": 19,
+          "col": 14,
+          "lit": "warn"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 3,
+          "line": 20,
+          "col": 3,
+          "lit": "retention-days"
+        },
+        "value": ""
+      }
+    ]
+  },
+  "execution": {
+    "executionType": "nodeJS",
+    "hasPre": false,
+    "hasPost": false,
+    "script": "dist/index.js",
+    "pre": null,
+    "post": null,
+    "nodeVersion": "node12",
+    "cleanupCondition": "always()",
+    "initCondition": "always()"
+  },
+  "deprecated": null
+}
+[2023-04-06 17:26:25Z INFO ActionManager] Action pre node.js file: N/A.
+[2023-04-06 17:26:25Z INFO ActionManager] Action node.js file: dist/index.js.
+[2023-04-06 17:26:25Z INFO ActionManager] Action post node.js file: N/A.
+[2023-04-06 17:26:25Z INFO HostContext] Well known directory 'Bin': '/home/ifs/ci-cd-sample/actions-runner/bin'
+[2023-04-06 17:26:25Z INFO HostContext] Well known directory 'Root': '/home/ifs/ci-cd-sample/actions-runner'
+[2023-04-06 17:26:25Z INFO HostContext] Well known directory 'Work': '/home/ifs/ci-cd-sample/actions-runner/ci-cd-sample'
+[2023-04-06 17:26:25Z INFO HostContext] Well known directory 'Temp': '/home/ifs/ci-cd-sample/actions-runner/ci-cd-sample/_temp'
+[2023-04-06 17:26:25Z INFO ExecutionContext] Write event payload to /home/ifs/ci-cd-sample/actions-runner/ci-cd-sample/_temp/_github_workflow/event.json
+[2023-04-06 17:26:25Z INFO HostContext] Well known directory 'Bin': '/home/ifs/ci-cd-sample/actions-runner/bin'
+[2023-04-06 17:26:25Z INFO HostContext] Well known directory 'Root': '/home/ifs/ci-cd-sample/actions-runner'
+[2023-04-06 17:26:25Z INFO HostContext] Well known directory 'Work': '/home/ifs/ci-cd-sample/actions-runner/ci-cd-sample'
+[2023-04-06 17:26:25Z INFO HostContext] Well known directory 'Temp': '/home/ifs/ci-cd-sample/actions-runner/ci-cd-sample/_temp'
+[2023-04-06 17:26:25Z INFO ExtensionManager] Getting extensions for interface: 'GitHub.Runner.Worker.IFileCommandExtension'
+[2023-04-06 17:26:25Z INFO ActionManifestManager] Input 'if-no-files-found': default value evaluate result: {
+  "type": 0,
+  "file": 3,
+  "line": 19,
+  "col": 14,
+  "lit": "warn"
+}
+[2023-04-06 17:26:25Z INFO ActionManifestManager] Input 'retention-days': default value evaluate result: ""
+[2023-04-06 17:26:25Z INFO ExtensionManager] Getting extensions for interface: 'GitHub.Runner.Worker.IActionCommandExtension'
+[2023-04-06 17:26:25Z INFO ActionCommandManager] Register action command extension for command internal-set-repo-path
+[2023-04-06 17:26:25Z INFO ActionCommandManager] Register action command extension for command set-env
+[2023-04-06 17:26:25Z INFO ActionCommandManager] Register action command extension for command set-output
+[2023-04-06 17:26:25Z INFO ActionCommandManager] Register action command extension for command save-state
+[2023-04-06 17:26:25Z INFO ActionCommandManager] Register action command extension for command add-path
+[2023-04-06 17:26:25Z INFO ActionCommandManager] Register action command extension for command add-mask
+[2023-04-06 17:26:25Z INFO ActionCommandManager] Register action command extension for command add-matcher
+[2023-04-06 17:26:25Z INFO ActionCommandManager] Register action command extension for command remove-matcher
+[2023-04-06 17:26:25Z INFO ActionCommandManager] Register action command extension for command warning
+[2023-04-06 17:26:25Z INFO ActionCommandManager] Register action command extension for command error
+[2023-04-06 17:26:25Z INFO ActionCommandManager] Register action command extension for command notice
+[2023-04-06 17:26:25Z INFO ActionCommandManager] Register action command extension for command debug
+[2023-04-06 17:26:25Z INFO ActionCommandManager] Register action command extension for command group
+[2023-04-06 17:26:25Z INFO ActionCommandManager] Register action command extension for command endgroup
+[2023-04-06 17:26:25Z INFO ActionCommandManager] Register action command extension for command echo
+[2023-04-06 17:26:25Z INFO HostContext] Well known directory 'Bin': '/home/ifs/ci-cd-sample/actions-runner/bin'
+[2023-04-06 17:26:25Z INFO HostContext] Well known directory 'Root': '/home/ifs/ci-cd-sample/actions-runner'
+[2023-04-06 17:26:25Z INFO HostContext] Well known directory 'Externals': '/home/ifs/ci-cd-sample/actions-runner/externals'
+[2023-04-06 17:26:25Z INFO ProcessInvokerWrapper] Starting process:
+[2023-04-06 17:26:25Z INFO ProcessInvokerWrapper]   File name: '/home/ifs/ci-cd-sample/actions-runner/externals/node12/bin/node'
+[2023-04-06 17:26:25Z INFO ProcessInvokerWrapper]   Arguments: '"/home/ifs/ci-cd-sample/actions-runner/ci-cd-sample/_actions/actions/upload-artifact/v2.2.4/dist/index.js"'
+[2023-04-06 17:26:25Z INFO ProcessInvokerWrapper]   Working directory: '/home/ifs/ci-cd-sample/actions-runner/ci-cd-sample/ci-cd-sample/ci-cd-sample'
+[2023-04-06 17:26:25Z INFO ProcessInvokerWrapper]   Require exit code zero: 'False'
+[2023-04-06 17:26:25Z INFO ProcessInvokerWrapper]   Encoding web name:  ; code page: ''
+[2023-04-06 17:26:25Z INFO ProcessInvokerWrapper]   Force kill process on cancellation: 'False'
+[2023-04-06 17:26:25Z INFO ProcessInvokerWrapper]   Redirected STDIN: 'False'
+[2023-04-06 17:26:25Z INFO ProcessInvokerWrapper]   Persist current code page: 'False'
+[2023-04-06 17:26:25Z INFO ProcessInvokerWrapper]   Keep redirected STDIN open: 'False'
+[2023-04-06 17:26:25Z INFO ProcessInvokerWrapper]   High priority process: 'False'
+[2023-04-06 17:26:25Z INFO ProcessInvokerWrapper] Updated oom_score_adj to 500 for PID: 3036782.
+[2023-04-06 17:26:25Z INFO ProcessInvokerWrapper] Process started with process id 3036782, waiting for process exit.
+[2023-04-06 17:26:25Z INFO JobServerQueue] Try to append 1 batches web console lines for record '1676fe7e-2086-5d8e-ea6f-a98c568c7ddc', success rate: 1/1.
+[2023-04-06 17:26:26Z INFO JobServerQueue] Try to append 1 batches web console lines for record '1676fe7e-2086-5d8e-ea6f-a98c568c7ddc', success rate: 1/1.
+[2023-04-06 17:26:26Z INFO JobServerQueue] Try to upload 2 log files or attachments, success rate: 2/2.
+[2023-04-06 17:26:26Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2023-04-06 17:26:26Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2023-04-06 17:26:26Z INFO ProcessInvokerWrapper] Finished process 3036782 with exit code 0, and elapsed time 00:00:01.2350208.
+[2023-04-06 17:26:26Z INFO CreateStepSummaryCommand] Step Summary file (/home/ifs/ci-cd-sample/actions-runner/ci-cd-sample/_temp/_runner_file_commands/step_summary_9236b49d-4f68-4410-8965-3b1fb585e770) is empty; skipping attachment upload
+[2023-04-06 17:26:26Z INFO StepsRunner] Step result: 
+[2023-04-06 17:26:26Z INFO ExecutionContext] Publish step telemetry for current step {
+  "action": "actions/upload-artifact",
+  "ref": "v2.2.4",
+  "type": "node12",
+  "stage": "Main",
+  "stepId": "1676fe7e-2086-5d8e-ea6f-a98c568c7ddc",
+  "stepContextName": "__actions_upload-artifact",
+  "hasPreStep": false,
+  "hasPostStep": false,
+  "result": "succeeded",
+  "errorMessages": [],
+  "executionTimeInSeconds": 2,
+  "startTime": "2023-04-06T17:26:25.105876Z",
+  "finishTime": "2023-04-06T17:26:26.3530663Z"
+}.
+[2023-04-06 17:26:26Z INFO StepsRunner] No need for updating job result with current step result 'Succeeded'.
+[2023-04-06 17:26:26Z INFO StepsRunner] Current state: job state = ''
+[2023-04-06 17:26:26Z INFO StepsRunner] Processing step: DisplayName='Save artifact (Windows)'
+[2023-04-06 17:26:26Z INFO StepsRunner] Evaluating: (always() && startsWith(matrix.os, 'windows'))
+[2023-04-06 17:26:26Z INFO StepsRunner] Expanded: (true && startsWith('self-hosted-linux', 'windows'))
+[2023-04-06 17:26:26Z INFO StepsRunner] Result: false
+[2023-04-06 17:26:26Z INFO StepsRunner] Skipping step due to condition evaluation.
+[2023-04-06 17:26:26Z INFO StepsRunner] No need for updating job result with current step result 'Skipped'.
+[2023-04-06 17:26:26Z INFO StepsRunner] Current state: job state = ''
+[2023-04-06 17:26:26Z INFO StepsRunner] Processing step: DisplayName='Post Checkout code'
+[2023-04-06 17:26:26Z INFO StepsRunner] Evaluating: always()
+[2023-04-06 17:26:26Z INFO StepsRunner] Result: true
+[2023-04-06 17:26:26Z INFO StepsRunner] Starting the step.
+[2023-04-06 17:26:26Z INFO HostContext] Well known directory 'Bin': '/home/ifs/ci-cd-sample/actions-runner/bin'
+[2023-04-06 17:26:26Z INFO HostContext] Well known directory 'Root': '/home/ifs/ci-cd-sample/actions-runner'
+[2023-04-06 17:26:26Z INFO HostContext] Well known directory 'Work': '/home/ifs/ci-cd-sample/actions-runner/ci-cd-sample'
+[2023-04-06 17:26:26Z INFO HostContext] Well known directory 'Actions': '/home/ifs/ci-cd-sample/actions-runner/ci-cd-sample/_actions'
+[2023-04-06 17:26:26Z INFO ActionManager] Load action that reference repository from '/home/ifs/ci-cd-sample/actions-runner/ci-cd-sample/_actions/actions/checkout/v3'
+[2023-04-06 17:26:26Z INFO HostContext] Well known directory 'Bin': '/home/ifs/ci-cd-sample/actions-runner/bin'
+[2023-04-06 17:26:26Z INFO HostContext] Well known directory 'Root': '/home/ifs/ci-cd-sample/actions-runner'
+[2023-04-06 17:26:26Z INFO HostContext] Well known directory 'Work': '/home/ifs/ci-cd-sample/actions-runner/ci-cd-sample'
+[2023-04-06 17:26:26Z INFO HostContext] Well known directory 'Actions': '/home/ifs/ci-cd-sample/actions-runner/ci-cd-sample/_actions'
+[2023-04-06 17:26:26Z INFO JobServerQueue] Try to append 1 batches web console lines for record '1676fe7e-2086-5d8e-ea6f-a98c568c7ddc', success rate: 1/1.
+[2023-04-06 17:26:26Z INFO ActionManifestManager] Loaded action.yml file: {
+  "name": "Checkout",
+  "description": "Checkout a Git repository at a particular version",
+  "inputs": {
+    "type": 2,
+    "map": [
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 4,
+          "col": 3,
+          "lit": "repository"
+        },
+        "value": {
+          "type": 3,
+          "file": 2,
+          "line": 6,
+          "col": 14,
+          "expr": "github.repository"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 7,
+          "col": 3,
+          "lit": "ref"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 12,
+          "col": 3,
+          "lit": "token"
+        },
+        "value": {
+          "type": 3,
+          "file": 2,
+          "line": 24,
+          "col": 14,
+          "expr": "github.token"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 25,
+          "col": 3,
+          "lit": "ssh-key"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 37,
+          "col": 3,
+          "lit": "ssh-known-hosts"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 42,
+          "col": 3,
+          "lit": "ssh-strict"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 47,
+          "col": 14,
+          "lit": "true"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 48,
+          "col": 3,
+          "lit": "persist-credentials"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 50,
+          "col": 14,
+          "lit": "true"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 51,
+          "col": 3,
+          "lit": "path"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 53,
+          "col": 3,
+          "lit": "clean"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 55,
+          "col": 14,
+          "lit": "true"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 56,
+          "col": 3,
+          "lit": "fetch-depth"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 58,
+          "col": 14,
+          "lit": "1"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 59,
+          "col": 3,
+          "lit": "lfs"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 61,
+          "col": 14,
+          "lit": "false"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 62,
+          "col": 3,
+          "lit": "submodules"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 70,
+          "col": 14,
+          "lit": "false"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 71,
+          "col": 3,
+          "lit": "set-safe-directory"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 73,
+          "col": 14,
+          "lit": "true"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 74,
+          "col": 3,
+          "lit": "github-server-url"
+        },
+        "value": ""
+      }
+    ]
+  },
+  "execution": {
+    "executionType": "nodeJS",
+    "hasPre": false,
+    "hasPost": true,
+    "script": "dist/index.js",
+    "pre": null,
+    "post": "dist/index.js",
+    "nodeVersion": "node16",
+    "cleanupCondition": "always()",
+    "initCondition": "always()"
+  },
+  "deprecated": null
+}
+[2023-04-06 17:26:26Z INFO ActionManager] Action pre node.js file: N/A.
+[2023-04-06 17:26:26Z INFO ActionManager] Action node.js file: dist/index.js.
+[2023-04-06 17:26:26Z INFO ActionManager] Action post node.js file: dist/index.js.
+[2023-04-06 17:26:26Z INFO HostContext] Well known directory 'Bin': '/home/ifs/ci-cd-sample/actions-runner/bin'
+[2023-04-06 17:26:26Z INFO HostContext] Well known directory 'Root': '/home/ifs/ci-cd-sample/actions-runner'
+[2023-04-06 17:26:26Z INFO HostContext] Well known directory 'Work': '/home/ifs/ci-cd-sample/actions-runner/ci-cd-sample'
+[2023-04-06 17:26:26Z INFO HostContext] Well known directory 'Temp': '/home/ifs/ci-cd-sample/actions-runner/ci-cd-sample/_temp'
+[2023-04-06 17:26:26Z INFO ExecutionContext] Write event payload to /home/ifs/ci-cd-sample/actions-runner/ci-cd-sample/_temp/_github_workflow/event.json
+[2023-04-06 17:26:26Z INFO HostContext] Well known directory 'Bin': '/home/ifs/ci-cd-sample/actions-runner/bin'
+[2023-04-06 17:26:26Z INFO HostContext] Well known directory 'Root': '/home/ifs/ci-cd-sample/actions-runner'
+[2023-04-06 17:26:26Z INFO HostContext] Well known directory 'Work': '/home/ifs/ci-cd-sample/actions-runner/ci-cd-sample'
+[2023-04-06 17:26:26Z INFO HostContext] Well known directory 'Temp': '/home/ifs/ci-cd-sample/actions-runner/ci-cd-sample/_temp'
+[2023-04-06 17:26:26Z INFO ExtensionManager] Getting extensions for interface: 'GitHub.Runner.Worker.IFileCommandExtension'
+[2023-04-06 17:26:26Z INFO ActionManifestManager] Input 'repository': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 6,
+  "col": 14,
+  "lit": "mesmail98/ci-cd-sample"
+}
+[2023-04-06 17:26:26Z INFO ActionManifestManager] Input 'ref': default value evaluate result: ""
+[2023-04-06 17:26:26Z INFO ActionManifestManager] Input 'token': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 24,
+  "col": 14,
+  "lit": "***"
+}
+[2023-04-06 17:26:26Z INFO ActionManifestManager] Input 'ssh-key': default value evaluate result: ""
+[2023-04-06 17:26:26Z INFO ActionManifestManager] Input 'ssh-known-hosts': default value evaluate result: ""
+[2023-04-06 17:26:26Z INFO ActionManifestManager] Input 'ssh-strict': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 47,
+  "col": 14,
+  "lit": "true"
+}
+[2023-04-06 17:26:26Z INFO ActionManifestManager] Input 'persist-credentials': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 50,
+  "col": 14,
+  "lit": "true"
+}
+[2023-04-06 17:26:26Z INFO ActionManifestManager] Input 'path': default value evaluate result: ""
+[2023-04-06 17:26:26Z INFO ActionManifestManager] Input 'clean': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 55,
+  "col": 14,
+  "lit": "true"
+}
+[2023-04-06 17:26:26Z INFO ActionManifestManager] Input 'fetch-depth': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 58,
+  "col": 14,
+  "lit": "1"
+}
+[2023-04-06 17:26:26Z INFO ActionManifestManager] Input 'lfs': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 61,
+  "col": 14,
+  "lit": "false"
+}
+[2023-04-06 17:26:26Z INFO ActionManifestManager] Input 'submodules': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 70,
+  "col": 14,
+  "lit": "false"
+}
+[2023-04-06 17:26:26Z INFO ActionManifestManager] Input 'set-safe-directory': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 73,
+  "col": 14,
+  "lit": "true"
+}
+[2023-04-06 17:26:26Z INFO ActionManifestManager] Input 'github-server-url': default value evaluate result: ""
+[2023-04-06 17:26:26Z INFO ExtensionManager] Getting extensions for interface: 'GitHub.Runner.Worker.IActionCommandExtension'
+[2023-04-06 17:26:26Z INFO ActionCommandManager] Register action command extension for command internal-set-repo-path
+[2023-04-06 17:26:26Z INFO ActionCommandManager] Register action command extension for command set-env
+[2023-04-06 17:26:26Z INFO ActionCommandManager] Register action command extension for command set-output
+[2023-04-06 17:26:26Z INFO ActionCommandManager] Register action command extension for command save-state
+[2023-04-06 17:26:26Z INFO ActionCommandManager] Register action command extension for command add-path
+[2023-04-06 17:26:26Z INFO ActionCommandManager] Register action command extension for command add-mask
+[2023-04-06 17:26:26Z INFO ActionCommandManager] Register action command extension for command add-matcher
+[2023-04-06 17:26:26Z INFO ActionCommandManager] Register action command extension for command remove-matcher
+[2023-04-06 17:26:26Z INFO ActionCommandManager] Register action command extension for command warning
+[2023-04-06 17:26:26Z INFO ActionCommandManager] Register action command extension for command error
+[2023-04-06 17:26:26Z INFO ActionCommandManager] Register action command extension for command notice
+[2023-04-06 17:26:26Z INFO ActionCommandManager] Register action command extension for command debug
+[2023-04-06 17:26:26Z INFO ActionCommandManager] Register action command extension for command group
+[2023-04-06 17:26:26Z INFO ActionCommandManager] Register action command extension for command endgroup
+[2023-04-06 17:26:26Z INFO ActionCommandManager] Register action command extension for command echo
+[2023-04-06 17:26:26Z INFO HostContext] Well known directory 'Bin': '/home/ifs/ci-cd-sample/actions-runner/bin'
+[2023-04-06 17:26:26Z INFO HostContext] Well known directory 'Root': '/home/ifs/ci-cd-sample/actions-runner'
+[2023-04-06 17:26:26Z INFO HostContext] Well known directory 'Externals': '/home/ifs/ci-cd-sample/actions-runner/externals'
+[2023-04-06 17:26:26Z INFO ProcessInvokerWrapper] Starting process:
+[2023-04-06 17:26:26Z INFO ProcessInvokerWrapper]   File name: '/home/ifs/ci-cd-sample/actions-runner/externals/node16/bin/node'
+[2023-04-06 17:26:26Z INFO ProcessInvokerWrapper]   Arguments: '"/home/ifs/ci-cd-sample/actions-runner/ci-cd-sample/_actions/actions/checkout/v3/dist/index.js"'
+[2023-04-06 17:26:26Z INFO ProcessInvokerWrapper]   Working directory: '/home/ifs/ci-cd-sample/actions-runner/ci-cd-sample/ci-cd-sample/ci-cd-sample'
+[2023-04-06 17:26:26Z INFO ProcessInvokerWrapper]   Require exit code zero: 'False'
+[2023-04-06 17:26:26Z INFO ProcessInvokerWrapper]   Encoding web name:  ; code page: ''
+[2023-04-06 17:26:26Z INFO ProcessInvokerWrapper]   Force kill process on cancellation: 'False'
+[2023-04-06 17:26:26Z INFO ProcessInvokerWrapper]   Redirected STDIN: 'False'
+[2023-04-06 17:26:26Z INFO ProcessInvokerWrapper]   Persist current code page: 'False'
+[2023-04-06 17:26:26Z INFO ProcessInvokerWrapper]   Keep redirected STDIN open: 'False'
+[2023-04-06 17:26:26Z INFO ProcessInvokerWrapper]   High priority process: 'False'
+[2023-04-06 17:26:26Z INFO ProcessInvokerWrapper] Updated oom_score_adj to 500 for PID: 3036794.
+[2023-04-06 17:26:26Z INFO ProcessInvokerWrapper] Process started with process id 3036794, waiting for process exit.
+[2023-04-06 17:26:26Z INFO AddMaskCommandExtension] Add new secret mask with length of 32
+[2023-04-06 17:26:26Z INFO JobServerQueue] Try to append 1 batches web console lines for record '45d8212e-9dc2-4bdf-b169-d76bc06a14d9', success rate: 1/1.
+[2023-04-06 17:26:26Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2023-04-06 17:26:26Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2023-04-06 17:26:26Z INFO ProcessInvokerWrapper] Finished process 3036794 with exit code 0, and elapsed time 00:00:00.3572227.
+[2023-04-06 17:26:26Z INFO CreateStepSummaryCommand] Step Summary file (/home/ifs/ci-cd-sample/actions-runner/ci-cd-sample/_temp/_runner_file_commands/step_summary_32f94f4e-39be-4d0a-9a6f-e393282b5972) is empty; skipping attachment upload
+[2023-04-06 17:26:26Z INFO StepsRunner] Step result: 
+[2023-04-06 17:26:26Z INFO ExecutionContext] Publish step telemetry for current step {
+  "action": "actions/checkout",
+  "ref": "v3",
+  "type": "node16",
+  "stage": "Post",
+  "stepId": "45d8212e-9dc2-4bdf-b169-d76bc06a14d9",
+  "result": "succeeded",
+  "errorMessages": [],
+  "executionTimeInSeconds": 1,
+  "startTime": "2023-04-06T17:26:26.3551591Z",
+  "finishTime": "2023-04-06T17:26:26.723991Z"
+}.
+[2023-04-06 17:26:26Z INFO StepsRunner] No need for updating job result with current step result 'Succeeded'.
+[2023-04-06 17:26:26Z INFO StepsRunner] Current state: job state = ''
+[2023-04-06 17:26:26Z INFO JobRunner] Finalize job.
+[2023-04-06 17:26:26Z INFO HostContext] Well known directory 'Bin': '/home/ifs/ci-cd-sample/actions-runner/bin'
+[2023-04-06 17:26:26Z INFO HostContext] Well known directory 'Root': '/home/ifs/ci-cd-sample/actions-runner'
+[2023-04-06 17:26:26Z INFO HostContext] Well known directory 'Diag': '/home/ifs/ci-cd-sample/actions-runner/_diag'
+[2023-04-06 17:26:26Z INFO HostContext] Well known directory 'Bin': '/home/ifs/ci-cd-sample/actions-runner/bin'
+[2023-04-06 17:26:26Z INFO HostContext] Well known directory 'Root': '/home/ifs/ci-cd-sample/actions-runner'
+[2023-04-06 17:26:26Z INFO HostContext] Well known directory 'Diag': '/home/ifs/ci-cd-sample/actions-runner/_diag'
+[2023-04-06 17:26:26Z INFO JobExtension] Initialize Env context
+[2023-04-06 17:26:26Z INFO JobExtension] Initialize steps context
+[2023-04-06 17:26:26Z INFO JobServerQueue] Try to append 1 batches web console lines for record '45d8212e-9dc2-4bdf-b169-d76bc06a14d9', success rate: 1/1.
+[2023-04-06 17:26:26Z INFO JobServerQueue] Try to append 1 batches web console lines for record 'd8216f40-0e69-443a-9d7b-fc155b31fcf6', success rate: 1/1.
+[2023-04-06 17:26:26Z INFO JobExtension] Total accessible running process: 1422.
+[2023-04-06 17:26:26Z INFO JobExtension] Inspecting process environment variables. PID: 145691 (kworker/133:2-events)
+[2023-04-06 17:26:26Z INFO LinuxProcessExtensions] Read env from /proc/145691/environ
+[2023-04-06 17:26:26Z WARN JobExtension] Ignore exception during read process environment variables: Access to the path '/proc/145691/environ' is denied.
+[2023-04-06 17:26:26Z INFO JobExtension] Inspecting process environment variables. PID: 150800 (kworker/56:1-events)
+[2023-04-06 17:26:26Z INFO LinuxProcessExtensions] Read env from /proc/150800/environ
+[2023-04-06 17:26:26Z WARN JobExtension] Ignore exception during read process environment variables: Access to the path '/proc/150800/environ' is denied.
+[2023-04-06 17:26:26Z INFO JobExtension] Inspecting process environment variables. PID: 179415 (kworker/137:1-events)
+[2023-04-06 17:26:26Z INFO LinuxProcessExtensions] Read env from /proc/179415/environ
+[2023-04-06 17:26:26Z WARN JobExtension] Ignore exception during read process environment variables: Access to the path '/proc/179415/environ' is denied.
+[2023-04-06 17:26:26Z INFO JobExtension] Inspecting process environment variables. PID: 754169 (kworker/109:2-events)
+[2023-04-06 17:26:26Z INFO LinuxProcessExtensions] Read env from /proc/754169/environ
+[2023-04-06 17:26:26Z WARN JobExtension] Ignore exception during read process environment variables: Access to the path '/proc/754169/environ' is denied.
+[2023-04-06 17:26:26Z INFO JobExtension] Inspecting process environment variables. PID: 820099 (kworker/0:1-events_freezable)
+[2023-04-06 17:26:26Z INFO LinuxProcessExtensions] Read env from /proc/820099/environ
+[2023-04-06 17:26:26Z WARN JobExtension] Ignore exception during read process environment variables: Access to the path '/proc/820099/environ' is denied.
+[2023-04-06 17:26:26Z INFO JobExtension] Inspecting process environment variables. PID: 841630 (kworker/43:1-mm_percpu_wq)
+[2023-04-06 17:26:26Z INFO LinuxProcessExtensions] Read env from /proc/841630/environ
+[2023-04-06 17:26:26Z WARN JobExtension] Ignore exception during read process environment variables: Access to the path '/proc/841630/environ' is denied.
+[2023-04-06 17:26:26Z INFO JobExtension] Inspecting process environment variables. PID: 897178 (kworker/131:1-events)
+[2023-04-06 17:26:26Z INFO LinuxProcessExtensions] Read env from /proc/897178/environ
+[2023-04-06 17:26:26Z WARN JobExtension] Ignore exception during read process environment variables: Access to the path '/proc/897178/environ' is denied.
+[2023-04-06 17:26:26Z INFO JobExtension] Inspecting process environment variables. PID: 1769900 (kworker/125:2-events)
+[2023-04-06 17:26:26Z INFO LinuxProcessExtensions] Read env from /proc/1769900/environ
+[2023-04-06 17:26:26Z WARN JobExtension] Ignore exception during read process environment variables: Access to the path '/proc/1769900/environ' is denied.
+[2023-04-06 17:26:26Z INFO JobExtension] Inspecting process environment variables. PID: 1844585 (kworker/114:1-events)
+[2023-04-06 17:26:26Z INFO LinuxProcessExtensions] Read env from /proc/1844585/environ
+[2023-04-06 17:26:26Z WARN JobExtension] Ignore exception during read process environment variables: Access to the path '/proc/1844585/environ' is denied.
+[2023-04-06 17:26:26Z INFO JobExtension] Inspecting process environment variables. PID: 2509123 (kworker/68:0-events)
+[2023-04-06 17:26:26Z INFO LinuxProcessExtensions] Read env from /proc/2509123/environ
+[2023-04-06 17:26:26Z WARN JobExtension] Ignore exception during read process environment variables: Access to the path '/proc/2509123/environ' is denied.
+[2023-04-06 17:26:26Z INFO JobExtension] Inspecting process environment variables. PID: 2644457 (kworker/130:0-events)
+[2023-04-06 17:26:26Z INFO LinuxProcessExtensions] Read env from /proc/2644457/environ
+[2023-04-06 17:26:26Z WARN JobExtension] Ignore exception during read process environment variables: Access to the path '/proc/2644457/environ' is denied.
+[2023-04-06 17:26:26Z INFO JobExtension] Inspecting process environment variables. PID: 2770986 (kworker/121:2-events)
+[2023-04-06 17:26:26Z INFO LinuxProcessExtensions] Read env from /proc/2770986/environ
+[2023-04-06 17:26:26Z WARN JobExtension] Ignore exception during read process environment variables: Access to the path '/proc/2770986/environ' is denied.
+[2023-04-06 17:26:26Z INFO JobExtension] Inspecting process environment variables. PID: 2770996 (kworker/120:1-mm_percpu_wq)
+[2023-04-06 17:26:26Z INFO LinuxProcessExtensions] Read env from /proc/2770996/environ
+[2023-04-06 17:26:26Z WARN JobExtension] Ignore exception during read process environment variables: Access to the path '/proc/2770996/environ' is denied.
+[2023-04-06 17:26:26Z INFO JobExtension] Inspecting process environment variables. PID: 2809366 (kworker/126:0-events)
+[2023-04-06 17:26:26Z INFO LinuxProcessExtensions] Read env from /proc/2809366/environ
+[2023-04-06 17:26:26Z WARN JobExtension] Ignore exception during read process environment variables: Access to the path '/proc/2809366/environ' is denied.
+[2023-04-06 17:26:26Z INFO JobExtension] Inspecting process environment variables. PID: 2809367 (kworker/127:2-mm_percpu_wq)
+[2023-04-06 17:26:26Z INFO LinuxProcessExtensions] Read env from /proc/2809367/environ
+[2023-04-06 17:26:26Z WARN JobExtension] Ignore exception during read process environment variables: Access to the path '/proc/2809367/environ' is denied.
+[2023-04-06 17:26:26Z INFO JobExtension] Inspecting process environment variables. PID: 2832398 (kworker/108:2-events)
+[2023-04-06 17:26:26Z INFO LinuxProcessExtensions] Read env from /proc/2832398/environ
+[2023-04-06 17:26:26Z WARN JobExtension] Ignore exception during read process environment variables: Access to the path '/proc/2832398/environ' is denied.
+[2023-04-06 17:26:26Z INFO JobExtension] Inspecting process environment variables. PID: 2845362 (kworker/124:0-events)
+[2023-04-06 17:26:26Z INFO LinuxProcessExtensions] Read env from /proc/2845362/environ
+[2023-04-06 17:26:26Z WARN JobExtension] Ignore exception during read process environment variables: Access to the path '/proc/2845362/environ' is denied.
+[2023-04-06 17:26:26Z INFO JobExtension] Inspecting process environment variables. PID: 2901304 (kworker/38:1-events)
+[2023-04-06 17:26:26Z INFO LinuxProcessExtensions] Read env from /proc/2901304/environ
+[2023-04-06 17:26:26Z WARN JobExtension] Ignore exception during read process environment variables: Access to the path '/proc/2901304/environ' is denied.
+[2023-04-06 17:26:26Z INFO JobExtension] Inspecting process environment variables. PID: 2922217 (kworker/41:0-events)
+[2023-04-06 17:26:26Z INFO LinuxProcessExtensions] Read env from /proc/2922217/environ
+[2023-04-06 17:26:26Z WARN JobExtension] Ignore exception during read process environment variables: Access to the path '/proc/2922217/environ' is denied.
+[2023-04-06 17:26:26Z INFO JobExtension] Inspecting process environment variables. PID: 2961643 (kworker/122:0-events)
+[2023-04-06 17:26:26Z INFO LinuxProcessExtensions] Read env from /proc/2961643/environ
+[2023-04-06 17:26:26Z WARN JobExtension] Ignore exception during read process environment variables: Access to the path '/proc/2961643/environ' is denied.
+[2023-04-06 17:26:26Z INFO JobExtension] Inspecting process environment variables. PID: 3030126 (kworker/40:0-mm_percpu_wq)
+[2023-04-06 17:26:26Z INFO LinuxProcessExtensions] Read env from /proc/3030126/environ
+[2023-04-06 17:26:26Z WARN JobExtension] Ignore exception during read process environment variables: Access to the path '/proc/3030126/environ' is denied.
+[2023-04-06 17:26:26Z INFO JobExtension] Inspecting process environment variables. PID: 3287733 (kworker/74:0-mm_percpu_wq)
+[2023-04-06 17:26:26Z INFO LinuxProcessExtensions] Read env from /proc/3287733/environ
+[2023-04-06 17:26:26Z WARN JobExtension] Ignore exception during read process environment variables: Access to the path '/proc/3287733/environ' is denied.
+[2023-04-06 17:26:26Z INFO JobExtension] Inspecting process environment variables. PID: 4168157 (kworker/84:1-events)
+[2023-04-06 17:26:26Z INFO LinuxProcessExtensions] Read env from /proc/4168157/environ
+[2023-04-06 17:26:26Z WARN JobExtension] Ignore exception during read process environment variables: Access to the path '/proc/4168157/environ' is denied.
+[2023-04-06 17:26:26Z INFO ExecutionContext] Publish step telemetry for current step {
+  "action": "complete_job",
+  "type": "runner",
+  "stage": "Post",
+  "stepId": "d8216f40-0e69-443a-9d7b-fc155b31fcf6",
+  "result": "succeeded",
+  "errorMessages": [],
+  "executionTimeInSeconds": 1,
+  "startTime": "2023-04-06T17:26:26.751361Z",
+  "finishTime": "2023-04-06T17:26:26.9081711Z"
+}.
+[2023-04-06 17:26:26Z INFO JobRunner] Job result after all job steps finish: Succeeded
+[2023-04-06 17:26:26Z INFO JobRunner] Completing the job execution context.
+[2023-04-06 17:26:26Z INFO JobRunner] Shutting down the job server queue.
+[2023-04-06 17:26:26Z INFO JobServerQueue] Fire signal to shutdown all queues.
+[2023-04-06 17:26:27Z INFO JobServerQueue] All queue process task stopped.
+[2023-04-06 17:26:27Z INFO JobServerQueue] Try to append 1 batches web console lines for record 'bddc1945-e983-5915-0743-b12662939965', success rate: 1/1.
+[2023-04-06 17:26:27Z INFO JobServerQueue] Web console line queue drained.
+[2023-04-06 17:26:27Z INFO JobServerQueue] Uploading 4 files in one shot.
+[2023-04-06 17:26:28Z INFO JobServerQueue] Try to upload 4 log files or attachments, success rate: 4/4.
+[2023-04-06 17:26:28Z INFO JobServerQueue] File upload queue drained.
+[2023-04-06 17:26:28Z INFO JobServerQueue] Starting results-based upload queue...
+[2023-04-06 17:26:28Z INFO JobServerQueue] Results upload queue drained.
+[2023-04-06 17:26:28Z INFO JobServerQueue] Timeline update queue drained.
+[2023-04-06 17:26:28Z INFO JobServerQueue] Disposing job server ...
+[2023-04-06 17:26:28Z INFO JobServerQueue] All queue process tasks have been stopped, and all queues are drained.
+[2023-04-06 17:26:28Z INFO TempDirectoryManager] Cleaning runner temp folder: /home/ifs/ci-cd-sample/actions-runner/ci-cd-sample/_temp
+[2023-04-06 17:26:28Z INFO HostContext] Well known directory 'Bin': '/home/ifs/ci-cd-sample/actions-runner/bin'
+[2023-04-06 17:26:28Z INFO HostContext] Well known directory 'Root': '/home/ifs/ci-cd-sample/actions-runner'
+[2023-04-06 17:26:28Z INFO HostContext] Well known directory 'Diag': '/home/ifs/ci-cd-sample/actions-runner/_diag'
+[2023-04-06 17:26:28Z INFO HostContext] Well known config file 'Telemetry': '/home/ifs/ci-cd-sample/actions-runner/_diag/.telemetry'
+[2023-04-06 17:26:28Z INFO JobRunner] Raising job completed event
+[2023-04-06 17:26:29Z INFO Worker] Job completed.

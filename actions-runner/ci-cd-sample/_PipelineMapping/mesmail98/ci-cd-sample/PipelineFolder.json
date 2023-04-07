@@ -1,0 +1,12 @@
+﻿{
+  "repositoryName": "mesmail98/ci-cd-sample",
+  "pipelineDirectory": "ci-cd-sample",
+  "workspaceDirectory": "ci-cd-sample/ci-cd-sample",
+  "repositories": {
+    "mesmail98/ci-cd-sample": {
+      "repositoryPath": "ci-cd-sample/ci-cd-sample",
+      "lastRunOn": "04/06/2023 10:26:07 -07:00"
+    }
+  },
+  "lastRunOn": "04/06/2023 10:26:07 -07:00"
+}

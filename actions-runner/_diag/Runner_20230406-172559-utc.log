@@ -1,0 +1,163 @@
+[2023-04-06 17:25:59Z INFO HostContext] Configuring anonymous proxy http://proxy-chain.intel.com:911 for all HTTP requests.
+[2023-04-06 17:25:59Z INFO HostContext] Configuring anonymous proxy http://proxy-chain.intel.com:912 for all HTTPS requests.
+[2023-04-06 17:25:59Z INFO HostContext] Well known directory 'Bin': '/home/ifs/ci-cd-sample/actions-runner/bin'
+[2023-04-06 17:25:59Z INFO HostContext] Well known directory 'Root': '/home/ifs/ci-cd-sample/actions-runner'
+[2023-04-06 17:25:59Z INFO HostContext] Well known config file 'Credentials': '/home/ifs/ci-cd-sample/actions-runner/.credentials'
+[2023-04-06 17:26:00Z INFO HostContext] Well known directory 'Bin': '/home/ifs/ci-cd-sample/actions-runner/bin'
+[2023-04-06 17:26:00Z INFO HostContext] Well known directory 'Root': '/home/ifs/ci-cd-sample/actions-runner'
+[2023-04-06 17:26:00Z INFO HostContext] Well known config file 'Runner': '/home/ifs/ci-cd-sample/actions-runner/.runner'
+[2023-04-06 17:26:00Z INFO Listener] Runner is built for Linux (X64) - linux-x64.
+[2023-04-06 17:26:00Z INFO Listener] RuntimeInformation: Linux 5.15.0-41-generic #44~20.04.1-Ubuntu SMP Fri Jun 24 13:27:29 UTC 2022.
+[2023-04-06 17:26:00Z INFO Listener] Version: 2.303.0
+[2023-04-06 17:26:00Z INFO Listener] Commit: e676c7871817c1b484299cd93fabdf4b95e70741
+[2023-04-06 17:26:00Z INFO Listener] Culture: en-US
+[2023-04-06 17:26:00Z INFO Listener] UI Culture: en-US
+[2023-04-06 17:26:00Z INFO HostContext] Well known directory 'Bin': '/home/ifs/ci-cd-sample/actions-runner/bin'
+[2023-04-06 17:26:00Z INFO HostContext] Well known directory 'Root': '/home/ifs/ci-cd-sample/actions-runner'
+[2023-04-06 17:26:00Z INFO Listener] Validating directory permissions for: '/home/ifs/ci-cd-sample/actions-runner'
+[2023-04-06 17:26:00Z INFO CommandLineParser] Parse
+[2023-04-06 17:26:00Z INFO CommandLineParser] Parsing 1 args
+[2023-04-06 17:26:00Z INFO CommandLineParser] parsing argument
+[2023-04-06 17:26:00Z INFO CommandLineParser] HasArgs: False
+[2023-04-06 17:26:00Z INFO CommandLineParser] Adding Command: run
+[2023-04-06 17:26:00Z INFO Listener] Arguments parsed
+[2023-04-06 17:26:00Z INFO Runner] ExecuteCommand
+[2023-04-06 17:26:00Z INFO ConfigurationStore] currentAssemblyLocation: /home/ifs/ci-cd-sample/actions-runner/bin/Runner.Listener.dll
+[2023-04-06 17:26:00Z INFO HostContext] Well known directory 'Bin': '/home/ifs/ci-cd-sample/actions-runner/bin'
+[2023-04-06 17:26:00Z INFO ConfigurationStore] binPath: /home/ifs/ci-cd-sample/actions-runner/bin
+[2023-04-06 17:26:00Z INFO HostContext] Well known directory 'Bin': '/home/ifs/ci-cd-sample/actions-runner/bin'
+[2023-04-06 17:26:00Z INFO HostContext] Well known directory 'Root': '/home/ifs/ci-cd-sample/actions-runner'
+[2023-04-06 17:26:00Z INFO ConfigurationStore] RootFolder: /home/ifs/ci-cd-sample/actions-runner
+[2023-04-06 17:26:00Z INFO HostContext] Well known directory 'Bin': '/home/ifs/ci-cd-sample/actions-runner/bin'
+[2023-04-06 17:26:00Z INFO HostContext] Well known directory 'Root': '/home/ifs/ci-cd-sample/actions-runner'
+[2023-04-06 17:26:00Z INFO HostContext] Well known config file 'Runner': '/home/ifs/ci-cd-sample/actions-runner/.runner'
+[2023-04-06 17:26:00Z INFO ConfigurationStore] ConfigFilePath: /home/ifs/ci-cd-sample/actions-runner/.runner
+[2023-04-06 17:26:00Z INFO HostContext] Well known directory 'Bin': '/home/ifs/ci-cd-sample/actions-runner/bin'
+[2023-04-06 17:26:00Z INFO HostContext] Well known directory 'Root': '/home/ifs/ci-cd-sample/actions-runner'
+[2023-04-06 17:26:00Z INFO HostContext] Well known config file 'Credentials': '/home/ifs/ci-cd-sample/actions-runner/.credentials'
+[2023-04-06 17:26:00Z INFO ConfigurationStore] CredFilePath: /home/ifs/ci-cd-sample/actions-runner/.credentials
+[2023-04-06 17:26:00Z INFO HostContext] Well known directory 'Bin': '/home/ifs/ci-cd-sample/actions-runner/bin'
+[2023-04-06 17:26:00Z INFO HostContext] Well known directory 'Root': '/home/ifs/ci-cd-sample/actions-runner'
+[2023-04-06 17:26:00Z INFO HostContext] Well known config file 'MigratedCredentials': '/home/ifs/ci-cd-sample/actions-runner/.credentials_migrated'
+[2023-04-06 17:26:00Z INFO ConfigurationStore] MigratedCredFilePath: /home/ifs/ci-cd-sample/actions-runner/.credentials_migrated
+[2023-04-06 17:26:00Z INFO HostContext] Well known directory 'Bin': '/home/ifs/ci-cd-sample/actions-runner/bin'
+[2023-04-06 17:26:00Z INFO HostContext] Well known directory 'Root': '/home/ifs/ci-cd-sample/actions-runner'
+[2023-04-06 17:26:00Z INFO HostContext] Well known config file 'Service': '/home/ifs/ci-cd-sample/actions-runner/.service'
+[2023-04-06 17:26:00Z INFO ConfigurationStore] ServiceConfigFilePath: /home/ifs/ci-cd-sample/actions-runner/.service
+[2023-04-06 17:26:00Z INFO CommandSettings] Flag 'help': 'False'
+[2023-04-06 17:26:00Z INFO CommandSettings] Flag 'version': 'False'
+[2023-04-06 17:26:00Z INFO CommandSettings] Flag 'commit': 'False'
+[2023-04-06 17:26:00Z INFO CommandSettings] Flag 'check': 'False'
+[2023-04-06 17:26:00Z INFO CommandSettings] Command 'configure': 'False'
+[2023-04-06 17:26:00Z INFO CommandSettings] Command 'remove': 'False'
+[2023-04-06 17:26:00Z INFO CommandSettings] Command 'warmup': 'False'
+[2023-04-06 17:26:00Z INFO ConfigurationManager] LoadSettings
+[2023-04-06 17:26:00Z INFO ConfigurationStore] IsConfigured()
+[2023-04-06 17:26:00Z INFO ConfigurationStore] IsConfigured: True
+[2023-04-06 17:26:00Z INFO ConfigurationManager] Is configured: True
+[2023-04-06 17:26:00Z INFO ConfigurationStore] Read setting file: 300 chars
+[2023-04-06 17:26:00Z INFO ConfigurationManager] Settings Loaded
+[2023-04-06 17:26:00Z INFO ConfigurationStore] IsServiceConfigured()
+[2023-04-06 17:26:00Z INFO ConfigurationStore] IsServiceConfigured: False
+[2023-04-06 17:26:00Z INFO CommandSettings] Command 'run': 'True'
+[2023-04-06 17:26:00Z INFO ConfigurationStore] IsConfigured()
+[2023-04-06 17:26:00Z INFO ConfigurationStore] IsConfigured: True
+[2023-04-06 17:26:00Z INFO ConfigurationManager] Is configured: True
+[2023-04-06 17:26:00Z INFO Runner] Could not parse the argument value '' for StartupType. Defaulting to Manual
+[2023-04-06 17:26:00Z INFO Runner] Set runner startup type - Manual
+[2023-04-06 17:26:00Z INFO CommandSettings] Flag 'once': 'False'
+[2023-04-06 17:26:00Z INFO CommandSettings] Flag 'once': 'False'
+[2023-04-06 17:26:00Z INFO Runner] RunAsync
+[2023-04-06 17:26:00Z INFO ConfigurationManager] LoadSettings
+[2023-04-06 17:26:00Z INFO ConfigurationStore] IsConfigured()
+[2023-04-06 17:26:00Z INFO ConfigurationStore] IsConfigured: True
+[2023-04-06 17:26:00Z INFO ConfigurationManager] Is configured: True
+[2023-04-06 17:26:00Z INFO ConfigurationManager] Settings Loaded
+[2023-04-06 17:26:00Z INFO MessageListener] {
+  "AgentId": 2,
+  "AgentName": "mohamed esmail",
+  "PoolId": 1,
+  "PoolName": "Default",
+  "ServerUrl": "https://pipelines.actions.githubusercontent.com/E72i4yQxnUthuzCimL5e2A76ZggI2zfN2qwFy4aFGu9eJL7Fpu",
+  "GitHubUrl": "https://github.com/mesmail98/ci-cd-sample",
+  "WorkFolder": "ci-cd-sample"
+}
+[2023-04-06 17:26:00Z INFO MessageListener] Loading Credentials
+[2023-04-06 17:26:00Z INFO ConfigurationStore] HasCredentials()
+[2023-04-06 17:26:00Z INFO ConfigurationStore] stored True
+[2023-04-06 17:26:00Z INFO CredentialManager] GetCredentialProvider
+[2023-04-06 17:26:00Z INFO CredentialManager] Creating type OAuth
+[2023-04-06 17:26:00Z INFO CredentialManager] Creating credential type: OAuth
+[2023-04-06 17:26:00Z INFO HostContext] Well known directory 'Bin': '/home/ifs/ci-cd-sample/actions-runner/bin'
+[2023-04-06 17:26:00Z INFO HostContext] Well known directory 'Root': '/home/ifs/ci-cd-sample/actions-runner'
+[2023-04-06 17:26:00Z INFO HostContext] Well known config file 'RSACredentials': '/home/ifs/ci-cd-sample/actions-runner/.credentials_rsaparams'
+[2023-04-06 17:26:00Z INFO RSAFileKeyManager] Loading RSA key parameters from file /home/ifs/ci-cd-sample/actions-runner/.credentials_rsaparams
+[2023-04-06 17:26:00Z INFO MessageListener] Attempt to create session.
+[2023-04-06 17:26:00Z INFO MessageListener] Connecting to the Runner Server...
+[2023-04-06 17:26:00Z INFO RunnerServer] EstablishVssConnection
+[2023-04-06 17:26:00Z INFO RunnerServer] Establish connection with 100 seconds timeout.
+[2023-04-06 17:26:00Z INFO GitHubActionsService] Starting operation Location.GetConnectionData
+[2023-04-06 17:26:00Z INFO RunnerServer] EstablishVssConnection
+[2023-04-06 17:26:00Z INFO RunnerServer] Establish connection with 60 seconds timeout.
+[2023-04-06 17:26:00Z INFO GitHubActionsService] Starting operation Location.GetConnectionData
+[2023-04-06 17:26:00Z INFO RunnerServer] EstablishVssConnection
+[2023-04-06 17:26:00Z INFO RunnerServer] Establish connection with 60 seconds timeout.
+[2023-04-06 17:26:00Z INFO GitHubActionsService] Starting operation Location.GetConnectionData
+[2023-04-06 17:26:00Z INFO GitHubActionsService] Finished operation Location.GetConnectionData
+[2023-04-06 17:26:00Z INFO GitHubActionsService] Finished operation Location.GetConnectionData
+[2023-04-06 17:26:00Z INFO GitHubActionsService] Finished operation Location.GetConnectionData
+[2023-04-06 17:26:01Z INFO MessageListener] VssConnection created
+[2023-04-06 17:26:01Z INFO Terminal] WRITE LINE: 
+[2023-04-06 17:26:01Z INFO Terminal] WRITE LINE: 
+[2023-04-06 17:26:01Z INFO RSAFileKeyManager] Loading RSA key parameters from file /home/ifs/ci-cd-sample/actions-runner/.credentials_rsaparams
+[2023-04-06 17:26:01Z INFO RSAFileKeyManager] Loading RSA key parameters from file /home/ifs/ci-cd-sample/actions-runner/.credentials_rsaparams
+[2023-04-06 17:26:01Z INFO GitHubActionsService] AAD Correlation ID for this token request: Unknown
+[2023-04-06 17:26:01Z INFO MessageListener] Session created.
+[2023-04-06 17:26:01Z INFO Terminal] WRITE LINE: Current runner version: '2.303.0'
+[2023-04-06 17:26:01Z INFO Terminal] WRITE LINE: 2023-04-06 17:26:01Z: Listening for Jobs
+[2023-04-06 17:26:01Z INFO JobDispatcher] Set runner/worker IPC timeout to 30 seconds.
+[2023-04-06 17:26:05Z INFO RSAFileKeyManager] Loading RSA key parameters from file /home/ifs/ci-cd-sample/actions-runner/.credentials_rsaparams
+[2023-04-06 17:26:05Z INFO MessageListener] Message '1' received from session 'f252fbc1-2f32-41d3-8721-eedc3bb8e94b'.
+[2023-04-06 17:26:05Z INFO Runner] Received job message of length 22749 from service, with hash 'bc5f8a4118503d4fca9724d08e01ce8d055d2e1fef6cf625f675ba3ff0fb7f83'
+[2023-04-06 17:26:05Z INFO JobDispatcher] Job request 12 for plan ffd401a8-5ddd-48f9-9cd2-1c8b05398e87 job bddc1945-e983-5915-0743-b12662939965 received.
+[2023-04-06 17:26:05Z INFO JobDispatcher] Pull OrchestrationId ffd401a8-5ddd-48f9-9cd2-1c8b05398e87.build.self-hosted-linux from JWT claims
+[2023-04-06 17:26:05Z INFO Terminal] WRITE LINE: 2023-04-06 17:26:05Z: Running job: Build on self-hosted-linux
+[2023-04-06 17:26:05Z INFO JobDispatcher] Start renew job request 12 for job bddc1945-e983-5915-0743-b12662939965.
+[2023-04-06 17:26:05Z INFO JobDispatcher] Successfully renew job request 12, job is valid till 4/6/2023 5:35:56 PM
+[2023-04-06 17:26:05Z INFO HostContext] Well known directory 'Bin': '/home/ifs/ci-cd-sample/actions-runner/bin'
+[2023-04-06 17:26:05Z INFO ProcessInvokerWrapper] Starting process:
+[2023-04-06 17:26:05Z INFO ProcessInvokerWrapper]   File name: '/home/ifs/ci-cd-sample/actions-runner/bin/Runner.Worker'
+[2023-04-06 17:26:05Z INFO ProcessInvokerWrapper]   Arguments: 'spawnclient 111 114'
+[2023-04-06 17:26:05Z INFO ProcessInvokerWrapper]   Working directory: '/home/ifs/ci-cd-sample/actions-runner/bin'
+[2023-04-06 17:26:05Z INFO ProcessInvokerWrapper]   Require exit code zero: 'False'
+[2023-04-06 17:26:05Z INFO ProcessInvokerWrapper]   Encoding web name:  ; code page: ''
+[2023-04-06 17:26:05Z INFO ProcessInvokerWrapper]   Force kill process on cancellation: 'True'
+[2023-04-06 17:26:05Z INFO ProcessInvokerWrapper]   Redirected STDIN: 'False'
+[2023-04-06 17:26:05Z INFO ProcessInvokerWrapper]   Persist current code page: 'False'
+[2023-04-06 17:26:05Z INFO ProcessInvokerWrapper]   Keep redirected STDIN open: 'False'
+[2023-04-06 17:26:05Z INFO ProcessInvokerWrapper]   High priority process: 'True'
+[2023-04-06 17:26:05Z INFO ProcessInvokerWrapper] Process started with process id 3036580, waiting for process exit.
+[2023-04-06 17:26:05Z INFO JobDispatcher] Send job request message to worker for job bddc1945-e983-5915-0743-b12662939965.
+[2023-04-06 17:26:05Z INFO ProcessChannel] Sending message of length 22749, with hash 'bc5f8a4118503d4fca9724d08e01ce8d055d2e1fef6cf625f675ba3ff0fb7f83'
+[2023-04-06 17:26:05Z INFO JobNotification] Entering JobStarted Notification
+[2023-04-06 17:26:05Z INFO JobNotification] Entering StartMonitor
+[2023-04-06 17:26:29Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2023-04-06 17:26:29Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2023-04-06 17:26:29Z INFO ProcessInvokerWrapper] Finished process 3036580 with exit code 100, and elapsed time 00:00:23.4930692.
+[2023-04-06 17:26:29Z INFO JobDispatcher] Worker finished for job bddc1945-e983-5915-0743-b12662939965. Code: 100
+[2023-04-06 17:26:29Z INFO JobDispatcher] finish job request for job bddc1945-e983-5915-0743-b12662939965 with result: Succeeded
+[2023-04-06 17:26:29Z INFO Terminal] WRITE LINE: 2023-04-06 17:26:29Z: Job Build on self-hosted-linux completed with result: Succeeded
+[2023-04-06 17:26:29Z INFO JobDispatcher] Stop renew job request for job bddc1945-e983-5915-0743-b12662939965.
+[2023-04-06 17:26:29Z INFO JobDispatcher] job renew has been cancelled, stop renew job request 12.
+[2023-04-06 17:26:29Z INFO JobNotification] Entering JobCompleted Notification
+[2023-04-06 17:26:29Z INFO JobNotification] Entering EndMonitor
+[2023-04-06 17:29:24Z INFO Terminal] WRITE LINE: Exiting...
+[2023-04-06 17:29:24Z INFO ConfigurationStore] IsServiceConfigured()
+[2023-04-06 17:29:24Z INFO ConfigurationStore] IsServiceConfigured: False
+[2023-04-06 17:29:24Z INFO HostContext] Runner will be shutdown for UserCancelled
+[2023-04-06 17:29:24Z WARN GitHubActionsService] GET request to https://pipelines.actions.githubusercontent.com/E72i4yQxnUthuzCimL5e2A76ZggI2zfN2qwFy4aFGu9eJL7Fpu/_apis/distributedtask/pools/1/messages?sessionId=f252fbc1-2f32-41d3-8721-eedc3bb8e94b&lastMessageId=1&status=Online&runnerVersion=2.303.0 has been cancelled.
+[2023-04-06 17:29:24Z INFO MessageListener] Get next message has been cancelled.
+[2023-04-06 17:29:24Z INFO JobDispatcher] Shutting down JobDispatcher. Make sure all WorkerDispatcher has finished.
+[2023-04-06 17:29:24Z INFO JobDispatcher] Ensure WorkerDispather for job bddc1945-e983-5915-0743-b12662939965 run to finish, cancel any running job.
+[2023-04-06 17:29:24Z INFO JobDispatcher] Job request bddc1945-e983-5915-0743-b12662939965 processed succeed.
+[2023-04-06 17:29:24Z INFO Listener] Runner execution been cancelled.
