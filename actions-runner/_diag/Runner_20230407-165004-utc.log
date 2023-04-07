@@ -151,3 +151,39 @@
 [2023-04-07 16:50:55Z INFO JobDispatcher] job renew has been cancelled, stop renew job request 14.
 [2023-04-07 16:50:55Z INFO JobNotification] Entering JobCompleted Notification
 [2023-04-07 16:50:55Z INFO JobNotification] Entering EndMonitor
+[2023-04-07 16:56:56Z INFO RSAFileKeyManager] Loading RSA key parameters from file /home/ifs/ci-cd-sample/actions-runner/.credentials_rsaparams
+[2023-04-07 16:56:56Z INFO MessageListener] Message '3' received from session 'dd988101-d158-4954-bf98-1c776441a1d0'.
+[2023-04-07 16:56:56Z INFO Runner] Received job message of length 21855 from service, with hash '971383f403940d812f2fa94e17b2a20faf117e9a6e22b9aafae5cc9f0a4305b1'
+[2023-04-07 16:56:56Z INFO JobDispatcher] Job request 15 for plan c4989741-b47a-4a1a-945f-c9c9d46b156c job bddc1945-e983-5915-0743-b12662939965 received.
+[2023-04-07 16:56:56Z INFO JobDispatcher] Pull OrchestrationId c4989741-b47a-4a1a-945f-c9c9d46b156c.build.self-hosted-linux from JWT claims
+[2023-04-07 16:56:56Z INFO JobDispatcher] Job request bddc1945-e983-5915-0743-b12662939965 processed succeed.
+[2023-04-07 16:56:56Z INFO Terminal] WRITE LINE: 2023-04-07 16:56:56Z: Running job: Build on self-hosted-linux
+[2023-04-07 16:56:56Z INFO JobDispatcher] Start renew job request 15 for job bddc1945-e983-5915-0743-b12662939965.
+[2023-04-07 16:56:56Z INFO JobDispatcher] Successfully renew job request 15, job is valid till 4/7/2023 5:06:47 PM
+[2023-04-07 16:56:56Z INFO HostContext] Well known directory 'Bin': '/home/ifs/ci-cd-sample/actions-runner/bin'
+[2023-04-07 16:56:56Z INFO ProcessInvokerWrapper] Starting process:
+[2023-04-07 16:56:56Z INFO ProcessInvokerWrapper]   File name: '/home/ifs/ci-cd-sample/actions-runner/bin/Runner.Worker'
+[2023-04-07 16:56:56Z INFO ProcessInvokerWrapper]   Arguments: 'spawnclient 110 113'
+[2023-04-07 16:56:56Z INFO ProcessInvokerWrapper]   Working directory: '/home/ifs/ci-cd-sample/actions-runner/bin'
+[2023-04-07 16:56:56Z INFO ProcessInvokerWrapper]   Require exit code zero: 'False'
+[2023-04-07 16:56:56Z INFO ProcessInvokerWrapper]   Encoding web name:  ; code page: ''
+[2023-04-07 16:56:56Z INFO ProcessInvokerWrapper]   Force kill process on cancellation: 'True'
+[2023-04-07 16:56:56Z INFO ProcessInvokerWrapper]   Redirected STDIN: 'False'
+[2023-04-07 16:56:56Z INFO ProcessInvokerWrapper]   Persist current code page: 'False'
+[2023-04-07 16:56:56Z INFO ProcessInvokerWrapper]   Keep redirected STDIN open: 'False'
+[2023-04-07 16:56:56Z INFO ProcessInvokerWrapper]   High priority process: 'True'
+[2023-04-07 16:56:56Z INFO ProcessInvokerWrapper] Process started with process id 3057793, waiting for process exit.
+[2023-04-07 16:56:56Z INFO JobDispatcher] Send job request message to worker for job bddc1945-e983-5915-0743-b12662939965.
+[2023-04-07 16:56:56Z INFO ProcessChannel] Sending message of length 21855, with hash '971383f403940d812f2fa94e17b2a20faf117e9a6e22b9aafae5cc9f0a4305b1'
+[2023-04-07 16:56:56Z INFO JobNotification] Entering JobStarted Notification
+[2023-04-07 16:56:56Z INFO JobNotification] Entering StartMonitor
+[2023-04-07 16:57:04Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2023-04-07 16:57:04Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2023-04-07 16:57:04Z INFO ProcessInvokerWrapper] Finished process 3057793 with exit code 102, and elapsed time 00:00:08.3463263.
+[2023-04-07 16:57:04Z INFO JobDispatcher] Worker finished for job bddc1945-e983-5915-0743-b12662939965. Code: 102
+[2023-04-07 16:57:04Z INFO JobDispatcher] finish job request for job bddc1945-e983-5915-0743-b12662939965 with result: Failed
+[2023-04-07 16:57:04Z INFO Terminal] WRITE LINE: 2023-04-07 16:57:04Z: Job Build on self-hosted-linux completed with result: Failed
+[2023-04-07 16:57:04Z INFO JobDispatcher] Stop renew job request for job bddc1945-e983-5915-0743-b12662939965.
+[2023-04-07 16:57:04Z INFO JobDispatcher] job renew has been cancelled, stop renew job request 15.
+[2023-04-07 16:57:04Z INFO JobNotification] Entering JobCompleted Notification
+[2023-04-07 16:57:04Z INFO JobNotification] Entering EndMonitor
